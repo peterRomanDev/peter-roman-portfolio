@@ -1,0 +1,1393 @@
+:root {
+    --color-light: white;
+    --color-dark: black;
+    --color-player-bg: radial-gradient(circle at right, rgb(255, 177, 177), red 150%);
+    --color-cactus-bg: radial-gradient(circle at right, rgb(7, 222, 7), green 150%);
+    --color-cactus-flower-bg: radial-gradient(circle at bottom, yellow, rgb(126, 126, 14) 150%);
+    --color-btn-neutral: radial-gradient(circle at right, rgb(87, 194, 255), rgb(4, 109, 170) 150%);
+    --color-btn-light: radial-gradient(circle at right, hsl(202, 100%, 77%), hsl(202, 95%, 44%) 150%);
+    --color-sky-bg: radial-gradient(circle at right top, hsl(202, 100%, 83%), hsl(202, 100%, 78%) 150%);
+    --color-ground-bg: radial-gradient(circle at right top, hsl(60, 100%, 80%), hsl(60, 100%, 60%) 150%);
+    --color-sea-bg: radial-gradient(circle at right, hsl(202, 100%, 77%), hsl(202, 100%, 64%) 150%);
+
+    --font-futura: Futura, sans-serif;
+    
+    --transition-visibility: opacity 350ms;
+    --transition-player-intro: left 250ms linear;
+    --transition-ground-intro: bottom 1000ms ease-out;
+    --transition-clouds-intro: top 1800ms ease-out;
+
+    --width-full-screen: 100vw;
+    --height-full-screen: 100vh;
+
+    --division-intensity: 1.125;
+    /* --division-intensity: 1.22; */
+    --md: 2;
+    --sm: 3;
+    --xs: 4;
+    
+    --br-small-division-part: calc(var(--br-small-xl) - var(--br-small-xl) / var(--division-intensity));
+    --br-small-xl: 15px;
+    --br-small-lg: calc(var(--br-small-xl) - var(--br-small-division-part));
+    --br-small-md: calc(var(--br-small-xl) - var(--br-small-division-part) * var(--md));
+    --br-small-sm: calc(var(--br-small-xl) - var(--br-small-division-part) * var(--sm));
+    --br-small-xs: calc(var(--br-small-xl) - var(--br-small-division-part) * var(--xs));
+
+    --br-big-division-part: calc(var(--br-big-xl) - var(--br-big-xl) / var(--division-intensity));
+    --br-big-xl: 50px;
+    --br-big-lg: calc(var(--br-big-xl) - var(--br-big-division-part));
+    --br-big-md: calc(var(--br-big-xl) - var(--br-big-division-part) * var(--md));
+    --br-big-sm: calc(var(--br-big-xl) - var(--br-big-division-part) * var(--sm));
+    --br-big-xs: calc(var(--br-big-xl) - var(--br-big-division-part) * var(--xs));
+    
+    --br-round: 50%;
+    --br-cactus-body: 50% 50% 40% 40%;
+    
+    --border-thick-division-part: calc(var(--border-thick-xl-thickness) - var(--border-thick-xl-thickness) / var(--division-intensity));
+    --border-thick-xl-thickness: 0.375rem;
+    --border-thick-lg-thickness: calc(var(--border-thick-xl-thickness) - var(--border-thick-division-part));
+    --border-thick-md-thickness: calc(var(--border-thick-xl-thickness) - var(--border-thick-division-part) * var(--md));
+    --border-thick-sm-thickness: calc(var(--border-thick-xl-thickness) - var(--border-thick-division-part) * var(--sm));
+    --border-thick-xs-thickness: calc(var(--border-thick-xl-thickness) - var(--border-thick-division-part) * var(--xs));
+    --border-thick-xl: var(--border-thick-xl-thickness) solid var(--color-dark);
+    --border-thick-lg: var(--border-thick-lg-thickness) solid var(--color-dark);
+    --border-thick-md: var(--border-thick-md-thickness) solid var(--color-dark);
+    --border-thick-sm: var(--border-thick-sm-thickness) solid var(--color-dark);
+    --border-thick-xs: var(--border-thick-xs-thickness) solid var(--color-dark);
+    
+    --border-thin-division-part: calc(var(--border-thin-xl-thickness) - var(--border-thin-xl-thickness) / var(--division-intensity));
+    --border-thin-xl-thickness: 0.188rem;
+    /* --border-thin-xl-thickness: 0.125rem; */
+    --border-thin-lg-thickness: calc(var(--border-thin-xl-thickness) - var(--border-thin-division-part));
+    --border-thin-md-thickness: calc(var(--border-thin-xl-thickness) - var(--border-thin-division-part) * var(--md));
+    --border-thin-sm-thickness: calc(var(--border-thin-xl-thickness) - var(--border-thin-division-part) * var(--sm));
+    --border-thin-xs-thickness: calc(var(--border-thin-xl-thickness) - var(--border-thin-division-part) * var(--xs));
+    --border-thin-xl: var(--border-thin-xl-thickness) solid var(--color-dark);
+    --border-thin-lg: var(--border-thin-lg-thickness) solid var(--color-dark);
+    --border-thin-md: var(--border-thin-md-thickness) solid var(--color-dark);
+    --border-thin-sm: var(--border-thin-sm-thickness) solid var(--color-dark);
+    --border-thin-xs: var(--border-thin-xs-thickness) solid var(--color-dark);
+
+    --fs-small-division-part: calc(var(--fs-small-xl) - var(--fs-small-xl) / var(--division-intensity));
+    --fs-small-xl: 1rem;
+    --fs-small-lg: calc(var(--fs-small-xl) - var(--fs-small-division-part));
+    --fs-small-md: calc(var(--fs-small-xl) - var(--fs-small-division-part) * var(--md));
+    --fs-small-sm: calc(var(--fs-small-xl) - var(--fs-small-division-part) * var(--sm));
+    --fs-small-xs: calc(var(--fs-small-xl) - var(--fs-small-division-part) * var(--xs));
+
+    --fs-medium-division-part: calc(var(--fs-medium-xl) - var(--fs-medium-xl) / var(--division-intensity));
+    --fs-medium-xl: 2rem;
+    --fs-medium-lg: calc(var(--fs-medium-xl) - var(--fs-medium-division-part));
+    --fs-medium-md: calc(var(--fs-medium-xl) - var(--fs-medium-division-part) * var(--md));
+    --fs-medium-sm: calc(var(--fs-medium-xl) - var(--fs-medium-division-part) * var(--sm));
+    --fs-medium-xs: calc(var(--fs-medium-xl) - var(--fs-medium-division-part) * var(--xs));
+
+    --fs-big-division-part: calc(var(--fs-big-xl) - var(--fs-big-xl) / var(--division-intensity));
+    --fs-big-xl: 5rem;
+    --fs-big-lg: calc(var(--fs-big-xl) - var(--fs-big-division-part));
+    --fs-big-md: calc(var(--fs-big-xl) - var(--fs-big-division-part) * var(--md));
+    --fs-big-sm: calc(var(--fs-big-xl) - var(--fs-big-division-part) * var(--sm));
+    --fs-big-xs: calc(var(--fs-big-xl) - var(--fs-big-division-part) * var(--xs));
+    
+    --sea-ground-width: var(--width-full-screen);
+    --sea-ground-height-division-part: calc(var(--sea-ground-height-xl) - var(--sea-ground-height-xl) / var(--division-intensity));
+    --sea-ground-height-xl: 4.25rem;
+    --sea-ground-height-lg: calc(var(--sea-ground-height-xl) - var(--sea-ground-height-division-part));
+    --sea-ground-height-md: calc(var(--sea-ground-height-xl) - var(--sea-ground-height-division-part) * var(--md));
+    --sea-ground-height-sm: calc(var(--sea-ground-height-xl) - var(--sea-ground-height-division-part) * var(--sm));
+    --sea-ground-height-xs: calc(var(--sea-ground-height-xl) - var(--sea-ground-height-division-part) * var(--xs));
+
+    --sea-position-xl: calc(var(--sea-ground-height-xl) * -1);
+    --sea-position-lg: calc(var(--sea-ground-height-lg) * -1);
+    --sea-position-md: calc(var(--sea-ground-height-md) * -1);
+    --sea-position-sm: calc(var(--sea-ground-height-sm) * -1);
+    --sea-position-xs: calc(var(--sea-ground-height-xs) * -1);
+    
+    --sea-position-gameplay-division-part: calc(var(--sea-position-gameplay-xl) - var(--sea-position-gameplay-xl) / var(--division-intensity));
+    --sea-position-gameplay-xl: 5%;
+    --sea-position-gameplay-lg: calc(var(--sea-position-gameplay-xl) - var(--sea-position-gameplay-division-part));
+    --sea-position-gameplay-md: calc(var(--sea-position-gameplay-xl) - var(--sea-position-gameplay-division-part) * 2);
+    --sea-position-gameplay-sm: calc(var(--sea-position-gameplay-xl) - var(--sea-position-gameplay-division-part) * 3);
+    --sea-position-gameplay-xs: calc(var(--sea-position-gameplay-xl) - var(--sea-position-gameplay-division-part) * 4);
+
+    --ground-position-xl: calc(var(--sea-ground-height-xl) * -1 - 5%);
+    --ground-position-lg: calc(var(--sea-ground-height-lg) * -0.925 - 5%);
+    --ground-position-md: calc(var(--sea-ground-height-md) * -0.85 - 5%);
+    --ground-position-sm: calc(var(--sea-ground-height-sm) * -0.775 - 5%);
+    --ground-position-xs: calc(var(--sea-ground-height-xs) * -0.7 - 5%);
+    
+    --ground-position-gameplay: 0;
+
+    --player-division-part: calc(var(--player-xl) - var(--player-xl) / var(--division-intensity));
+    --player-xl: 10rem;
+    --player-lg: calc(var(--player-xl) - var(--player-division-part));
+    --player-md: calc(var(--player-xl) - var(--player-division-part) * var(--md));
+    --player-sm: calc(var(--player-xl) - var(--player-division-part) * var(--sm));
+    --player-xs: calc(var(--player-xl) - var(--player-division-part) * var(--xs));
+
+    --player-position-xl: calc(var(--player-xl) * -1);
+    --player-position-lg: calc(var(--player-lg) * -1);
+    --player-position-md: calc(var(--player-md) * -1);
+    --player-position-sm: calc(var(--player-sm) * -1);
+    --player-position-xs: calc(var(--player-xs) * -1);
+    
+    --player-position-gameplay: 5%;
+
+    --player-eye-width-division-part: calc(var(--player-eye-width-xl) - var(--player-eye-width-xl) / var(--division-intensity));
+    --player-eye-width-xl: 3.125rem;
+    --player-eye-width-lg: calc(var(--player-eye-width-xl) - var(--player-eye-width-division-part));
+    --player-eye-width-md: calc(var(--player-eye-width-xl) - var(--player-eye-width-division-part) * var(--md));
+    --player-eye-width-sm: calc(var(--player-eye-width-xl) - var(--player-eye-width-division-part) * var(--sm));
+    --player-eye-width-xs: calc(var(--player-eye-width-xl) - var(--player-eye-width-division-part) * var(--xs));
+    --player-eye-height-division-part: calc(var(--player-eye-height-xl) - var(--player-eye-height-xl) / var(--division-intensity));
+    --player-eye-height-xl: 2.0625rem;
+    --player-eye-height-lg: calc(var(--player-eye-height-xl) - var(--player-eye-height-division-part));
+    --player-eye-height-md: calc(var(--player-eye-height-xl) - var(--player-eye-height-division-part) * var(--md));
+    --player-eye-height-sm: calc(var(--player-eye-height-xl) - var(--player-eye-height-division-part) * var(--sm));
+    --player-eye-height-xs: calc(var(--player-eye-height-xl) - var(--player-eye-height-division-part) * var(--xs));
+
+    --player-eye-pupil-division-part: calc(var(--player-eye-pupil-xl) - var(--player-eye-pupil-xl) / var(--division-intensity));
+    --player-eye-pupil-xl: 1.25rem;
+    --player-eye-pupil-lg: calc(var(--player-eye-pupil-xl) - var(--player-eye-pupil-division-part));
+    --player-eye-pupil-md: calc(var(--player-eye-pupil-xl) - var(--player-eye-pupil-division-part) * var(--md));
+    --player-eye-pupil-sm: calc(var(--player-eye-pupil-xl) - var(--player-eye-pupil-division-part) * var(--sm));
+    --player-eye-pupil-xs: calc(var(--player-eye-pupil-xl) - var(--player-eye-pupil-division-part) * var(--xs));
+    
+    --player-shadow-width-division-part: calc(var(--player-shadow-width-xl) - var(--player-shadow-width-xl) / var(--division-intensity));
+    --player-shadow-width-xl: 5rem;
+    --player-shadow-width-lg: calc(var(--player-shadow-width-xl) - var(--player-shadow-width-division-part));
+    --player-shadow-width-md: calc(var(--player-shadow-width-xl) - var(--player-shadow-width-division-part) * var(--md));
+    --player-shadow-width-sm: calc(var(--player-shadow-width-xl) - var(--player-shadow-width-division-part) * var(--sm));
+    --player-shadow-width-xs: calc(var(--player-shadow-width-xl) - var(--player-shadow-width-division-part) * var(--xs));
+    --player-shadow-height-division-part: calc(var(--player-shadow-height-xl) - var(--player-shadow-height-xl) / var(--division-intensity));
+    --player-shadow-height-xl: 0.9375rem;
+    --player-shadow-height-lg: calc(var(--player-shadow-height-xl) - var(--player-shadow-height-division-part));
+    --player-shadow-height-md: calc(var(--player-shadow-height-xl) - var(--player-shadow-height-division-part) * var(--md));
+    --player-shadow-height-sm: calc(var(--player-shadow-height-xl) - var(--player-shadow-height-division-part) * var(--sm));
+    --player-shadow-height-xs: calc(var(--player-shadow-height-xl) - var(--player-shadow-height-division-part) * var(--xs));
+
+    --player-shadow-position-gameplay: 6%;
+
+    --cactus-body-division-part: calc(var(--cactus-body-xl) - var(--cactus-body-xl) / var(--division-intensity));
+    --cactus-body-xl: 5rem;
+    --cactus-body-lg: calc(var(--cactus-body-xl) - var(--cactus-body-division-part));
+    --cactus-body-md: calc(var(--cactus-body-xl) - var(--cactus-body-division-part) * var(--md));
+    --cactus-body-sm: calc(var(--cactus-body-xl) - var(--cactus-body-division-part) * var(--sm));
+    --cactus-body-xs: calc(var(--cactus-body-xl) - var(--cactus-body-division-part) * var(--xs));
+
+    --cactus-flower-width-division-part: calc(var(--cactus-flower-width-xl) - var(--cactus-flower-width-xl) / var(--division-intensity));
+    --cactus-flower-width-xl: 3.125rem;
+    --cactus-flower-width-lg: calc(var(--cactus-flower-width-xl) - var(--cactus-flower-width-division-part));
+    --cactus-flower-width-md: calc(var(--cactus-flower-width-xl) - var(--cactus-flower-width-division-part) * var(--md));
+    --cactus-flower-width-sm: calc(var(--cactus-flower-width-xl) - var(--cactus-flower-width-division-part) * var(--sm));
+    --cactus-flower-width-xs: calc(var(--cactus-flower-width-xl) - var(--cactus-flower-width-division-part) * var(--xs));
+    --cactus-flower-height-division-part: calc(var(--cactus-flower-height-xl) - var(--cactus-flower-height-xl) / var(--division-intensity));
+    --cactus-flower-height-xl: 1.5625rem;
+    --cactus-flower-height-lg: calc(var(--cactus-flower-height-xl) - var(--cactus-flower-height-division-part));
+    --cactus-flower-height-md: calc(var(--cactus-flower-height-xl) - var(--cactus-flower-height-division-part) * var(--md));
+    --cactus-flower-height-sm: calc(var(--cactus-flower-height-xl) - var(--cactus-flower-height-division-part) * var(--sm));
+    --cactus-flower-height-xs: calc(var(--cactus-flower-height-xl) - var(--cactus-flower-height-division-part) * var(--xs));
+
+    --cactus-shadow-width-division-part: calc(var(--cactus-shadow-width-xl) - var(--cactus-shadow-width-xl) / var(--division-intensity));
+    --cactus-shadow-width-xl: 4.1rem;
+    --cactus-shadow-width-lg: calc(var(--cactus-shadow-width-xl) - var(--cactus-shadow-width-division-part));
+    --cactus-shadow-width-md: calc(var(--cactus-shadow-width-xl) - var(--cactus-shadow-width-division-part) * var(--md));
+    --cactus-shadow-width-sm: calc(var(--cactus-shadow-width-xl) - var(--cactus-shadow-width-division-part) * var(--sm));
+    --cactus-shadow-width-xs: calc(var(--cactus-shadow-width-xl) - var(--cactus-shadow-width-division-part) * var(--xs));
+    --cactus-shadow-height-division-part: calc(var(--cactus-shadow-height-xl) - var(--cactus-shadow-height-xl) / var(--division-intensity));
+    --cactus-shadow-height-xl: 0.768rem;
+    --cactus-shadow-height-lg: calc(var(--cactus-shadow-height-xl) - var(--cactus-shadow-height-division-part));
+    --cactus-shadow-height-md: calc(var(--cactus-shadow-height-xl) - var(--cactus-shadow-height-division-part) * var(--md));
+    --cactus-shadow-height-sm: calc(var(--cactus-shadow-height-xl) - var(--cactus-shadow-height-division-part) * var(--sm));
+    --cactus-shadow-height-xs: calc(var(--cactus-shadow-height-xl) - var(--cactus-shadow-height-division-part) * var(--xs));
+    
+    --cloud-base-width-division-part: calc(var(--cloud-base-width-xl) - var(--cloud-base-width-xl) / var(--division-intensity));
+    --cloud-base-width-xl: 12.5rem;
+    --cloud-base-width-lg: calc(var(--cloud-base-width-xl) - var(--cloud-base-width-division-part));
+    --cloud-base-width-md: calc(var(--cloud-base-width-xl) - var(--cloud-base-width-division-part) * var(--md));
+    --cloud-base-width-sm: calc(var(--cloud-base-width-xl) - var(--cloud-base-width-division-part) * var(--sm));
+    --cloud-base-width-xs: calc(var(--cloud-base-width-xl) - var(--cloud-base-width-division-part) * var(--xs));
+    --cloud-base-height-division-part: calc(var(--cloud-base-height-xl) - var(--cloud-base-height-xl) / var(--division-intensity));
+    --cloud-base-height-xl: 3.125rem;
+    --cloud-base-height-lg: calc(var(--cloud-base-height-xl) - var(--cloud-base-height-division-part));
+    --cloud-base-height-md: calc(var(--cloud-base-height-xl) - var(--cloud-base-height-division-part) * var(--md));
+    --cloud-base-height-sm: calc(var(--cloud-base-height-xl) - var(--cloud-base-height-division-part) * var(--sm));
+    --cloud-base-height-xs: calc(var(--cloud-base-height-xl) - var(--cloud-base-height-division-part) * var(--xs));
+
+    --cloud-circle-left-right-division-part: calc(var(--cloud-circle-left-right-xl) - var(--cloud-circle-left-right-xl) / var(--division-intensity));
+    --cloud-circle-left-right-xl: 3.125rem;
+    --cloud-circle-left-right-lg: calc(var(--cloud-circle-left-right-xl) - var(--cloud-circle-left-right-division-part));
+    --cloud-circle-left-right-md: calc(var(--cloud-circle-left-right-xl) - var(--cloud-circle-left-right-division-part) * var(--md));
+    --cloud-circle-left-right-sm: calc(var(--cloud-circle-left-right-xl) - var(--cloud-circle-left-right-division-part) * var(--sm));
+    --cloud-circle-left-right-xs: calc(var(--cloud-circle-left-right-xl) - var(--cloud-circle-left-right-division-part) * var(--xs));
+
+    --cloud-circle-middle-division-part: calc(var(--cloud-circle-middle-xl) - var(--cloud-circle-middle-xl) / var(--division-intensity));
+    --cloud-circle-middle-xl: 4.6875rem;
+    --cloud-circle-middle-lg: calc(var(--cloud-circle-middle-xl) - var(--cloud-circle-middle-division-part));
+    --cloud-circle-middle-md: calc(var(--cloud-circle-middle-xl) - var(--cloud-circle-middle-division-part) * var(--md));
+    --cloud-circle-middle-sm: calc(var(--cloud-circle-middle-xl) - var(--cloud-circle-middle-division-part) * var(--sm));
+    --cloud-circle-middle-xs: calc(var(--cloud-circle-middle-xl) - var(--cloud-circle-middle-division-part) * var(--xs));
+
+    --cloud-top-position: calc(100% + var(--cloud-base-height-xl) + 5%);
+    --cloud-center-position: calc(100% + var(--cloud-base-height-xl) + 10%);
+    --cloud-bottom-position: calc(100% + var(--cloud-base-height-xl) + 15%);
+
+    overflow: hidden;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    transition: var(--transition-visibility);
+}
+
+
+
+
+
+/* position */
+.player,
+.player-eye,
+.player-shadow,
+.cactus,
+.cactus-flower,
+.cactus-shadow,
+.sea,
+.ground,
+.cloud-base,
+.cloud-circle-left,
+.cloud-circle-middle,
+.cloud-circle-right,
+.cloud-top,
+.cloud-center,
+.cloud-bottom,
+.game-title,
+.heading-paused,
+.heading-game-over,
+.screen-center,
+.bg,
+.bg-dark {
+    position: absolute;
+}
+
+
+
+
+
+/* position of the player */
+.player {
+    bottom: 3%;
+    left: var(--player-position-xs);
+}
+
+.player-position-gameplay {
+    left: var(--player-position-gameplay);
+}
+
+.player-eye {
+    top: 20%;
+    right: 5%;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    overflow: hidden;
+}
+
+.player-shadow {
+    bottom: 3%;
+    left: -15%;
+}
+
+.player-shadow-position-gameplay {
+    left: var(--player-shadow-position-gameplay);
+}
+
+
+
+
+
+/* position of cacti */
+.cactus {
+    bottom: 3%;
+    left: 100%;
+
+    display: flex;
+    justify-content: center;
+}
+
+.cactus-shadow {
+    bottom: 3%;
+    left: 100%;
+}
+
+
+
+
+
+/* position of sea and ground */
+.sea {
+    bottom: var(--sea-position-xs);
+}
+
+.sea-position-gameplay {
+    bottom: var(--sea-position-gameplay-xs);
+}
+
+.ground {
+    bottom: var(--ground-position-xs);
+}
+
+.ground-position-gameplay {
+    bottom: var(--ground-position-gameplay);
+}
+
+
+
+
+
+/* position of clouds */
+.cloud-top {
+    top: var(--cloud-top-position);
+    left: 60%;
+}
+
+.cloud-top-position-gameplay {
+    transition: var(--transition-clouds-intro);
+    top: 25%;
+    left: 60%;
+}
+
+.cloud-top-position-off-screen-right {
+    top: 25%;
+    left: 100%;
+}
+
+.cloud-center {
+    top: var(--cloud-center-position);
+    left: 70%;
+}
+
+.cloud-center-position-gameplay {
+    transition: var(--transition-clouds-intro);
+    top: 30%;
+    left: 70%;
+}
+
+.cloud-center-position-off-screen-right {
+    top: 30%;
+    left: 100%;
+}
+
+.cloud-bottom {
+    top: var(--cloud-bottom-position);
+    left: 20%;
+}
+
+.cloud-bottom-position-gameplay {
+    transition: var(--transition-clouds-intro);
+    top: 35%;
+    left: 20%;
+}
+
+.cloud-bottom-position-off-screen-right {
+    top: 35%;
+    left: 100%;
+}
+
+.cloud-circle-left {
+    top: -40%;
+    left: 12%;
+}
+
+.cloud-circle-right {
+    top: -50%;
+    left: 55%;
+}
+
+.cloud-circle-middle {
+    top: -73%;
+    left: 28%;
+}
+
+
+
+
+
+/* position of the hud, buttons, text, etc. */
+.hud {
+    margin: 1.5%;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.hud-btns,
+.hud-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.hud-btns {
+    align-items: flex-start;
+}
+
+.hud-info {
+    align-items: flex-end;
+}
+
+.text-small,
+.text-medium,
+.text-big {
+    text-align: center;
+}
+
+.btn-start-game,
+.btn-resume-game,
+.btn-play-again {
+    padding: 0.875em 2.5em;
+}
+
+.btn-toggle-audio,
+.btn-toggle-music,
+.btn-pause-game {
+    padding: 0.5em 0.75em;
+    margin: 0 0 1.5% 0;
+}
+
+.game-title,
+.heading-paused,
+.heading-game-over {
+    top: 10%;
+}
+
+.bg,
+.bg-dark {
+    top: 0;
+    left: 0;
+}
+
+.screen-center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+
+
+/* z-index */
+.player,
+.cactus-shadow,
+.cloud-top,
+.cloud-center,
+.cloud-bottom,
+.msg-how-to-jump {
+    z-index: -20;
+}
+
+.player-shadow,
+.cactus {
+    z-index: -30;
+}
+
+.sea,
+.ground {
+    z-index: -40;
+}
+
+.bg {
+    z-index: -50;
+}
+
+.cactus,
+.bg-dark {
+    z-index: -10;
+}
+
+
+
+
+
+
+
+
+
+
+/* appearance of player */
+.player {
+    width: var(--player-xs);
+    height: var(--player-xs);
+    border: var(--border-thick-xs);
+    border-radius: var(--br-round);
+    background-image: var(--color-player-bg);
+}
+
+.player-eye {
+    width: var(--player-eye-width-xs);
+    height: var(--player-eye-height-xs);
+    border: var(--border-thin-xs);
+    border-radius: var(--br-round);
+    background-color: var(--color-light);
+}
+
+/* Player eye pupil */
+.player-eye::after {
+    content: '';
+    width: var(--player-eye-pupil-xs);
+    height: var(--player-eye-pupil-xs);
+    border-radius: var(--br-round);
+    background-color: var(--color-dark);
+}
+
+.player-shadow {
+    width: var(--player-shadow-width-xs);
+    height: var(--player-shadow-height-xs);
+    border-radius: var(--br-round);
+    background-color: var(--color-dark);
+    opacity: 0.10;
+}
+
+
+
+
+
+/* appearance of cacti */
+.cactus {
+    width: var(--cactus-body-xs);
+    height: var(--cactus-body-xs);
+    border: var(--border-thick-xs);
+    border-radius: var(--br-cactus-body);
+    background-image: var(--color-cactus-bg);
+}
+
+.cactus-flower {
+    width: var(--cactus-flower-width-xs);
+    height: var(--cactus-flower-height-xs);
+    border: var(--border-thin-xs);
+    border-radius: var(--br-round);
+    background-image: var(--color-cactus-flower-bg);
+}
+
+.cactus-shadow {
+    width: var(--cactus-shadow-width-xs);
+    height: var(--cactus-shadow-height-xs);
+    border-radius: var(--br-round);
+    background-color: var(--color-dark);
+    opacity: 0.10;
+}
+
+
+
+
+
+/* appearance of sea and ground */
+.sea,
+.ground {
+    width: var(--sea-ground-width);
+    height: var(--sea-ground-height-xs);
+    transition: var(--transition-ground-intro);
+}
+
+.sea {
+    background-image: var(--color-btn-neutral);
+}
+
+.ground {
+    background-image: var(--color-ground-bg);
+}
+
+
+
+
+
+/* appearance of clouds */
+.cloud-top,
+.cloud-center,
+.cloud-bottom {
+    width: var(--cloud-base-width-xs);
+    height: var(--cloud-base-height-xs);
+    border-radius: var(--br-big-xs);
+}
+
+.cloud-circle-left,
+.cloud-circle-right {
+    width: var(--cloud-circle-left-right-xs);
+    height: var(--cloud-circle-left-right-xs);
+}
+
+.cloud-circle-middle {
+    width: var(--cloud-circle-middle-xs);
+    height: var(--cloud-circle-middle-xs);
+}
+
+.cloud-circle-left,
+.cloud-circle-middle,
+.cloud-circle-right {
+    border-radius: var(--br-round);
+}
+
+.cloud-top,
+.cloud-center,
+.cloud-bottom,
+.cloud-circle-left,
+.cloud-circle-middle,
+.cloud-circle-right {
+    background-color: var(--color-light);
+}
+
+
+
+
+
+/* appearance of the hud, buttons, text, etc. */
+.text-small,
+.text-medium,
+.text-big {
+    font-family: var(--font-futura);
+    color: var(--color-dark);
+}
+
+.text-small {
+    font-size: var(--fs-small-xs);
+}
+
+.text-medium {
+    font-size: var(--fs-medium-xs);
+}
+
+.text-big {
+    font-size: var(--fs-big-xs);
+}
+
+.btn {
+    border: var(--border-thick-xs);
+    border-radius: var(--br-small-xs);
+    background-image: var(--color-btn-neutral);
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-image: var(--color-btn-light);
+}
+
+.game-title,
+.heading-paused,
+.heading-game-over,
+.msg-how-to-jump,
+.bg,
+.bg-dark {
+    width: var(--width-full-screen);
+}
+
+.bg {
+    width: 100%;
+}
+
+.bg,
+.bg-dark {
+    height: var(--height-full-screen);
+}
+
+.bg {
+    background-image: var(--color-sky-bg);
+}
+
+
+.bg-dark {
+    background-color: var(--color-dark);
+    opacity: 0.5;
+}
+
+
+
+
+
+/* visibility */
+.invisible {
+    opacity: 0;
+}
+
+.not-displayed {
+    display: none;
+}
+
+
+
+
+
+/* animations */
+.player-intro-transition {
+    transition: var(--transition-player-intro);
+}
+
+.player-jump {
+    animation: player-jump 400ms ease-out 2 alternate;
+}
+
+.player-eye-blink {
+    animation: player-eye-blink 75ms ease 2 alternate;
+}
+
+.player-shadow-resize {
+    animation: player-shadow-resize 400ms ease-out 2 alternate;
+}
+
+.cactus-to-position-off-screen-left {
+    animation: cactus-position-off-screen-left 1750ms linear;
+}
+
+.cloud-top-to-position-off-screen-left {
+    animation: cloud-position-off-screen-left 45000ms linear;
+}
+
+.cloud-center-to-position-off-screen-left {
+    animation: cloud-position-off-screen-left 35000ms linear;
+}
+
+.cloud-bottom-to-position-off-screen-left {
+    animation: cloud-position-off-screen-left 15000ms linear;
+}
+
+.text-resize {
+    animation: text-resize 150ms ease-out 2 alternate;
+}
+
+.animation-paused {
+    animation-play-state: paused;
+}
+
+
+
+
+
+
+
+
+
+
+@keyframes player-jump {
+    100% {
+        transform: translateY(-150%);
+    }
+}
+
+@keyframes player-shadow-resize {
+    100% {
+        transform: scale(0.8);
+    }
+}
+
+@keyframes player-eye-blink {
+    100% {
+        transform: scale(1, 0);
+    }
+}
+
+@keyframes cactus-position-off-screen-left {
+    100% {
+        transform: translateX(calc(-100vw - var(--cactus-body-xl)));
+    }
+}
+
+@keyframes cloud-position-off-screen-left {
+    100% {
+        left: calc(var(--cloud-base-width-xl) * -1);
+    }
+}
+
+@keyframes text-resize {
+    100% {
+        transform: scale(1.25);
+    }
+}
+
+
+
+
+
+@media screen and (min-width: 576px) {
+    /* position of the player */
+    .player {
+        left: var(--player-position-sm);
+    }
+
+    .player-position-gameplay {
+        left: var(--player-position-gameplay);
+    }
+
+
+
+
+
+    /* position of sea and ground */
+    .sea {
+        bottom: var(--sea-position-sm);
+    }
+
+    .sea-position-gameplay {
+        bottom: var(--sea-position-gameplay-sm);
+    }
+
+    .ground {
+        bottom: var(--ground-position-sm);
+    }
+
+    .ground-position-gameplay {
+        bottom: var(--ground-position-gameplay);
+    }
+    
+
+
+
+    
+
+
+
+
+
+    /* appearance of player */
+    .player {
+        width: var(--player-sm);
+        height: var(--player-sm);
+        border: var(--border-thick-sm);
+    }
+
+    .player-eye {
+        width: var(--player-eye-width-sm);
+        height: var(--player-eye-height-sm);
+        border: var(--border-thin-sm);
+    }
+
+    /* Player eye pupil */
+    .player-eye::after {
+        width: var(--player-eye-pupil-sm);
+        height: var(--player-eye-pupil-sm);
+    }
+    
+    .player-shadow {
+        width: var(--player-shadow-width-sm);
+        height: var(--player-shadow-height-sm);
+    }
+
+
+
+
+
+    /* appearance of cacti */
+    .cactus {
+        width: var(--cactus-body-sm);
+        height: var(--cactus-body-sm);
+        border: var(--border-thick-sm);
+    }
+
+    .cactus-flower {
+        width: var(--cactus-flower-width-sm);
+        height: var(--cactus-flower-height-sm);
+        border: var(--border-thin-sm);
+    }
+
+    .cactus-shadow {
+        width: var(--cactus-shadow-width-sm);
+        height: var(--cactus-shadow-height-sm);
+    }
+
+
+
+
+
+    /* appearance of sea and ground */
+    .sea,
+    .ground {
+        height: var(--sea-ground-height-sm);
+    }
+
+
+
+
+
+    /* appearance of clouds */
+    .cloud-top,
+    .cloud-center,
+    .cloud-bottom {
+        width: var(--cloud-base-width-sm);
+        height: var(--cloud-base-height-sm);
+        border-radius: var(--br-big-sm);
+    }
+
+    .cloud-circle-left,
+    .cloud-circle-right {
+        width: var(--cloud-circle-left-right-sm);
+        height: var(--cloud-circle-left-right-sm);
+    }
+
+    .cloud-circle-middle {
+        width: var(--cloud-circle-middle-sm);
+        height: var(--cloud-circle-middle-sm);
+    }
+
+
+
+
+
+    /* appearance of the hud, buttons, text, etc. */
+    .text-small {
+        font-size: var(--fs-small-sm);
+    }
+
+    .text-medium {
+        font-size: var(--fs-medium-sm);
+    }
+    
+    .text-big {
+        font-size: var(--fs-big-sm);
+    }
+    
+    .btn {
+        border: var(--border-thick-sm);
+        border-radius: var(--br-small-sm);
+    }
+}
+
+
+
+
+
+@media screen and (min-width: 768px) {
+    /* position of the player */
+    .player {
+        left: var(--player-position-md);
+    }
+    
+    .player-position-gameplay {
+        left: var(--player-position-gameplay);
+    }
+
+
+
+
+
+    /* position of sea and ground */
+    .sea {
+        bottom: var(--sea-position-md);
+    }
+
+    .sea-position-gameplay {
+        bottom: var(--sea-position-gameplay-md);
+    }
+
+    .ground {
+        bottom: var(--ground-position-md);
+    }
+
+    .ground-position-gameplay {
+        bottom: var(--ground-position-gameplay);
+    }
+
+
+
+
+
+
+
+
+
+
+    /* appearance of player */
+    .player {
+        width: var(--player-md);
+        height: var(--player-md);
+        border: var(--border-thick-md);
+    }
+
+    .player-eye {
+        width: var(--player-eye-width-md);
+        height: var(--player-eye-height-md);
+        border: var(--border-thin-md);
+    }
+
+    /* Player eye pupil */
+    .player-eye::after {
+        width: var(--player-eye-pupil-md);
+        height: var(--player-eye-pupil-md);
+    }
+
+    .player-shadow {
+        width: var(--player-shadow-width-md);
+        height: var(--player-shadow-height-md);
+    }
+
+
+
+
+
+    /* appearance of cacti */
+    .cactus {
+        width: var(--cactus-body-md);
+        height: var(--cactus-body-md);
+        border: var(--border-thick-md);
+    }
+
+    .cactus-flower {
+        width: var(--cactus-flower-width-md);
+        height: var(--cactus-flower-height-md);
+        border: var(--border-thin-md);
+    }
+
+    .cactus-shadow {
+        width: var(--cactus-shadow-width-md);
+        height: var(--cactus-shadow-height-md);
+    }
+
+
+
+
+
+    /* appearance of sea and ground */
+    .sea,
+    .ground {
+        height: var(--sea-ground-height-md);
+    }
+
+
+
+
+
+    /* appearance of clouds */
+    .cloud-top,
+    .cloud-center,
+    .cloud-bottom {
+        width: var(--cloud-base-width-md);
+        height: var(--cloud-base-height-md);
+        border-radius: var(--br-big-md);
+    }
+
+    .cloud-circle-left,
+    .cloud-circle-right {
+        width: var(--cloud-circle-left-right-md);
+        height: var(--cloud-circle-left-right-md);
+    }
+
+    .cloud-circle-middle {
+        width: var(--cloud-circle-middle-md);
+        height: var(--cloud-circle-middle-md);
+    }
+
+
+
+
+
+    /* appearance of the hud, buttons, text, etc. */
+    .text-small {
+        font-size: var(--fs-small-md);
+    }
+    
+    .text-medium {
+        font-size: var(--fs-medium-md);
+    }
+    
+    .text-big {
+        font-size: var(--fs-big-md);
+    }
+
+    .btn {
+        border: var(--border-thick-md);
+        border-radius: var(--br-small-md);
+    }
+}
+
+
+
+
+
+@media screen and (min-width: 992px) {
+    /* position of the player */
+    .player {
+        left: var(--player-position-lg);
+    }
+    
+    .player-position-gameplay {
+        left: var(--player-position-gameplay);
+    }
+
+
+
+
+
+    /* position of sea and ground */
+    .sea {
+        bottom: var(--sea-position-lg);
+    }
+
+    .sea-position-gameplay {
+        bottom: var(--sea-position-gameplay-lg);
+    }
+
+    .ground {
+        bottom: var(--ground-position-lg);
+    }
+
+    .ground-position-gameplay {
+        bottom: var(--ground-position-gameplay);
+    }
+
+
+
+
+
+
+
+
+
+    
+    /* appearance of player */
+    .player {
+        width: var(--player-lg);
+        height: var(--player-lg);
+        border: var(--border-thick-lg);
+    }
+
+    .player-eye {
+        width: var(--player-eye-width-lg);
+        height: var(--player-eye-height-lg);
+        border: var(--border-thin-lg);
+    }
+
+    /* Player eye pupil */
+    .player-eye::after {
+        width: var(--player-eye-pupil-lg);
+        height: var(--player-eye-pupil-lg);
+    }
+
+    .player-shadow {
+        width: var(--player-shadow-width-lg);
+        height: var(--player-shadow-height-lg);
+    }
+
+
+
+
+
+    /* appearance of cacti */
+    .cactus {
+        width: var(--cactus-body-lg);
+        height: var(--cactus-body-lg);
+        border: var(--border-thick-lg);
+    }
+
+    .cactus-flower {
+        width: var(--cactus-flower-width-lg);
+        height: var(--cactus-flower-height-lg);
+        border: var(--border-thin-lg);
+    }
+
+    .cactus-shadow {
+        width: var(--cactus-shadow-width-lg);
+        height: var(--cactus-shadow-height-lg);
+    }
+
+
+
+
+
+    /* appearance of sea and ground */
+    .sea,
+    .ground {
+        height: var(--sea-ground-height-lg);
+    }
+
+    
+
+
+
+    /* appearance of clouds */
+    .cloud-top,
+    .cloud-center,
+    .cloud-bottom {
+        width: var(--cloud-base-width-lg);
+        height: var(--cloud-base-height-lg);
+        border-radius: var(--br-big-lg);
+    }
+
+    .cloud-circle-left,
+    .cloud-circle-right {
+        width: var(--cloud-circle-left-right-lg);
+        height: var(--cloud-circle-left-right-lg);
+    }
+
+    .cloud-circle-middle {
+        width: var(--cloud-circle-middle-lg);
+        height: var(--cloud-circle-middle-lg);
+    }
+
+
+
+
+
+    /* appearance of the hud, buttons, text, etc. */
+    .text-small {
+        font-size: var(--fs-small-lg);
+    }
+    
+    .text-medium {
+        font-size: var(--fs-medium-lg);
+    }
+    
+    .text-big {
+        font-size: var(--fs-big-lg);
+    }
+
+    .btn {
+        border: var(--border-thick-lg);
+        border-radius: var(--br-small-lg);
+    }
+}
+
+
+
+
+
+@media screen and (min-width: 1200px) {
+    /* position of the player */
+    .player {
+        left: var(--player-position-xl);
+    }
+    
+    .player-position-gameplay {
+        left: var(--player-position-gameplay);
+    }
+
+
+
+
+
+    /* position of sea and ground */
+    .sea {
+        bottom: var(--sea-position-xl);
+    }
+
+    .sea-position-gameplay {
+        bottom: var(--sea-position-gameplay-xl);
+    }
+
+    .ground {
+        bottom: var(--ground-position-xl);
+    }
+
+    .ground-position-gameplay {
+        bottom: var(--ground-position-gameplay);
+    }
+
+
+
+
+
+
+
+
+
+
+    /* appearance of player */
+    .player {
+        width: var(--player-xl);
+        height: var(--player-xl);
+        border: var(--border-thick-xl);
+    }
+
+    .player-eye {
+        width: var(--player-eye-width-xl);
+        height: var(--player-eye-height-xl);
+        border: var(--border-thin-xl);
+    }
+
+    /* Player eye pupil */
+    .player-eye::after {
+        width: var(--player-eye-pupil-xl);
+        height: var(--player-eye-pupil-xl);
+    }
+
+    .player-shadow {
+        width: var(--player-shadow-width-xl);
+        height: var(--player-shadow-height-xl);
+    }
+
+
+
+
+
+    /* appearance of cacti */
+    .cactus {
+        width: var(--cactus-body-xl);
+        height: var(--cactus-body-xl);
+        border: var(--border-thick-xl);
+    }
+
+    .cactus-flower {
+        width: var(--cactus-flower-width-xl);
+        height: var(--cactus-flower-height-xl);
+        border: var(--border-thin-xl);
+    }
+    
+    .cactus-shadow {
+        width: var(--cactus-shadow-width-xl);
+        height: var(--cactus-shadow-height-xl);
+    }
+
+
+
+
+    /* appearance of sea and ground */
+    .sea,
+    .ground {
+        height: var(--sea-ground-height-xl);
+    }
+
+    
+
+
+
+    /* appearance of clouds */
+    .cloud-top,
+    .cloud-center,
+    .cloud-bottom {
+        width: var(--cloud-base-width-xl);
+        height: var(--cloud-base-height-xl);
+        border-radius: var(--br-big-xl);
+    }
+
+    .cloud-circle-left,
+    .cloud-circle-right {
+        width: var(--cloud-circle-left-right-xl);
+        height: var(--cloud-circle-left-right-xl);
+    }
+
+    .cloud-circle-middle {
+        width: var(--cloud-circle-middle-xl);
+        height: var(--cloud-circle-middle-xl);
+    }
+
+
+
+
+
+    /* appearance of the hud, buttons, text, etc. */
+    .text-small {
+        font-size: var(--fs-small-xl);
+    }
+    
+    .text-medium {
+        font-size: var(--fs-medium-xl);
+    }
+    
+    .text-big {
+        font-size: var(--fs-big-xl);
+    }
+
+    .btn {
+        border: var(--border-thick-xl);
+        border-radius: var(--br-small-xl);
+    }
+}

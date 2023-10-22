@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="/projects/task-manager-app/stylesheets/style.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_package_v0/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_package_v0/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_package_v0/favicon-16x16.png">
+    <link rel="manifest" href="favicon_package_v0/site.webmanifest">
+    <link rel="mask-icon" href="favicon_package_v0/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <script src="/projects/task-manager-app/scripts/script.js" defer></script>
+</head>
+<body class="bg-success bg-opacity-50">
+    <main>
+        <form class="form-search-bar | d-flex align-items-center justify-content-center m-4">
+            <input class="input-search-bar | form-control-lg border-0 mx-1" type="text" placeholder="🔎 find task">
+        </form>
+        <div class="tasks-wrapper list-dimensions | bg-success bg-opacity-50 m-auto mb-4 py-3 px-3 px-md-4 rounded-3 d-flex flex-column">
+            <form class="form-write-task | d-flex flex-column flex-md-row align-items-center justify-content-center m-4">
+                <input class="input-write-task | form-control-lg border-0 mx-1 mb-3 mb-md-0" type="text" placeholder="write a task here" maxlength="100">
+                <input class="btn-add-task | btn btn-dark btn-lg mx-1 fw-bold" type="submit" value="Add Task">
+            </form>
+            <!-- <h1 class="h1 fs-1 fw-bold text-dark align-self-center">My Tasks:</h1> -->
+            <ul class="list-of-tasks | p-0 d-flex flex-column">
+                <!-- <li class="task draggable | fs-5 px-3 py-2 mb-2 rounded-2 bg-light bg-opacity-75 d-flex align-items-center justify-content-between" draggable="true">
+                    <span class="task-text">This one was here before</span>
+                    <div class="icons-btns-wrapper | d-flex align-items-center justify-content-center">
+                        <div class="btn-edit-task | btn fs-5 border-0">✏️</div>
+                        <div class="checkbox-complete-task-wrapper">
+                            <input class="checkbox-complete-task-hidden | d-none" type="checkbox">
+                            <div class="checkbox-complete-task | border border-3 border-success rounded-1 d-flex align-items-center justify-content-center"></div>
+                        </div>
+                        <button class="btn-delete-task | btn fs-5 border-0">❌</button>
+                    </div>
+                </li> -->
+            </ul>
+
+            <button class="btn-delete-all-tasks | btn text-danger text-opacity-75 border-0 align-self-end d-none">Delete All Tasks</button>
+            <button class="btn-toggle-msgs | btn align-self-end d-flex align-items-center border-0 d-none">
+                <span class="switch-toggle-msgs | text-dark text-opacity-75">Tooltip Messages</span>
+                <div class="switch-toggle-msgs switch-bg | d-flex align-items-center rounded-5 bg-light bg-opacity-75 ms-2">
+                    <div class="switch-toggle-msgs switch-circle | bg-success rounded-5"></div>
+                </div>
+            </button>
+
+            <div class="cursor-msg | bg-dark text-light d-none"></div>
+        </div>
+    </main>
+</body>
+</html>

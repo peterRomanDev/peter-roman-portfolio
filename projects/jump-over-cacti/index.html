@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jump Over Cacti!</title>
+    <link rel="stylesheet" href="stylesheets/style.css">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="../final/favicon_package_v0/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../final/favicon_package_v0/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../final/favicon_package_v0/favicon-16x16.png">
+    <link rel="manifest" href="../final/favicon_package_v0/site.webmanifest">
+    <link rel="mask-icon" href="../final/favicon_package_v0/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff"> -->
+
+    <script src="scripts/script.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js" integrity="sha512-6+YN/9o9BWrk6wSfGxQGpt3EUK6XeHi6yeHV+TYD2GR0Sj/cggRpXr1BrAQf0as6XslxomMUxXp2vIl+fv0QRA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <section class="game">
+        <div class="bg"></div>
+        <section class="menu">
+            <div class="hud">
+                <div class="hud-btns">
+                    <button class="btn-toggle-audio btn text-small invisible not-displayed">Sound Off</button>
+                    <button class="btn-toggle-music btn text-small invisible not-displayed">Music Off</button>
+                    <button class="btn-pause-game btn text-small invisible not-displayed">Pause Game</button>
+                </div>
+                
+                <div class="hud-info">
+                    <div class="score-counter text-medium invisible not-displayed"></div>
+                    <div class="stopwatch text-medium invisible not-displayed"></div>
+                </div>
+            </div>
+            
+            <div class="main-menu">
+                <h1 class="game-title text-big invisible not-displayed">Jump Over Cacti!</h1>
+                <h2 class="heading-paused text-big invisible not-displayed">Paused</h2>
+                <h2 class="heading-game-over text-big invisible not-displayed">Game Over</h2>
+                <button class="btn-start-game btn screen-center text-medium invisible not-displayed">Start Game</button>
+                <button class="btn-resume-game btn screen-center text-medium invisible not-displayed">Resume Game</button>
+                <button class="btn-play-again btn screen-center text-medium invisible not-displayed">Play Again</button>
+                <div class="msg-how-to-jump screen-center text-big invisible not-displayed"></div>
+            </div>
+        </section>
+        
+        <section class="level">
+            <div class="cloud-top">
+                <div class="cloud-circle-right"></div>
+                <div class="cloud-circle-middle"></div>
+                <div class="cloud-circle-left"></div>
+            </div>
+            
+            <div class="cloud-center">
+                <div class="cloud-circle-right"></div>
+                <div class="cloud-circle-middle"></div>
+                <div class="cloud-circle-left"></div>
+            </div>
+
+            <div class="cloud-bottom">
+                <div class="cloud-circle-right"></div>
+                <div class="cloud-circle-middle"></div>
+                <div class="cloud-circle-left"></div>
+            </div>
+            
+            <div class="sea"></div>
+            <div class="ground"></div>
+
+            <div class="player">
+                <div class="player-eye"></div>
+            </div>
+            <div class="player-shadow"></div>
+        </section>
+        <div class="bg-dark invisible not-displayed"></div>
+    </section>
+</body>
+</html>
