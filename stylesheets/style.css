@@ -14,8 +14,8 @@
     --clr-grey-darker-500: rgb(99, 100, 120);
     --clr-black: black;
 
-    --ff-sans-serif: "helvetica";
-    --ff-monospace: "menlo";
+    --ff-sans-serif: 'helvetica', sans-serif;
+    --ff-monospace: 'menlo', monospace;
 
     --fs-200: 0.75rem; /* 12px */
     --fs-250: 0.813rem; /* 12px */
@@ -1612,9 +1612,9 @@ html::-webkit-scrollbar-track,
         --width-nav-item-big: 9.375rem;
         --width-section-home-content-image: 18rem;
 
-        --height-section-home: 105vh;
         --height-section-home: 100vh;
-        --height-section-contact: 105vh;
+        --height-section-home: 100vh;
+        --height-section-contact: 100vh;
         --height-section-contact: 100vh;
         
         --markup-h1-before-left: -4ch;
