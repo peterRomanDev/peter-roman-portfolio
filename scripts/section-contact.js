@@ -148,7 +148,7 @@ class ChatWindowElement {
     }
 };
 
-const sectionContact = new SectionContact('section-contact');
+const sectionContact = new SectionContact('contact');
 const chatWindow = new ChatWindow('.chat-window');
 const textBubble1 = new ChatWindowElement('.text-bubble-1');
 const textBubble2 = new ChatWindowElement('.text-bubble-2');
