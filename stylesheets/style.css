@@ -552,20 +552,6 @@ body {
     border: var(--border-thin-light);
 }
 
-.section-home-content-image-blurred {
-    background-image: url(/images/peter-roman-blurred.jpg);
-    background-size: cover;
-    border-radius: var(--br-10px);
-    border: var(--border-thin-light);
-
-    /* position: absolute; */
-    z-index: -1;
-}
-
-.img-to-load {
-    transition: opacity 200ms;
-}
-
 
 
 /* SECTION ABOUT */
