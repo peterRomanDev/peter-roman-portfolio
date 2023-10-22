@@ -6,6 +6,7 @@ const checkB = document.querySelector('.check-b');
 const checkC = document.querySelector('.check-c');
 const checkD = document.querySelector('.check-d');
 
+const introText = document.querySelector('.intro-text');
 const msgField = document.querySelector('.msg');
 
 const grid = document.querySelector('.grid');
@@ -152,6 +153,12 @@ const showMenu = () => formEnterNames.classList.remove('d-none');
 
 // Make the Main Menu disappear from the screen
 const hideMenu = () => formEnterNames.classList.add('d-none');
+
+// Show the paragraphs in the main menu explaining the game
+const showIntroText = () => introText.classList.remove('d-none');
+
+// Show the paragraphs in the main menu explaining the game
+const hideIntroText = () => introText.classList.add('d-none');
 
 // Make the Start Game button appear on screen
 const showStartGameBtn = () => btnStartGame.classList.remove('d-none');
@@ -307,6 +314,7 @@ formEnterNames.addEventListener('input', () => {
 
 // Start Game button
 btnStartGame.addEventListener('click', () => {
+    hideIntroText();
     hideMenu();
     hideStartGameBtn();
     showGrid();
@@ -359,6 +367,7 @@ btnBackToMenu.addEventListener('click', () => {
     resetPlayers();
     resetMenu();
     showMenu();
+    showIntroText();
     disableStartGameBtn();
     showStartGameBtn();
     updateMsg("Let's play Tic-Tac-Toe!");
