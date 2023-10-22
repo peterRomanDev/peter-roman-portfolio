@@ -61,7 +61,7 @@ class MsgHowToJump extends Element {
     setDeviceSpecificMsg() {
         // game.isTouchScreenDevice() ? this.msgHowToJump.innerHTML = 'Tap <strong>Anywhere</strong> To Jump' : this.msgHowToJump.innerHTML = 'Press <strong>SPACE</strong> To Jump';
 
-            this.msgHowToJump.innerHTML = '<strong>Press SPACE</strong> or <strong>Tap the Screen</strong> To Jump';
+            this.msgHowToJump.innerHTML = '<strong>Press SPACE</strong> or <br><strong>Tap the Screen</strong> To Jump';
     }
 };
 
