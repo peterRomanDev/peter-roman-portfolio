@@ -830,23 +830,23 @@ const menu = new Menu('.menu');
 const btnToggleAudio = new Element('.btn-toggle-audio');
 
 const audioIncreaseScore = new Howl({
-    src: '/projects/jump-over-cacti/sound-effects/audio-increase-score.mp3',
+    src: 'projects/jump-over-cacti/sound-effects/audio-increase-score.mp3',
     autoplay: false
 });
 const audioClickButton = new Howl({
-    src: '/projects/jump-over-cacti/sound-effects/audio-clicked-btn.mp3',
+    src: 'projects/jump-over-cacti/sound-effects/audio-clicked-btn.mp3',
     autoplay: false
 });
 const audioJump = new Howl({
-    src: '/projects/jump-over-cacti/sound-effects/audio-jump.mp3',
+    src: 'projects/jump-over-cacti/sound-effects/audio-jump.mp3',
     autoplay: false
 });
 const audioGameOver = new Howl({
-    src: '/projects/jump-over-cacti/sound-effects/audio-game-over.mp3',
+    src: 'projects/jump-over-cacti/sound-effects/audio-game-over.mp3',
     autoplay: false
 });
 const audioPauseGame = new Howl({
-    src: '/projects/jump-over-cacti/sound-effects/audio-pause-game.mp3',
+    src: 'projects/jump-over-cacti/sound-effects/audio-pause-game.mp3',
     autoplay: false
 });
 const btnPauseGame = new Element('.btn-pause-game');
