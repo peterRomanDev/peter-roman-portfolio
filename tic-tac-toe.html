@@ -21,51 +21,57 @@
     <main>
 
         <section>
-            <div class="mt-5 d-flex flex-column align-items-center justify-content-center">
-                <h1 class="msg | text-primary h1 fw-bold">Let's play Tic-Tac-Toe!</h1>
-                    <form class="form-enter-names">
-                        <div class="d-flex flex-column flex-md-row">
-                            
-                            <div class="my-3 mx-2 bg-info bg-opacity-10 p-5">
-                                <h2 class="h3 text-primary fw-bold">Player 1</h2>
-                                <div class="mt-3">
-                                    <label class="form-label h6 text-muted" for="playerOne-name">Enter your name:</label>
-                                    <input class="playerOne-name | form-control" id="playerOne-name" name="playerOneName" placeholder="e.g. Johnny" type="text" maxlength="15">
-                                </div>
-                                <div class="mt-3">
-                                    <h3 class="h6 text-muted">Choose a sign:</h3>
-                                    <div>
-                                        <input class="check-a form-check-input" type="radio" id="symbolXPlayerOne" name="symbolPlayerOne">
-                                        <label class="form-check-label text-primary" for="symbolXPlayerOne">X</label>
-                                    </div>
-                                    <div>
-                                        <input class="check-b form-check-input" type="radio" id="symbolOPlayerOne" name="symbolPlayerOne">
-                                        <label class="form-check-label text-primary" for="symbolOPlayerOne">O</label>
-                                    </div>
-                                </div>
+            <div class="mt-5 d-flex flex-column align-items-center  justify-content-center">
+                <h1 class="msg | text-primary h1 fw-bold my-3">Let's play Tic-Tac-Toe!</h1>
+                <div class="intro-text | container d-flex flex-column align-items-center my-3">
+                    <p class="w-75">Tic Tac Toe is a game for two people who compete against each other in trying to place three signs next to each other in any direction in a grid.</p>
+                    <p class="w-75">To start playing, <strong class="text-primary">enter your names below</strong> and <strong class="text-primary">choose your signs</strong>. <strong class="text-primary">Click Start Game</strong> once the information is filled</p>
+                    <p class="w-75">When you're in the game, click on an empty square in the grid to place your sign. <strong class="text-primary">The player who manages to place three signs next to each other in any direction wins!</strong></p>
+                    <p class="w-75">When the game is over, you can choose to play again, reset the score, or to go back to the main menu. Good luck and have fun!</p>
+                </div>
+                <form class="form-enter-names">
+                    <div class="d-flex flex-column flex-md-row">
+                        
+                        <div class="my-3 mx-2 bg-info bg-opacity-10 p-5">
+                            <h2 class="h3 text-primary fw-bold">Player 1</h2>
+                            <div class="mt-3">
+                                <label class="form-label h6 text-muted" for="playerOne-name">Enter your name:</label>
+                                <input class="playerOne-name | form-control" id="playerOne-name" name="playerOneName" placeholder="e.g. Johnny" type="text" maxlength="15">
                             </div>
-                            
-                            <div class="my-3 mx-2 bg-info bg-opacity-10 p-5">
-                                <h2 class="h3 text-primary fw-bold">Player 2</h2>
-                                <div class="mt-3">
-                                    <label class="form-label h6 text-muted" for="playerTwo-name">Enter your name:</label>
-                                    <input class="playerTwo-name | form-control" id="playerTwo-name" name="playerTwoName" placeholder="e.g. Christina" type="text" maxlength="15">
+                            <div class="mt-3">
+                                <h3 class="h6 text-muted">Choose a sign:</h3>
+                                <div>
+                                    <input class="check-a form-check-input" type="radio" id="symbolXPlayerOne" name="symbolPlayerOne">
+                                    <label class="form-check-label text-primary" for="symbolXPlayerOne">X</label>
                                 </div>
-                                <div class="mt-3">
-                                    <h3 class="h6 text-muted">Your sign:</h3>
-                                    <div>
-                                        <input class="check-c form-check-input" type="radio" id="symbolXPlayerTwo" name="symbolPlayerTwo" disabled>
-                                        <label class="form-check-label text-primary" for="symbolXPlayerTwo">X</label>
-                                    </div>
-                                    <div>
-                                        <input class="check-d form-check-input" type="radio" id="symbolOPlayerTwo" name="symbolPlayerTwo" disabled>
-                                        <label class="form-check-label text-primary" for="symbolOPlayerTwo">O</label>
-                                    </div>
+                                <div>
+                                    <input class="check-b form-check-input" type="radio" id="symbolOPlayerOne" name="symbolPlayerOne">
+                                    <label class="form-check-label text-primary" for="symbolOPlayerOne">O</label>
                                 </div>
                             </div>
                         </div>
                         
-                    </form>
+                        <div class="my-3 mx-2 bg-info bg-opacity-10 p-5">
+                            <h2 class="h3 text-primary fw-bold">Player 2</h2>
+                            <div class="mt-3">
+                                <label class="form-label h6 text-muted" for="playerTwo-name">Enter your name:</label>
+                                <input class="playerTwo-name | form-control" id="playerTwo-name" name="playerTwoName" placeholder="e.g. Christina" type="text" maxlength="15">
+                            </div>
+                            <div class="mt-3">
+                                <h3 class="h6 text-muted">Your sign:</h3>
+                                <div>
+                                    <input class="check-c form-check-input" type="radio" id="symbolXPlayerTwo" name="symbolPlayerTwo" disabled>
+                                    <label class="form-check-label text-primary" for="symbolXPlayerTwo">X</label>
+                                </div>
+                                <div>
+                                    <input class="check-d form-check-input" type="radio" id="symbolOPlayerTwo" name="symbolPlayerTwo" disabled>
+                                    <label class="form-check-label text-primary" for="symbolOPlayerTwo">O</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </form>
                 <button class="btn-start-game | btn btn-lg btn-primary disabled fw-bold mb-5">Start Game</button>
             </div>
         </section>
