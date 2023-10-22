@@ -100,10 +100,10 @@ class Nav extends HeaderElement {
     }
     detectSectionsOnScreen() {
 
-        const sectionHome = document.getElementById('section-home');
-        const sectionAbout = document.getElementById('section-about');
-        const sectionProjects = document.getElementById('section-projects');
-        const sectionContact = document.getElementById('section-contact');
+        const sectionHome = document.getElementById('home');
+        const sectionAbout = document.getElementById('about');
+        const sectionProjects = document.getElementById('projects');
+        const sectionContact = document.getElementById('contact');
         const sections = [sectionHome, sectionAbout, sectionProjects, sectionContact];
 
         let options = {
@@ -265,11 +265,11 @@ const btnToggleNavLineTop = new Line('.btn-toggle-nav-line-top', 'btn-toggle-nav
 const btnToggleNavLineCenter = new Line('.btn-toggle-nav-line-center', 'btn-toggle-nav-line-center-expanded');
 const btnToggleNavLineBottom = new Line('.btn-toggle-nav-line-bottom', 'btn-toggle-nav-line-bottom-expanded');
 
-const linkLogo = new Link('.link-logo', '#section-home');
-const linkHome = new Link('.link-home', '#section-home');
-const linkAbout = new Link('.link-about', '#section-about');
-const linkProjects = new Link('.link-projects', '#section-projects');
-const linkContact = new Link('.link-contact', '#section-contact');
+const linkLogo = new Link('.link-logo', '#home');
+const linkHome = new Link('.link-home', '#home');
+const linkAbout = new Link('.link-about', '#about');
+const linkProjects = new Link('.link-projects', '#projects');
+const linkContact = new Link('.link-contact', '#contact');
 
 
 
