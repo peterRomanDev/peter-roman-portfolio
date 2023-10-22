@@ -75,14 +75,14 @@ class Player extends Element {
     enableJumping() {
         // game.isTouchScreenDevice() ? document.addEventListener('click', this.jump) : document.addEventListener('keydown', game.spacePressed);
 
-        document.addEventListener('click', this.jump);
+        window.addEventListener('click', this.jump);
         document.addEventListener('keydown', game.spacePressed);
     }
     // The player is unable to jump
     disableJumping() {
         // game.isTouchScreenDevice() ? document.removeEventListener('click', this.jump) : document.removeEventListener('keydown', game.spacePressed);
 
-        document.removeEventListener('click', this.jump)
+        window.removeEventListener('click', this.jump)
         document.removeEventListener('keydown', game.spacePressed)
     }
     // The player jumps
