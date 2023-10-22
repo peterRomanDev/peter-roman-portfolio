@@ -949,9 +949,9 @@ class Links {
 
 
 const pageBody = new PageBody('body');
-const sectionHome = new Section('section-home');
-const sectionAbout = new Section('section-about');
-const sectionProjects = new SectionProjects('section-projects');
+const sectionHome = new Section('home');
+const sectionAbout = new Section('about');
+const sectionProjects = new SectionProjects('projects');
 
 const devicesMidScreen = new SectionProjectsElement('.devices-lg', 'devices-lg-on-screen', 'transition-devices');
 const devices = new SectionProjectsElement('.devices-xl', 'devices-xl-on-screen', 'transition-devices');
