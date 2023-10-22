@@ -484,9 +484,12 @@
 .cactus-shadow,
 .cloud-top,
 .cloud-center,
-.cloud-bottom,
-.msg-how-to-jump {
+.cloud-bottom {
     z-index: -20;
+}
+
+.msg-how-to-jump {
+    z-index: 10;
 }
 
 .player-shadow,
