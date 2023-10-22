@@ -835,6 +835,7 @@ class Menu {
             if(game.audio) {
                 audioClickButton.play();
             }
+            btnToggleAudio.loseFocus();
         }
     }
 };
