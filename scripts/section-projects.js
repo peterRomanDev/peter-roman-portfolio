@@ -16,6 +16,15 @@ class PageBody {
 
         imgsDisabledRightClick.forEach(imgDisabledRightClick => imgDisabledRightClick.addEventListener('contextmenu', e => e.preventDefault()));
     }
+    detectLoadedImages() {
+        const imagesToLoad = document.querySelectorAll('.img-to-load');
+
+        imagesToLoad.forEach(imageToLoad => {
+            if(imageToLoad.complete) {
+                imageToLoad.classList.remove('transparent');
+            }
+        });
+    }
 };
 
 class Section {
@@ -1008,7 +1017,8 @@ document.addEventListener('DOMContentLoaded', () => {
     sectionProjects.addEventListener('pointerout', sectionProjects.hoverOutOfProject);
     sectionProjects.addEventListener('click', sectionProjects.clickProject);
     sectionProjects.detectProjectsListOnScreen();
-
+    
+    pageBody.detectLoadedImages();
     pageBody.disableRightClick();
 
 });
