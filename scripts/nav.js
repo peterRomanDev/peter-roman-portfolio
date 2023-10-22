@@ -100,10 +100,10 @@ class Nav extends HeaderElement {
     }
     detectSectionsOnScreen() {
 
-        const sectionHome = document.getElementById('section-home');
-        const sectionAbout = document.getElementById('section-about');
-        const sectionProjects = document.getElementById('section-projects');
-        const sectionContact = document.getElementById('section-contact');
+        const sectionHome = document.getElementById('home');
+        const sectionAbout = document.getElementById('about');
+        const sectionProjects = document.getElementById('projects');
+        const sectionContact = document.getElementById('contact');
         const sections = [sectionHome, sectionAbout, sectionProjects, sectionContact];
 
         let options = {
