@@ -61,7 +61,7 @@ class MsgHowToJump extends Element {
     setDeviceSpecificMsg() {
         // game.isTouchScreenDevice() ? this.msgHowToJump.innerHTML = 'Tap <strong>Anywhere</strong> To Jump' : this.msgHowToJump.innerHTML = 'Press <strong>SPACE</strong> To Jump';
 
-            this.msgHowToJump.innerHTML = '<strong>Press SPACE</strong> or <br><strong>Tap the Screen</strong> To Jump';
+            this.msgHowToJump.innerHTML = '<strong>Press SPACE</strong> or <br><strong>Tap the Character</strong> <br>To Jump';
     }
 };
 
@@ -71,24 +71,30 @@ class Player extends Element {
         this.player = document.querySelector(elementClass);
         this.introAnimationClass = introAnimationClass;
     }
+    addEventListener(eventName, callback) {
+        this.player.addEventListener(eventName, callback)
+    }
+    removeEventListener(eventName, callback) {
+        this.player.removeEventListener(eventName, callback)
+    }
     // The player is able to jump
     enableJumping() {
         // game.isTouchScreenDevice() ? document.addEventListener('click', this.jump) : document.addEventListener('keydown', game.spacePressed);
 
-        window.addEventListener('click', this.jump);
+        player.addEventListener('click', this.jump);
         document.addEventListener('keydown', game.spacePressed);
     }
     // The player is unable to jump
     disableJumping() {
         // game.isTouchScreenDevice() ? document.removeEventListener('click', this.jump) : document.removeEventListener('keydown', game.spacePressed);
 
-        window.removeEventListener('click', this.jump)
+        player.removeEventListener('click', this.jump)
         document.removeEventListener('keydown', game.spacePressed)
     }
     // The player jumps
     // The message on how to jump fades away
     jump() {
-        this.playJumpAnimation();
+        player.playJumpAnimation();
         msgHowToJump.hide();
     }
     // The jump animation is added to the player
