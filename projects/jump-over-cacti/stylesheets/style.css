@@ -267,7 +267,8 @@
 .heading-game-over,
 .screen-center,
 .bg,
-.bg-dark {
+.bg-dark,
+.bg-clickable {
     position: absolute;
 }
 
@@ -464,7 +465,8 @@
 }
 
 .bg,
-.bg-dark {
+.bg-dark,
+.bg-clickable {
     top: 0;
     left: 0;
 }
@@ -489,7 +491,7 @@
 }
 
 .msg-how-to-jump {
-    z-index: 10;
+    z-index: -6;
 }
 
 .player-shadow,
@@ -509,6 +511,10 @@
 .cactus,
 .bg-dark {
     z-index: -10;
+}
+
+.bg-clickable {
+    z-index: -5;
 }
 
 
@@ -682,7 +688,8 @@
 .heading-game-over,
 .msg-how-to-jump,
 .bg,
-.bg-dark {
+.bg-dark,
+.bg-clickable {
     width: var(--width-full-screen);
 }
 
@@ -691,7 +698,8 @@
 }
 
 .bg,
-.bg-dark {
+.bg-dark,
+.bg-clickable {
     height: var(--height-full-screen);
 }
 
@@ -703,6 +711,10 @@
 .bg-dark {
     background-color: var(--color-dark);
     opacity: 0.5;
+}
+
+.bg-clickable {
+    background-color: transparent;
 }
 
 
