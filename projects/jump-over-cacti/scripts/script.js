@@ -4,6 +4,12 @@ class Element {
         this.mainAnimationClass = mainAnimationClass;
         this.introAnimationClass = introAnimationClass;
     }
+    addEventListener(eventName, callback) {
+        this.element.addEventListener(eventName, callback)
+    }
+    removeEventListener(eventName, callback) {
+        this.element.removeEventListener(eventName, callback)
+    }
     // Make an element fade in to the screen by first removing the "not-displayed" class and then removing the "invisible" class
     show() {
         this.element.classList.remove('not-displayed');
@@ -61,7 +67,7 @@ class MsgHowToJump extends Element {
     setDeviceSpecificMsg() {
         // game.isTouchScreenDevice() ? this.msgHowToJump.innerHTML = 'Tap <strong>Anywhere</strong> To Jump' : this.msgHowToJump.innerHTML = 'Press <strong>SPACE</strong> To Jump';
 
-            this.msgHowToJump.innerHTML = '<strong>Press SPACE</strong> or <br><strong>Tap the Character</strong> <br>To Jump';
+            this.msgHowToJump.innerHTML = '<strong>Press SPACE</strong> or <br><strong>Tap the Screen</strong> <br>To Jump';
     }
 };
 
@@ -81,14 +87,19 @@ class Player extends Element {
     enableJumping() {
         // game.isTouchScreenDevice() ? document.addEventListener('click', this.jump) : document.addEventListener('keydown', game.spacePressed);
 
-        player.addEventListener('click', this.jump);
+        bgClickable.addEventListener('click', () => {
+
+            console.log('clicked');
+            
+            player.jump();
+        });
         document.addEventListener('keydown', game.spacePressed);
     }
     // The player is unable to jump
     disableJumping() {
         // game.isTouchScreenDevice() ? document.removeEventListener('click', this.jump) : document.removeEventListener('keydown', game.spacePressed);
 
-        player.removeEventListener('click', this.jump)
+        bgClickable.removeEventListener('click', player.jump)
         document.removeEventListener('keydown', game.spacePressed)
     }
     // The player jumps
@@ -888,6 +899,7 @@ const playerEye = new PlayerEye('.player-eye', 'player-eye-blink');
 const playerShadow = new Player('.player-shadow', 'player-shadow-resize', 'player-shadow-position-gameplay');
 
 const bgDark = new Element('.bg-dark');
+const bgClickable = new Element('.bg-clickable');
 
 
 window.addEventListener('load', game.load);
