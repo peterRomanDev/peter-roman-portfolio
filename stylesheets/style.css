@@ -146,7 +146,7 @@
     --margin-left-list-properties: var(--indent-1ch);
     --margin-left-list-responsibilities: var(--indent-2ch);
     --margin-left-list-courses: var(--indent-2ch);
-    --margin-bottom-spacer-list: 4rem;
+    --margin-bottom-spacer-link-credential: 4rem;
     
     --padding-top-section-home: 6rem;
     --padding-right-section-home: 3ch;
@@ -699,8 +699,8 @@ body {
     margin-bottom: 2rem;
 }
 
-.spacer-list {
-    margin-bottom: var(--margin-bottom-spacer-list);
+.spacer-link-credential {
+    margin-bottom: var(--margin-bottom-spacer-link-credential);
 }
 
 .property-list-position {
@@ -849,6 +849,10 @@ body {
     background-color: var(--clr-blue-dark-800);
 
     cursor: pointer;
+}
+
+.project-xs-md-details-btn:active {
+    background-color: var(--clr-blue-dark-700);
 }
 
 .project-xs-md-details-content {
@@ -1366,6 +1370,39 @@ html::-webkit-scrollbar-track,
     line-height: 1.5;
 }
 
+.text-bubble-typing {
+    height: 1.85rem;
+    border-radius: 0 var(--br-15px) var(--br-15px) var(--br-15px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.1rem;;
+}
+
+.text-bubble-typing-dot {
+    width: var(--width-status-dot);
+    height: var(--width-status-dot);
+    border-radius: var(--br-50-percent);
+}
+
+.typing-bubble-typing-dot-1,
+.typing-bubble-typing-dot-2,
+.typing-bubble-typing-dot-3 {
+    animation-name: typing-bubble-grow;
+    animation-duration: 500ms;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.typing-bubble-typing-dot-2 {
+    animation-delay: 150ms;
+}
+
+.typing-bubble-typing-dot-3 {
+    animation-delay: 300ms;
+}
+
 .border-radius-first-item {
     border-radius: var(--br-15px);
 }
@@ -1590,7 +1627,7 @@ html::-webkit-scrollbar-track,
         --margin-left-list-properties: var(--indent-5ch);
         --margin-left-list-responsibilities: var(--indent-20ch);
         --margin-left-list-courses: var(--indent-11ch);
-        --margin-bottom-spacer-list: 0;
+        --margin-bottom-spacer-link-credential: 0;
         
         --padding-top-section-contact: 46rem;
         --padding-right-section-home: 0;
@@ -1679,5 +1716,16 @@ html::-webkit-scrollbar-track,
         --margin-left-sub-item: var(--indent-10ch);
         --margin-left-sub-item-highlighted: var(--indent-10ch);
         --margin-left-list-properties: var(--indent-7ch);
+    }
+}
+
+@keyframes typing-bubble-grow{
+    from {
+        transform: scale(1);
+        background-color: var(--clr-grey-darker-500);
+    }
+    to {
+        transform: scale(0.7);
+        background-color: var(--clr-grey-400);
     }
 }
