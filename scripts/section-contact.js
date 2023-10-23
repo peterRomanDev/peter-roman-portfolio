@@ -36,11 +36,11 @@ class ChatWindow {
     }
     startChat() {
 
-        msgTyping.display();
+        textBubbleTyping.display();
 
         setTimeout(() => {
             
-            msgTyping.undisplay();
+            textBubbleTyping.undisplay();
 
         }, 500)
         setTimeout(() => {
@@ -51,54 +51,54 @@ class ChatWindow {
         }, 750)
         setTimeout(() => {
             
-            msgTyping.display();
+            textBubble1.borderRadiusFirstItemRemove();
+            textBubble1.borderRadiusFirstItemFollowedByItem();
+            textBubbleTyping.display();
             
         }, 1000)
         setTimeout(() => {
             
-            msgTyping.undisplay();
+            textBubbleTyping.undisplay();
             
         }, 2000)
         setTimeout(() => {
             
-            textBubble1.borderRadiusFirstItemRemove();
-            textBubble1.borderRadiusFirstItemFollowedByItem();
             textBubble2.borderRadiusNewItem();
             textBubble2.display();
             
         }, 2250)
         setTimeout(() => {
             
-            msgTyping.display();
+            textBubble2.borderRadiusNewItemRemove();
+            textBubble2.borderRadiusItemFollowedByItem();
+            textBubbleTyping.display();
             
         }, 2500)
         setTimeout(() => {
             
-            msgTyping.undisplay();
+            textBubbleTyping.undisplay();
             
         }, 4000)
         setTimeout(() => {
             
-            textBubble2.borderRadiusNewItemRemove();
-            textBubble2.borderRadiusItemFollowedByItem();
             textBubble3.borderRadiusNewItem();
             textBubble3.display();
             
         }, 4250)
         setTimeout(() => {
             
-            msgTyping.display();
+            textBubble3.borderRadiusNewItemRemove();
+            textBubble3.borderRadiusItemFollowedByItem();
+            textBubbleTyping.display();
             
         }, 4500)
         setTimeout(() => {
             
-            msgTyping.undisplay();
+            textBubbleTyping.undisplay();
             
         }, 6000)
         setTimeout(() => {
             
-            textBubble3.borderRadiusNewItemRemove();
-            textBubble3.borderRadiusItemFollowedByItem();
             textBubble4.borderRadiusNewItem();
             textBubble4.display();
             
@@ -154,6 +154,7 @@ const textBubble1 = new ChatWindowElement('.text-bubble-1');
 const textBubble2 = new ChatWindowElement('.text-bubble-2');
 const textBubble3 = new ChatWindowElement('.text-bubble-3');
 const textBubble4 = new ChatWindowElement('.text-bubble-4');
+const textBubbleTyping = new ChatWindowElement('.text-bubble-typing');
 const msgTyping = new ChatWindowElement('.msg-typing');
 const greenDot = new ChatWindowElement('.chat-window-header-text-status-dot');
 
