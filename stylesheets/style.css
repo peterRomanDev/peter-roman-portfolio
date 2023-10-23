@@ -846,6 +846,8 @@ body {
 }
 
 .project-xs-md-details-btn:hover {
+    background-color: var(--clr-blue-dark-700);
+    
     cursor: pointer;
 }
 
