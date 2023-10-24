@@ -971,7 +971,7 @@ body {
 
 .btn-view-project:hover .btn-view-project-title {
     text-decoration: none;
-    color: var(--clr-red-accent);
+    color: var(--clr-blue-light-200);
 }
 
 .btn-view-project:hover .btn-view-project-subtitle {
