@@ -846,8 +846,8 @@ body {
 }
 
 .project-xs-md-details-btn:hover {
-    background-color: var(--clr-blue-dark-700);
-    
+    background-color: var(--clr-blue-dark-800);
+
     cursor: pointer;
 }
 
@@ -1685,7 +1685,7 @@ html::-webkit-scrollbar-track,
         --padding-left-section-home: 0;
         --padding-left-section-home-content-text: 0;
         --padding-top-section-about: 6rem;
-        --padding-top-section-projects: 6rem;
+        --padding-top-section-projects: 20rem;
         --padding-bottom-section-projects: 3rem;
         /* --padding-bottom-section-projects: 0; */
 
