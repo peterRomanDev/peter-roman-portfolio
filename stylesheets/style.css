@@ -558,6 +558,7 @@ body {
 
 .section-about {
     padding-top: var(--padding-top-section-about);
+    padding-bottom: var(--padding-bottom-section-about);
 
     font-family: var(--ff-monospace);
     font-size: var(--fs-section-about);
@@ -1685,7 +1686,8 @@ html::-webkit-scrollbar-track,
         --padding-left-section-home: 0;
         --padding-left-section-home-content-text: 0;
         --padding-top-section-about: 6rem;
-        --padding-top-section-projects: 20rem;
+        --padding-bottom-section-about: 14rem;
+        --padding-top-section-projects: 6rem;
         --padding-bottom-section-projects: 3rem;
         /* --padding-bottom-section-projects: 0; */
 
