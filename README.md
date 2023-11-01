@@ -94,11 +94,13 @@ Current features:
         - [x] the About section has more indentation
         - [x] the projects gallery is represented as a list of projects and a MacBook and iPhone screens next to it - the projects can be previewed and clicked on for more ingo
         - [x] the chat window shows up on the right side of the screen
+
 * interactive navigation
     * the navigation links update:
         - [x] when they are hovered over
         - [x] when they are clicked
         - [x] according to the current page that is in view
+
 * interactive projects gallery
     - [x] a MacBook and an iPhone show up or leave the screen depending on if the list of projects is in view
     * ability to preview each project:
@@ -107,16 +109,19 @@ Current features:
     * ability to get more info about each project:
         - [x] the list of projects goes away, and a description and buttons show up when a project is clicked
         - [x] the description and buttons go away and the list of projects shows up when a either then "Back To Projects" button or any of the navigation links are clicked
+
 * animated chat bubble
     - [x] a certain Peter Roman starts typing messages as soon as the chat bubble comes into view
 
 Future features:
 
 * draggable image in the hero section
+
 * ability to translate the website to other languages
     - [ ] add a dropdown menu in the navigation, which includes buttons that switch languages
     - [ ] translate the website to Danish
     - [ ] translate the website to Slovak
+
 * ability to switch between a light and dark mode
     - [ ] add a dropdown menu in the navigation, which includes buttons that switch themes
     - [ ] design and code the light mode
