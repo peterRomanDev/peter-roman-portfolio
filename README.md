@@ -85,30 +85,30 @@ Current features:
 
 * responsive design
     * small screen sizes
-        * the navigation is represented as the hamburger icon, which brings the navigation links on screen when clicked
-        * the About section has less indentation
-        * the projects gallery is represented as projects stacked below one another - each project comes with its own screen showing a preview of the project and a "Project Details button"
-        * the chat window shows up in the center of the screen
+        - [x] the navigation is represented as the hamburger icon, which brings the navigation links on screen when clicked
+        - [x] the About section has less indentation
+        - [x] the projects gallery is represented as projects stacked below one another - each project comes with its own screen showing a preview of the project and a "Project Details button"
+        - [x] the chat window shows up in the center of the screen
     * large screen sizes
-        * the navigation is fixed to the top
-        * the About section has more indentation
-        * the projects gallery is represented as a list of projects and a MacBook and iPhone screens next to it - the projects can be previewed and clicked on for more ingo
-        * the chat window shows up on the right side of the screen
+        - [x] the navigation is fixed to the top
+        - [x] the About section has more indentation
+        - [x] the projects gallery is represented as a list of projects and a MacBook and iPhone screens next to it - the projects can be previewed and clicked on for more ingo
+        - [x] the chat window shows up on the right side of the screen
 * interactive navigation
-    * the navigation links update
-        * when they are hovered over
-        * when they are clicked
-        * according to the current page that is in view
+    * the navigation links update:
+        - [x] when they are hovered over
+        - [x] when they are clicked
+        - [x] according to the current page that is in view
 * interactive projects gallery
-    * a MacBook and an iPhone show up or leave the screen depending on if the list of projects is in view
-    * ability to preview each project
-        * images of a project show up on the MacBook and iPhone screens when the users move their cursor over a project
-        * images of a project disappear from the MacBook and iPhone screens when the users move their cursor away from project
-    * ability to get more info about each project
-        * the list of projects goes away, and a description and buttons show up when a project is clicked
-        * the description and buttons go away and the list of projects shows up when a either then "Back To Projects" button or any of the navigation links are clicked
+    - [x] a MacBook and an iPhone show up or leave the screen depending on if the list of projects is in view
+    * ability to preview each project:
+        - [x] images of a project show up on the MacBook and iPhone screens when the users move their cursor over a project
+        - [x] images of a project disappear from the MacBook and iPhone screens when the users move their cursor away from project
+    * ability to get more info about each project:
+        - [x] the list of projects goes away, and a description and buttons show up when a project is clicked
+        - [x] the description and buttons go away and the list of projects shows up when a either then "Back To Projects" button or any of the navigation links are clicked
 * animated chat bubble
-    * a certain Peter Roman starts typing messages as soon as the chat bubble comes into view
+    - [x] a certain Peter Roman starts typing messages as soon as the chat bubble comes into view
 
 Future features:
 
