@@ -106,13 +106,13 @@ Future features:
 
 ## Feedback
 
-In case you would like to provide feedback on my portfolio, feel free to contact me at peter.roman24[at]gmail.com.
+In case you would like to provide feedback on this project, feel free to contact me at peter.roman24[at]gmail.com.
 
 Any feedback is appreciated as I am always trying to improve my skills and work.
 
 ## Author
 
-This portfolio is created and maintained by me, Peter Roman.
+This project is created and maintained by me, Peter Roman.
 
 Connect with me:
 * [GitHub](https://github.com/peterRomanDev)
