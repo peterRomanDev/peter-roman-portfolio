@@ -1,6 +1,6 @@
 # Tic Tac Toe
 
-![Tic Tac Toe preview](images/projects/tic-tac-toe-laptop.jpg)
+![Tic Tac Toe preview](/images/readme/tic-tac-toe-laptop.jpg)
 
 ## Table Of Contents
 
