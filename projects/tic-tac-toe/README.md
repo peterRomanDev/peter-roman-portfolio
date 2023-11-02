@@ -19,7 +19,7 @@ Good luck and have fun!
 
 ## How To Start The Game
 
-> To start playing Tic Tac Toe, all you have to do is to click on this link: <https://peterroman.codes/tic-tac-toe>.
+To start playing Tic Tac Toe, all you have to do is to click on this link: <https://peterroman.codes/tic-tac-toe>.
 
 In the main menu, each player can choose a name which is referenced throughout the game to see whose turn it is, and a sign, which can be placed in the grid. Click the "Start Game" button once the information is filled.
 
