@@ -114,6 +114,8 @@ Current features:
 
 Future features:
 
+* the skills in the skills section have a progress bar each instead of values in percentages in order to indicate how well I know them
+
 * draggable image in the hero section
 
 * ability to translate the website to other languages
