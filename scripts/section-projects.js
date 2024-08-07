@@ -135,6 +135,12 @@ class SectionProjects extends Section {
             imgsSDGTechAwards.show();
 
         }
+        else if(e.target.classList.contains('btn-little-lemon')) {
+            
+            screenMsgs.hide();
+            imgsLittleLemon.show();
+
+        }
 
     }
     hoverOutOfProject(e) {
@@ -190,6 +196,12 @@ class SectionProjects extends Section {
         else if(e.target.classList.contains('btn-sdg-tech-awards')) {
             
             imgsSDGTechAwards.hide();
+            screenMsgs.show();
+
+        }
+        else if(e.target.classList.contains('btn-little-lemon')) {
+            
+            imgsLittleLemon.hide();
             screenMsgs.show();
 
         }
@@ -755,6 +767,68 @@ class SectionProjects extends Section {
             }, 1250);
         
         }
+        else if(e.target.classList.contains('btn-little-lemon')) {
+    
+            document.removeEventListener('click', nav.clickLargeScreen);
+            linkLogo.disable();
+            linkHome.disable();
+            linkAbout.disable();
+            linkProjects.disable();
+            linkContact.disable();
+            linksOutsideProjects.removeFocus();
+            
+            pageBody.disableScrolling();
+            
+            sectionProjects.removeEventListener('pointerover', sectionProjects.hoverOverProject);
+            sectionProjects.removeEventListener('pointerout', sectionProjects.hoverOutOfProject);
+
+            headingSectionProjects.hideFromScreenWithTransition();
+            projectsList.hideFromScreenWithTransition();
+            sectionAbout.hide();
+            sectionContact.hide();
+
+            btnBackToProjects.removeDisplayNone();
+            btnBackToProjects.removeFocus();
+            
+            imgsLittleLemon.show();
+
+            setTimeout(() => {
+
+                sectionProjects.projectViewOn();
+                
+                headingSectionProjects.undisplay();
+                projectsExceptLittleLemon.undisplay();
+                btnsViewProject.undisplay();
+                projectDetailsLittleLemon.display();
+                linksInsideProjects.removeFocus();
+                sectionAbout.show();
+                sectionContact.show();
+
+                window.scrollTo(sectionProjects);
+
+            }, 500);
+            setTimeout(() => {
+
+                linkAbout.deactivate();
+                linkProjects.activate();
+                projectsList.showOnScreenWithTransition();
+                btnBackToProjects.showOnScreenWithTransition();
+
+            }, 750);
+            setTimeout(() => {
+
+                document.addEventListener('click', nav.clickLargeScreen);
+                linkLogo.enable();
+                linkHome.enable();
+                linkAbout.enable();
+                linkProjects.enable();
+                linkContact.enable();
+                btnBackToProjects.addFocus();
+                linksInsideProjects.addFocus();
+
+            }, 1250);
+        
+        }
         else if(e.target.classList.contains('btn-back-to-projects')) {
 
             sectionProjects.resetWithTransition();
@@ -791,6 +865,7 @@ class SectionProjects extends Section {
             imgsPortfolio.hide();
             imgsSustainary.hide();
             imgsSDGTechAwards.hide();
+            imgsLittleLemon.hide();
             screenMsgs.show();
             
             window.scrollTo(sectionProjects);
@@ -830,6 +905,7 @@ class SectionProjects extends Section {
         imgsPortfolio.hide();
         imgsSustainary.hide();
         imgsSDGTechAwards.hide();
+        imgsLittleLemon.hide();
         screenMsgs.show();
         
         sectionProjects.addEventListener('pointerover', sectionProjects.hoverOverProject);
@@ -962,27 +1038,29 @@ const btnBackToProjects = new SectionProjectsElement('.btn-back-to-projects', 'p
 const btnsViewProject = new Projects('.btn-view-project');
 
 const projectsAll = new Projects('.project');
-const projectsExceptSDGTechAwards = new Projects('.project:not(.project-sdg-tech-awards)');
-const projectsExceptSustainaryMainWebsite = new Projects('.project:not(.project-sustainary-main-website)');
-const projectsExceptPeterRomanPortfolio = new Projects('.project:not(.project-peter-roman-portfolio)');
-const projectsExceptJumpOverCacti = new Projects('.project:not(.project-jump-over-cacti)');
-const projectsExceptCalculatorApp = new Projects('.project:not(.project-calculator-app)');
-const projectsExceptTicTacToe = new Projects('.project:not(.project-tic-tac-toe)');
-const projectsExceptEkoKviz = new Projects('.project:not(.project-ekokviz)');
-const projectsExceptPolyglotGathering = new Projects('.project:not(.project-polyglot-gathering)');
 const projectsExceptLingvaKviz = new Projects('.project:not(.project-lingvakviz)');
+const projectsExceptPolyglotGathering = new Projects('.project:not(.project-polyglot-gathering)');
+const projectsExceptEkoKviz = new Projects('.project:not(.project-ekokviz)');
+const projectsExceptTicTacToe = new Projects('.project:not(.project-tic-tac-toe)');
+const projectsExceptCalculatorApp = new Projects('.project:not(.project-calculator-app)');
+const projectsExceptJumpOverCacti = new Projects('.project:not(.project-jump-over-cacti)');
+const projectsExceptPeterRomanPortfolio = new Projects('.project:not(.project-peter-roman-portfolio)');
+const projectsExceptSustainaryMainWebsite = new Projects('.project:not(.project-sustainary-main-website)');
+const projectsExceptSDGTechAwards = new Projects('.project:not(.project-sdg-tech-awards)');
+const projectsExceptLittleLemon = new Projects('.project:not(.project-little-lemon)');
 
 const projectDetailsAll = new SectionProjectsElements('.project-lg-xl-details');
 const projectDetailsContentAll = new SectionProjectsElements('.project-lg-xl-details-content');
-const projectDetailsSDGTechAwards = new SectionProjectsElement('.project-details-sdg-tech-awards');
-const projectDetailsSustainaryMainWebsite = new SectionProjectsElement('.project-details-sustainary-main-website');
-const projectDetailsPeterRomanPortfolio = new SectionProjectsElement('.project-details-peter-roman-portfolio');
-const projectDetailsJumpOverCacti = new SectionProjectsElement('.project-details-jump-over-cacti');
-const projectDetailsCalculatorApp = new SectionProjectsElement('.project-details-calculator-app');
-const projectDetailsTicTacToe = new SectionProjectsElement('.project-details-tic-tac-toe');
-const projectDetailsEkoKviz = new SectionProjectsElement('.project-details-ekokviz');
-const projectDetailsPolyglotGathering = new SectionProjectsElement('.project-details-polyglot-gathering');
 const projectDetailsLingvaKviz = new SectionProjectsElement('.project-details-lingvakviz');
+const projectDetailsPolyglotGathering = new SectionProjectsElement('.project-details-polyglot-gathering');
+const projectDetailsEkoKviz = new SectionProjectsElement('.project-details-ekokviz');
+const projectDetailsTicTacToe = new SectionProjectsElement('.project-details-tic-tac-toe');
+const projectDetailsCalculatorApp = new SectionProjectsElement('.project-details-calculator-app');
+const projectDetailsJumpOverCacti = new SectionProjectsElement('.project-details-jump-over-cacti');
+const projectDetailsPeterRomanPortfolio = new SectionProjectsElement('.project-details-peter-roman-portfolio');
+const projectDetailsSustainaryMainWebsite = new SectionProjectsElement('.project-details-sustainary-main-website');
+const projectDetailsSDGTechAwards = new SectionProjectsElement('.project-details-sdg-tech-awards');
+const projectDetailsLittleLemon = new SectionProjectsElement('.project-details-little-lemon');
 
 const screenMsgs = new ScreenElements('.screen-msg');
 const imgsLingvaKviz = new ScreenElements('.img-lingvakviz');
@@ -994,6 +1072,7 @@ const imgsJumpOverCacti = new ScreenElements('.img-jump-over-cacti');
 const imgsPortfolio = new ScreenElements('.img-portfolio');
 const imgsSustainary = new ScreenElements('.img-sustainary');
 const imgsSDGTechAwards = new ScreenElements('.img-sdg-tech-awards');
+const imgsLittleLemon = new ScreenElements('.img-little-lemon');
 
 const linksOutsideProjects = new Links('a[tabindex="0"]');
 const linksInsideProjects = new Links('.link-inside-project');
