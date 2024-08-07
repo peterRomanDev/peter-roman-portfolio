@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "./static/css/main.ae2308f8.css",
+    "main.js": "./static/js/main.3b645295.js",
+    "static/js/453.92a78121.chunk.js": "./static/js/453.92a78121.chunk.js",
+    "static/media/pizza-margherita.jpg": "./static/media/pizza-margherita.672039266a04f76c3a4d.jpg",
+    "static/media/chefs.jpg": "./static/media/chefs.f8dc140e793c91024c30.jpg",
+    "static/media/greek-salad.jpg": "./static/media/greek-salad.b358e2f36ed6ea3ae62f.jpg",
+    "static/media/spaghetti-carbonara.jpg": "./static/media/spaghetti-carbonara.abb360280e2ca2003e07.jpg",
+    "static/media/John-Smith.jpg": "./static/media/John-Smith.18ac3432815b591af798.jpg",
+    "static/media/veggie-cous-cous.jpg": "./static/media/veggie-cous-cous.68f10a0eb2d34ca3d847.jpg",
+    "static/media/Wojak-Mleczko.jpg": "./static/media/Wojak-Mleczko.e0a2cf72759863222302.jpg",
+    "static/media/crepe-with-nutells.jpg": "./static/media/crepe-with-nutells.8e816c8c33e0609ec113.jpg",
+    "static/media/Jane-Peterson.jpg": "./static/media/Jane-Peterson.7f7cd15554410fe9b8f0.jpg",
+    "static/media/moussaka.jpg": "./static/media/moussaka.c2a128d13e037e5d6bf8.jpg",
+    "static/media/Logo.svg": "./static/media/Logo.791e04ece4801a850e40a8d4e711361c.svg",
+    "index.html": "./index.html",
+    "main.ae2308f8.css.map": "./static/css/main.ae2308f8.css.map",
+    "main.3b645295.js.map": "./static/js/main.3b645295.js.map",
+    "453.92a78121.chunk.js.map": "./static/js/453.92a78121.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ae2308f8.css",
+    "static/js/main.3b645295.js"
+  ]
+}
