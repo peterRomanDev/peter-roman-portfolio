@@ -99,18 +99,6 @@ class SectionProjects extends Section {
             imgsEkokviz.show();
             
         }
-        else if(e.target.classList.contains('btn-tic-tac-toe')) {
-            
-            screenMsgs.hide();
-            imgsTicTacToe.show();
-            
-        }
-        else if(e.target.classList.contains('btn-calculator-app')) {
-            
-            screenMsgs.hide();
-            imgsCalculator.show();
-            
-        }
         else if(e.target.classList.contains('btn-jump-over-cacti')) {
             
             screenMsgs.hide();
@@ -166,18 +154,6 @@ class SectionProjects extends Section {
         else if(e.target.classList.contains('btn-ekokviz')) {
             
             imgsEkokviz.hide();
-            screenMsgs.show();
-            
-        }
-        else if(e.target.classList.contains('btn-tic-tac-toe')) {
-            
-            imgsTicTacToe.hide();
-            screenMsgs.show();
-            
-        }
-        else if(e.target.classList.contains('btn-calculator-app')) {
-            
-            imgsCalculator.hide();
             screenMsgs.show();
             
         }
@@ -406,130 +382,6 @@ class SectionProjects extends Section {
 
             }, 1250);
             
-        }
-        else if(e.target.classList.contains('btn-tic-tac-toe')) {
-    
-            document.removeEventListener('click', nav.clickLargeScreen);
-            linkLogo.disable();
-            linkHome.disable();
-            linkAbout.disable();
-            linkProjects.disable();
-            linkContact.disable();
-            linksOutsideProjects.removeFocus();
-            
-            pageBody.disableScrolling();
-            
-            sectionProjects.removeEventListener('pointerover', sectionProjects.hoverOverProject);
-            sectionProjects.removeEventListener('pointerout', sectionProjects.hoverOutOfProject);
-
-            headingSectionProjects.hideFromScreenWithTransition();
-            projectsList.hideFromScreenWithTransition();
-            sectionAbout.hide();
-            sectionContact.hide();
-
-            btnBackToProjects.removeDisplayNone();
-            btnBackToProjects.removeFocus();
-            
-            imgsTicTacToe.show();
-
-            setTimeout(() => {
-
-                sectionProjects.projectViewOn();
-                
-                headingSectionProjects.undisplay();
-                projectsExceptTicTacToe.undisplay();
-                btnsViewProject.undisplay();
-                projectDetailsTicTacToe.display();
-                linksInsideProjects.removeFocus();
-                sectionAbout.show();
-                sectionContact.show();
-
-                window.scrollTo(sectionProjects);
-
-            }, 500);
-            setTimeout(() => {
-
-                linkAbout.deactivate();
-                linkProjects.activate();
-                projectsList.showOnScreenWithTransition();
-                btnBackToProjects.showOnScreenWithTransition();
-
-            }, 750);
-            setTimeout(() => {
-
-                document.addEventListener('click', nav.clickLargeScreen);
-                linkLogo.enable();
-                linkHome.enable();
-                linkAbout.enable();
-                linkProjects.enable();
-                linkContact.enable();
-                btnBackToProjects.addFocus();
-                linksInsideProjects.addFocus();
-
-            }, 1250);
-            
-        }
-        else if(e.target.classList.contains('btn-calculator-app')) {
-            
-            document.removeEventListener('click', nav.clickLargeScreen);
-            linkLogo.disable();
-            linkHome.disable();
-            linkAbout.disable();
-            linkProjects.disable();
-            linkContact.disable();
-            linksOutsideProjects.removeFocus();
-            
-            pageBody.disableScrolling();
-            
-            sectionProjects.removeEventListener('pointerover', sectionProjects.hoverOverProject);
-            sectionProjects.removeEventListener('pointerout', sectionProjects.hoverOutOfProject);
-
-            headingSectionProjects.hideFromScreenWithTransition();
-            projectsList.hideFromScreenWithTransition();
-            sectionAbout.hide();
-            sectionContact.hide();
-
-            btnBackToProjects.removeDisplayNone();
-            btnBackToProjects.removeFocus();
-            
-            imgsCalculator.show();
-
-            setTimeout(() => {
-
-                sectionProjects.projectViewOn();
-                
-                headingSectionProjects.undisplay();
-                projectsExceptCalculatorApp.undisplay();
-                btnsViewProject.undisplay();
-                projectDetailsCalculatorApp.display();
-                linksInsideProjects.removeFocus();
-                sectionAbout.show();
-                sectionContact.show();
-
-                window.scrollTo(sectionProjects);
-
-            }, 500);
-            setTimeout(() => {
-
-                linkAbout.deactivate();
-                linkProjects.activate();
-                projectsList.showOnScreenWithTransition();
-                btnBackToProjects.showOnScreenWithTransition();
-
-            }, 750);
-            setTimeout(() => {
-
-                document.addEventListener('click', nav.clickLargeScreen);
-                linkLogo.enable();
-                linkHome.enable();
-                linkAbout.enable();
-                linkProjects.enable();
-                linkContact.enable();
-                btnBackToProjects.addFocus();
-                linksInsideProjects.addFocus();
-
-            }, 1250);
-
         }
         else if(e.target.classList.contains('btn-jump-over-cacti')) {
     
@@ -933,8 +785,6 @@ class SectionProjects extends Section {
             imgsLingvaKviz.hide();
             imgsPolyglotGathering.hide();
             imgsEkokviz.hide();
-            imgsCalculator.hide();
-            imgsTicTacToe.hide();
             imgsJumpOverCacti.hide();
             imgsPortfolio.hide();
             imgsSustainary.hide();
@@ -974,8 +824,6 @@ class SectionProjects extends Section {
         imgsLingvaKviz.hide();
         imgsPolyglotGathering.hide();
         imgsEkokviz.hide();
-        imgsCalculator.hide();
-        imgsTicTacToe.hide();
         imgsJumpOverCacti.hide();
         imgsPortfolio.hide();
         imgsSustainary.hide();
@@ -1117,8 +965,6 @@ const projectsAll = new Projects('.project');
 const projectsExceptLingvaKviz = new Projects('.project:not(.project-lingvakviz)');
 const projectsExceptPolyglotGathering = new Projects('.project:not(.project-polyglot-gathering)');
 const projectsExceptEkoKviz = new Projects('.project:not(.project-ekokviz)');
-const projectsExceptTicTacToe = new Projects('.project:not(.project-tic-tac-toe)');
-const projectsExceptCalculatorApp = new Projects('.project:not(.project-calculator-app)');
 const projectsExceptJumpOverCacti = new Projects('.project:not(.project-jump-over-cacti)');
 const projectsExceptPeterRomanPortfolio = new Projects('.project:not(.project-peter-roman-portfolio)');
 const projectsExceptSustainaryMainWebsite = new Projects('.project:not(.project-sustainary-main-website)');
@@ -1131,8 +977,6 @@ const projectDetailsContentAll = new SectionProjectsElements('.project-lg-xl-det
 const projectDetailsLingvaKviz = new SectionProjectsElement('.project-details-lingvakviz');
 const projectDetailsPolyglotGathering = new SectionProjectsElement('.project-details-polyglot-gathering');
 const projectDetailsEkoKviz = new SectionProjectsElement('.project-details-ekokviz');
-const projectDetailsTicTacToe = new SectionProjectsElement('.project-details-tic-tac-toe');
-const projectDetailsCalculatorApp = new SectionProjectsElement('.project-details-calculator-app');
 const projectDetailsJumpOverCacti = new SectionProjectsElement('.project-details-jump-over-cacti');
 const projectDetailsPeterRomanPortfolio = new SectionProjectsElement('.project-details-peter-roman-portfolio');
 const projectDetailsSustainaryMainWebsite = new SectionProjectsElement('.project-details-sustainary-main-website');
@@ -1144,8 +988,6 @@ const screenMsgs = new ScreenElements('.screen-msg');
 const imgsLingvaKviz = new ScreenElements('.img-lingvakviz');
 const imgsPolyglotGathering = new ScreenElements('.img-polyglot-gathering');
 const imgsEkokviz = new ScreenElements('.img-ekokviz');
-const imgsTicTacToe = new ScreenElements('.img-tic-tac-toe');
-const imgsCalculator = new ScreenElements('.img-calculator');
 const imgsJumpOverCacti = new ScreenElements('.img-jump-over-cacti');
 const imgsPortfolio = new ScreenElements('.img-portfolio');
 const imgsSustainary = new ScreenElements('.img-sustainary');
