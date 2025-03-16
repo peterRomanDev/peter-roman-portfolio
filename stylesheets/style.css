@@ -179,7 +179,8 @@
     padding: 0;
     box-sizing: border-box;
     font: inherit;
-    font-weight: var(--fw-normal);
+	/* turned off because Font Awesome wouldn't load some icons */
+    /* font-weight: var(--fw-normal); */
     line-height: 2rem;
 }
 
