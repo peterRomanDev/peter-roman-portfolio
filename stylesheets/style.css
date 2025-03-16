@@ -1488,6 +1488,7 @@ html::-webkit-scrollbar-track,
     width: var(--height-btn);
     height: var(--height-btn);
     background-color: var(--clr-red-accent);
+	border: 0;
 
     font-family: var(--ff-sans-serif);
     font-size: var(--fs-900);
