@@ -69,6 +69,9 @@
 
     --box-shadow-slight-shadow-100: 0 0 2rem -1.5rem var(--clr-black);
     --box-shadow-slight-shadow-200: 0 0 2rem -1rem var(--clr-black);
+    --box-shadow-sub-item:
+        0 0 0 1rem var(--clr-blue-dark-700),
+        0 0 2rem 0 var(--clr-black);
     --box-shadow-sub-item-highlighted:
         -0.5rem 0 0 0.7rem var(--clr-blue-dark-700),
         -0.5rem 0 0 0.8rem var(--clr-blue-light-200),
@@ -122,6 +125,9 @@
     --width-phone-btn: 1.563rem;
     --width-nav-item-big: 9.375rem;
     --width-section-home-content-image: 13rem;
+	--width-testimonial-window: 18rem;
+	--width-testimonial-image: 8rem;
+	--width-carousel-indicator: 0.75rem;
 
     --height-phone: 21.563rem;
     --height-phone-screen: 265px;
@@ -129,6 +135,7 @@
     --height-project-details-content: 25%;
     --height-btn: 3.125rem;
     --height-section-contact: 100vh;
+	--height-testimonial-window: 38rem;
 
     --markup-h1-before-left: -1ch;
     --markup-h1-after-left: -1ch;
@@ -147,6 +154,7 @@
     --margin-left-list-responsibilities: var(--indent-2ch);
     --margin-left-list-courses: var(--indent-2ch);
     --margin-bottom-spacer-link-credential: 4rem;
+	--margin-left-testimonial: 1rem;
     
     --padding-top-section-home: 6rem;
     --padding-right-section-home: 3ch;
@@ -167,6 +175,8 @@
     --align-self-section-home-content-text: flex-start;
     --pos-link-credential-bottom: 2rem;
     --gap-projects: 5rem;
+	--gap-testimonial-window: 2rem;
+	--gap-testimonial-author-wrapper: 0.5rem;
     --transform-chat-window: translateX(50%);
 }
 
@@ -778,6 +788,111 @@ body {
 
 .transition-btn-back-to-projects {
     transition: left 500ms;
+}
+
+
+
+/* SECTION TESTIMONIALS */
+
+.section-testimonials {
+    padding-top: var(--padding-top-section-testimonials);
+    padding-bottom: var(--padding-bottom-section-projects);
+
+	font-family: var(--ff-sans-serif);
+    font-size: var(--fs-section-projects);
+    color: var(--clr-blue-light-200);
+
+    overflow-x: hidden;
+}
+
+.section-testimonials-h2 {
+    margin-bottom: var(--margin-bottom-section-projects-h2);
+
+    font-size: var(--fs-section-projects-h2);
+    font-weight: var(--fw-bold);
+    text-align: center;
+}
+
+.testimonials-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.testimonial-window-wrapper {
+	display: flex;
+	align-items: center;
+}
+
+.testimonial-window {
+	width: var(--width-testimonial-window);
+	height: var(--height-testimonial-window);
+	margin-top: var(--margin-top-sub-item-highlighted);
+    margin-bottom: var(--margin-bottom-sub-item-highlighted);
+    margin-left: var(--margin-left-testimonial);
+    margin-right: var(--margin-left-testimonial);
+    background-color: var(--clr-blue-dark-700);
+    border-radius: var(--br-10px);
+    box-shadow: var(--box-shadow-sub-item);
+
+	display: flex;
+	flex-direction: column;
+	gap: var(--gap-testimonial-window);
+}
+
+.testimonial-author-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: var(--gap-testimonial-author-wrapper);
+}
+
+.testimonial-img {
+    width: var(--width-testimonial-image);
+    height: var(--width-testimonial-image);
+    border: var(--border-thick-light);
+    border-radius: var(--br-50-percent);
+    box-shadow: var(--box-shadow-slight-shadow-200);
+
+    overflow: hidden;
+}
+
+.testimonial-author {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.testimonial-name {
+	font-size: var(--fs-testimonials-name);
+   	font-weight: var(--fw-bold);
+}
+
+.testimonial-quote {
+	font-size: var(--fs-testimonial-quote);
+}
+
+.carousel-indicators-wrapper {
+	display: flex;
+	gap: var(--width-carousel-indicator);
+}
+
+.carousel-indicator {
+	width: var(--width-carousel-indicator);
+	height: var(--width-carousel-indicator);
+	background-color: transparent;
+	border-radius: var(--br-50-percent);
+	border: var(--border-thick-light);
+}
+
+.carousel-indicator:hover,
+.carousel-indicator-active {
+	background-color: var(--clr-blue-light-200);
+
+	cursor: pointer;
 }
 
 
@@ -1592,6 +1707,9 @@ html::-webkit-scrollbar-track,
         --fs-section-projects: var(--fs-400);
         --fs-section-projects-h2: var(--fs-900);
 
+        --box-shadow-sub-item:
+            0 0 0 2rem var(--clr-blue-dark-700),
+            0 0 2rem 1rem var(--clr-black);
         --box-shadow-sub-item-highlighted:
             0 0 0 2rem var(--clr-blue-dark-700),
             0 0 0 2.1rem var(--clr-blue-light-200),
@@ -1614,6 +1732,7 @@ html::-webkit-scrollbar-track,
         --height-laptop: 19.438rem;
         --height-laptop-keyboard: 8px;
         --height-btn-back-to-projects: 4rem;
+		--height-testimonial-window: 42rem;
 
         --markup-h1-before-left: -3ch;
         --markup-h1-after-left: -3ch;
@@ -1631,11 +1750,13 @@ html::-webkit-scrollbar-track,
         --margin-left-list-responsibilities: var(--indent-20ch);
         --margin-left-list-courses: var(--indent-11ch);
         --margin-bottom-spacer-link-credential: 0;
+		--margin-left-testimonial: 3rem;
         
         --padding-top-section-contact: 46rem;
         --padding-right-section-home: 0;
         --padding-left-section-home: 0;
         --padding-left-section-home-content-text: 9ch;
+		--padding-top-section-testimonials: 3rem;
 
         --flex-direction-nav-list-items: row;
         --transform-chat-window: none;
@@ -1645,6 +1766,9 @@ html::-webkit-scrollbar-track,
 /* LG SCREEN SIZE */
 @media (min-width: 992px) {
     :root {
+		--fs-testimonials-name: var(--fs-400);
+		--fs-testimonial-quote: var(--fs-500);
+
         --pos-projects: relative;
         --pos-section-projects-h2-wrapper: relative;
         --pos-projects-right: calc(0% - var(--width-btn-view-project));
@@ -1661,11 +1785,14 @@ html::-webkit-scrollbar-track,
         --width-nav-item-big: 9.375rem;
         --width-section-home-content-image: 300px;
         /* --width-section-home-content-image: 18rem; */
+		--width-testimonial-window: 50rem;
+		--width-carousel-indicator: 1rem;
 
         --height-section-home: 100vh;
         --height-section-home: 100vh;
         --height-section-contact: 100vh;
         --height-section-contact: 100vh;
+		--height-testimonial-window: 30rem;
         
         --markup-h1-before-left: -4ch;
         --markup-h1-after-left: -4ch;
@@ -1691,6 +1818,7 @@ html::-webkit-scrollbar-track,
         --padding-bottom-section-about: 14rem;
         --padding-top-section-projects: 6rem;
         --padding-bottom-section-projects: 3rem;
+		--padding-top-section-testimonials: 35rem;
         /* --padding-bottom-section-projects: 0; */
 
         --align-items-projects: flex-end;
@@ -1720,6 +1848,8 @@ html::-webkit-scrollbar-track,
         --margin-left-sub-item: var(--indent-10ch);
         --margin-left-sub-item-highlighted: var(--indent-10ch);
         --margin-left-list-properties: var(--indent-7ch);
+
+		--padding-top-section-testimonials: 40rem;
     }
 }
 
