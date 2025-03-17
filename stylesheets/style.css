@@ -71,7 +71,7 @@
     --box-shadow-slight-shadow-200: 0 0 2rem -1rem var(--clr-black);
     --box-shadow-sub-item:
         0 0 0 1rem var(--clr-blue-dark-700),
-        0 0 2rem 0 var(--clr-black);
+        0 0 2rem -1rem var(--clr-black);
     --box-shadow-sub-item-highlighted:
         -0.5rem 0 0 0.7rem var(--clr-blue-dark-700),
         -0.5rem 0 0 0.8rem var(--clr-blue-light-200),
@@ -840,6 +840,8 @@ body {
 	display: flex;
 	flex-direction: column;
 	gap: var(--gap-testimonial-window);
+
+	overflow: hidden;
 }
 
 .testimonial-author-wrapper {
@@ -894,6 +896,23 @@ body {
 	background-color: var(--clr-blue-light-200);
 
 	cursor: pointer;
+}
+
+
+.transition-testimonial {
+	transition:
+		transform 350ms,
+		opacity 350ms;
+}
+
+.testimonial-off-screen-left {
+	transform: translateX(calc(var(--width-testimonial-window) * -1));
+	opacity: 0;
+}
+
+.testimonial-off-screen-right {
+	transform: translateX(var(--width-testimonial-window));
+	opacity: 0;
 }
 
 
@@ -1734,7 +1753,7 @@ html::-webkit-scrollbar-track,
 
         --box-shadow-sub-item:
             0 0 0 2rem var(--clr-blue-dark-700),
-            0 0 2rem 1rem var(--clr-black);
+            0 0 2rem 0 var(--clr-black);
         --box-shadow-sub-item-highlighted:
             0 0 0 2rem var(--clr-blue-dark-700),
             0 0 0 2.1rem var(--clr-blue-light-200),
