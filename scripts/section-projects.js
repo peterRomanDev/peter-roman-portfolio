@@ -218,6 +218,7 @@ class SectionProjects extends Section {
             linkProjects.disable();
             linkContact.disable();
             linksOutsideProjects.removeFocus();
+            buttonsOutsideProjects.removeFocus();
             
             pageBody.disableScrolling();
             
@@ -280,6 +281,7 @@ class SectionProjects extends Section {
             linkProjects.disable();
             linkContact.disable();
             linksOutsideProjects.removeFocus();
+            buttonsOutsideProjects.removeFocus();
             
             pageBody.disableScrolling();
             
@@ -342,6 +344,7 @@ class SectionProjects extends Section {
             linkProjects.disable();
             linkContact.disable();
             linksOutsideProjects.removeFocus();
+            buttonsOutsideProjects.removeFocus();
             
             pageBody.disableScrolling();
             
@@ -404,6 +407,7 @@ class SectionProjects extends Section {
             linkProjects.disable();
             linkContact.disable();
             linksOutsideProjects.removeFocus();
+            buttonsOutsideProjects.removeFocus();
             
             pageBody.disableScrolling();
             
@@ -466,6 +470,7 @@ class SectionProjects extends Section {
             linkProjects.disable();
             linkContact.disable();
             linksOutsideProjects.removeFocus();
+            buttonsOutsideProjects.removeFocus();
             
             pageBody.disableScrolling();
             
@@ -528,6 +533,7 @@ class SectionProjects extends Section {
             linkProjects.disable();
             linkContact.disable();
             linksOutsideProjects.removeFocus();
+            buttonsOutsideProjects.removeFocus();
             
             pageBody.disableScrolling();
             
@@ -590,6 +596,7 @@ class SectionProjects extends Section {
             linkProjects.disable();
             linkContact.disable();
             linksOutsideProjects.removeFocus();
+            buttonsOutsideProjects.removeFocus();
             
             pageBody.disableScrolling();
             
@@ -652,6 +659,7 @@ class SectionProjects extends Section {
             linkProjects.disable();
             linkContact.disable();
             linksOutsideProjects.removeFocus();
+            buttonsOutsideProjects.removeFocus();
             
             pageBody.disableScrolling();
             
@@ -714,6 +722,7 @@ class SectionProjects extends Section {
             linkProjects.disable();
             linkContact.disable();
             linksOutsideProjects.removeFocus();
+            buttonsOutsideProjects.removeFocus();
             
             pageBody.disableScrolling();
             
@@ -776,6 +785,7 @@ class SectionProjects extends Section {
         //     linkProjects.disable();
         //     linkContact.disable();
         //     linksOutsideProjects.removeFocus();
+        //     buttonsOutsideProjects.removeFocus();
             
         //     pageBody.disableScrolling();
             
@@ -855,6 +865,7 @@ class SectionProjects extends Section {
             btnsViewProject.display();
 
             linksOutsideProjects.addFocus();
+            buttonsOutsideProjects.addFocus();
             
             imgsLingvaKviz.hide();
             imgsPolyglotGathering.hide();
@@ -895,6 +906,7 @@ class SectionProjects extends Section {
         btnsViewProject.display();
         
         linksOutsideProjects.addFocus();
+        buttonsOutsideProjects.addFocus();
 
         imgsLingvaKviz.hide();
         imgsPolyglotGathering.hide();
@@ -1076,6 +1088,7 @@ const imgsSustainableInnovationCamp = new ScreenElements('.img-sustainable-innov
 
 const linksOutsideProjects = new Links('a[tabindex="0"]');
 const linksInsideProjects = new Links('.link-inside-project');
+const buttonsOutsideProjects = new Links('.button-outside-project');
 
 
 
