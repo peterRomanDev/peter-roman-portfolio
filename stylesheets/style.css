@@ -287,7 +287,8 @@ body {
     justify-content: space-between;
 }
 
-.logo {
+.logo,
+.arrow {
     pointer-events: none;
 }
 
