@@ -1623,6 +1623,30 @@ html::-webkit-scrollbar-track,
     cursor: pointer;
 }
 
+.btn-small-reversed {
+    width: var(--height-btn);
+    height: var(--height-btn);
+    background-color: transparent;
+    border: 0;
+
+    font-family: var(--ff-sans-serif);
+    font-size: var(--fs-900);
+    font-weight: var(--fw-bold);
+    text-decoration: none;
+    color: var(--clr-red-accent);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-small-reversed:hover,
+.btn-small-reversed:active {
+    color: var(--clr-blue-light-200);
+
+    cursor: pointer;
+}
+
 .btn-big {
     width: var(--width-btn);
     height: var(--height-btn);
