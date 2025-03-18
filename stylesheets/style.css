@@ -1694,6 +1694,29 @@ html::-webkit-scrollbar-track,
     cursor: pointer;
 }
 
+.btn-small-chat-window {
+	width: var(--height-btn);
+    height: var(--height-btn);
+	border: 0;
+
+    font-family: var(--ff-sans-serif);
+    font-size: var(--fs-900);
+    font-weight: var(--fw-bold);
+    text-decoration: none;
+    color: var(--clr-blue-dark-800);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-small-chat-window:hover,
+.btn-small-chat-window:active {
+	color: var(--clr-blue-dark-800-lower-opacity);
+
+    cursor: pointer;
+}
+
 .btn-big {
     width: var(--width-btn);
     height: var(--height-btn);
