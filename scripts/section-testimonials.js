@@ -68,6 +68,7 @@ const transition = {
 			btnTestimonialPrev.removeEventListener("click", handleBtnTestimonialPrevClick);
 			testimonialWindow.removeEventListener("pointerdown", handleTestimonialWindowSwipeStart);
 			testimonialWindow.removeEventListener("pointerup", handleTestimonialWindowSwipeEnd);
+			testimonialSwitchNextAutomaticEnd();
 
 			testimonialAuthorWrapper.classList.add("testimonial-off-screen-left");
 			testimonialQuote.classList.add("testimonial-off-screen-left");
@@ -95,6 +96,7 @@ const transition = {
 			btnTestimonialPrev.addEventListener("click", handleBtnTestimonialPrevClick);
 			testimonialWindow.addEventListener("pointerdown", handleTestimonialWindowSwipeStart);
 			testimonialWindow.addEventListener("pointerup", handleTestimonialWindowSwipeEnd);
+			testimonialSwitchNextAutomaticStart();
 		}
 	},
 	prev: {
@@ -105,6 +107,7 @@ const transition = {
 			btnTestimonialPrev.removeEventListener("click", handleBtnTestimonialPrevClick);
 			testimonialWindow.removeEventListener("pointerdown", handleTestimonialWindowSwipeStart);
 			testimonialWindow.removeEventListener("pointerup", handleTestimonialWindowSwipeEnd);
+			testimonialSwitchNextAutomaticEnd();
 
 			testimonialAuthorWrapper.classList.add("testimonial-off-screen-right");
 			testimonialQuote.classList.add("testimonial-off-screen-right");
@@ -132,6 +135,7 @@ const transition = {
 			btnTestimonialPrev.addEventListener("click", handleBtnTestimonialPrevClick);
 			testimonialWindow.addEventListener("pointerdown", handleTestimonialWindowSwipeStart);
 			testimonialWindow.addEventListener("pointerup", handleTestimonialWindowSwipeEnd);
+			testimonialSwitchNextAutomaticStart();
 		}
 	}
 }
@@ -422,6 +426,20 @@ const handleTestimonialWindowSwipeEnd = ({ clientX }) => {
 	}
 };
 
+let testimonialSwitchNextAutomatic = null;
+
+const testimonialSwitchNextAutomaticStart = () => {
+	if (!testimonialSwitchNextAutomatic) {
+		testimonialSwitchNextAutomatic = setInterval(() => {
+			testimonialSwitch.next();
+		}, 10000);
+	}
+};
+
+const testimonialSwitchNextAutomaticEnd = () => {
+	clearInterval(testimonialSwitchNextAutomatic);
+	testimonialSwitchNextAutomatic = null;
+};
 
 
 
@@ -432,3 +450,6 @@ btnTestimonialNext.addEventListener("click", handleBtnTestimonialNextClick);
 btnTestimonialPrev.addEventListener("click", handleBtnTestimonialPrevClick);
 testimonialWindow.addEventListener("pointerdown", handleTestimonialWindowSwipeStart);
 testimonialWindow.addEventListener("pointerup", handleTestimonialWindowSwipeEnd);
+document.addEventListener("DOMContentLoaded", () => {
+	testimonialSwitchNextAutomaticStart();
+});

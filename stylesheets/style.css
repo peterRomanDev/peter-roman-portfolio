@@ -71,7 +71,7 @@
     --box-shadow-slight-shadow-200: 0 0 2rem -1rem var(--clr-black);
     --box-shadow-sub-item:
         0 0 0 1rem var(--clr-blue-dark-700),
-        0 0 2rem -1rem var(--clr-black);
+        0 0 2rem -0.5rem var(--clr-black);
     --box-shadow-sub-item-highlighted:
         -0.5rem 0 0 0.7rem var(--clr-blue-dark-700),
         -0.5rem 0 0 0.8rem var(--clr-blue-light-200),
@@ -1893,7 +1893,7 @@ html::-webkit-scrollbar-track,
         --margin-left-sub-item-highlighted: var(--indent-10ch);
         --margin-left-list-properties: var(--indent-7ch);
 
-		--padding-top-section-testimonials: 40rem;
+		--padding-top-section-testimonials: 35rem;
     }
 }
 
