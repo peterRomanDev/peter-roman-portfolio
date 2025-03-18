@@ -128,6 +128,7 @@
 	--width-testimonial-window: 16rem;
 	--width-testimonial-image: 8rem;
 	--width-carousel-indicator: 0.75rem;
+	--width-list-bio-ps: 95%;
 
     --height-phone: 21.563rem;
     --height-phone-screen: 265px;
@@ -172,11 +173,14 @@
     --flex-direction-nav-list-items: column;
     --flex-direction-section-home-content: column;
     --align-items-projects: center;
+	--align-items-sub-item-bio: start;
     --align-self-section-home-content-text: flex-start;
+	--align-self-img-bio-01: center;
     --pos-link-credential-bottom: 2rem;
     --gap-projects: 5rem;
 	--gap-testimonial-window: 2rem;
 	--gap-testimonial-author-wrapper: 0.5rem;
+	--gap-sub-item-bio: 2rem;
     --transform-chat-window: translateX(50%);
 }
 
@@ -547,7 +551,7 @@ body {
     align-items: center;
 }
 
-.section-home-content-image-top::before {
+.section-home-content-image-top-headline::before {
     content: 'Determined-Peter.jpg';
 }
 
@@ -695,6 +699,25 @@ body {
     box-shadow: var(--box-shadow-sub-item-highlighted);
 }
 
+.sub-item-bio {
+	width: var(--width-sub-item-bio);
+	
+    display: flex;
+    flex-direction: var(--flex-direction-section-home-content);
+    align-items: var(--align-items-sub-item-bio);
+    justify-content: space-between;
+    gap: var(--gap-sub-item-bio);
+}
+
+.img-bio-01 {
+	margin-left: calc((var(--margin-left-sub-item) * -1) + (var(--margin-left-category) * -1));
+	align-self: var(--align-self-img-bio-01);
+}
+
+.img-bio-01-headline::before {
+    content: 'Peter-Coding.jpg';
+}
+
 .list-properties {
     margin-left: var(--margin-left-list-properties);
     margin-right: var(--indent-3ch);
@@ -706,6 +729,10 @@ body {
 
 .list-courses {
     margin-left: var(--margin-left-list-courses);
+}
+
+.list-bio-ps {
+	width: var(--width-list-bio-ps);
 }
 
 .spacer-property {
@@ -1831,6 +1858,8 @@ html::-webkit-scrollbar-track,
         /* --width-section-home-content-image: 18rem; */
 		--width-testimonial-window: 50rem;
 		--width-carousel-indicator: 1rem;
+		--width-sub-item-bio: 88%;
+		--width-list-bio-ps: 30rem;
 
         --height-section-home: 100vh;
         --height-section-home: 100vh;
@@ -1866,9 +1895,12 @@ html::-webkit-scrollbar-track,
         /* --padding-bottom-section-projects: 0; */
 
         --align-items-projects: flex-end;
+		--align-items-sub-item-bio: center;
         --gap-projects: 1rem;
+		--gap-sub-item-bio: 0;
         --flex-direction-section-home-content: row;
         --align-self-section-home-content-text: auto;
+		--align-self-img-bio-01: unset;
     }
 }
 
@@ -1883,6 +1915,8 @@ html::-webkit-scrollbar-track,
         --width-laptop-screen: 425px;
         /* --width-laptop-screen: calc(var(--width-laptop) - 30px); */
         --width-btn-view-project: 37vw;
+		--width-sub-item-bio: 82%;
+		--width-list-bio-ps: 35rem;
 
         --height-laptop-screen: 260px;
         /* --height-laptop-screen: calc(var(--height-laptop) - 50px); */
