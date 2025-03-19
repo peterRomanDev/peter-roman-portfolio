@@ -1198,6 +1198,11 @@ html::-webkit-scrollbar-track,
     gap: 1rem;
 }
 
+.project-lg-xl-links-multiple {
+    display: flex;
+    gap: 0.5rem;
+}
+
 /* DEVICES */
 
 .devices-lg {
