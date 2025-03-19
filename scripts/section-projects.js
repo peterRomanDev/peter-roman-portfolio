@@ -123,6 +123,12 @@ class SectionProjects extends Section {
             imgsSDGTechAwards.show();
 
         }
+		else if(e.target.classList.contains('btn-little-lemon')) {
+            
+            screenMsgs.hide();
+            imgsLittleLemon.show();
+
+        }
         else if(e.target.classList.contains('btn-talent-friendly-nation')) {
             
             screenMsgs.hide();
@@ -135,12 +141,6 @@ class SectionProjects extends Section {
             imgsSustainableInnovationCamp.show();
 
         }
-        // else if(e.target.classList.contains('btn-little-lemon')) {
-            
-        //     screenMsgs.hide();
-        //     imgsLittleLemon.show();
-
-        // }
 
     }
     hoverOutOfProject(e) {
@@ -187,6 +187,12 @@ class SectionProjects extends Section {
             screenMsgs.show();
 
         }
+		else if(e.target.classList.contains('btn-little-lemon')) {
+            
+            imgsLittleLemon.hide();
+            screenMsgs.show();
+
+        }
         else if(e.target.classList.contains('btn-talent-friendly-nation')) {
             
             imgsTalentFriendlyNation.hide();
@@ -199,12 +205,6 @@ class SectionProjects extends Section {
             screenMsgs.show();
 
         }
-        // else if(e.target.classList.contains('btn-little-lemon')) {
-            
-        //     imgsLittleLemon.hide();
-        //     screenMsgs.show();
-
-        // }
         
     }
     clickProject(e) {
@@ -650,6 +650,69 @@ class SectionProjects extends Section {
             }, 1250);
         
         }
+		else if(e.target.classList.contains('btn-little-lemon')) {
+    
+            document.removeEventListener('click', nav.clickLargeScreen);
+            linkLogo.disable();
+            linkHome.disable();
+            linkAbout.disable();
+            linkProjects.disable();
+            linkContact.disable();
+            linksOutsideProjects.removeFocus();
+            buttonsOutsideProjects.removeFocus();
+            
+            pageBody.disableScrolling();
+            
+            sectionProjects.removeEventListener('pointerover', sectionProjects.hoverOverProject);
+            sectionProjects.removeEventListener('pointerout', sectionProjects.hoverOutOfProject);
+
+            headingSectionProjects.hideFromScreenWithTransition();
+            projectsList.hideFromScreenWithTransition();
+            sectionAbout.hide();
+            sectionContact.hide();
+
+            btnBackToProjects.removeDisplayNone();
+            btnBackToProjects.removeFocus();
+            
+            imgsLittleLemon.show();
+
+            setTimeout(() => {
+
+                sectionProjects.projectViewOn();
+                
+                headingSectionProjects.undisplay();
+                projectsExceptLittleLemon.undisplay();
+                btnsViewProject.undisplay();
+                projectDetailsLittleLemon.display();
+                linksInsideProjects.removeFocus();
+                sectionAbout.show();
+                sectionContact.show();
+
+                window.scrollTo(sectionProjects);
+
+            }, 500);
+            setTimeout(() => {
+
+                linkAbout.deactivate();
+                linkProjects.activate();
+                projectsList.showOnScreenWithTransition();
+                btnBackToProjects.showOnScreenWithTransition();
+
+            }, 750);
+            setTimeout(() => {
+
+                document.addEventListener('click', nav.clickLargeScreen);
+                linkLogo.enable();
+                linkHome.enable();
+                linkAbout.enable();
+                linkProjects.enable();
+                linkContact.enable();
+                btnBackToProjects.addFocus();
+                linksInsideProjects.addFocus();
+
+            }, 1250);
+        
+        }
         else if(e.target.classList.contains('btn-talent-friendly-nation')) {
     
             document.removeEventListener('click', nav.clickLargeScreen);
@@ -776,69 +839,6 @@ class SectionProjects extends Section {
             }, 1250);
         
         }
-        // else if(e.target.classList.contains('btn-little-lemon')) {
-    
-        //     document.removeEventListener('click', nav.clickLargeScreen);
-        //     linkLogo.disable();
-        //     linkHome.disable();
-        //     linkAbout.disable();
-        //     linkProjects.disable();
-        //     linkContact.disable();
-        //     linksOutsideProjects.removeFocus();
-        //     buttonsOutsideProjects.removeFocus();
-            
-        //     pageBody.disableScrolling();
-            
-        //     sectionProjects.removeEventListener('pointerover', sectionProjects.hoverOverProject);
-        //     sectionProjects.removeEventListener('pointerout', sectionProjects.hoverOutOfProject);
-
-        //     headingSectionProjects.hideFromScreenWithTransition();
-        //     projectsList.hideFromScreenWithTransition();
-        //     sectionAbout.hide();
-        //     sectionContact.hide();
-
-        //     btnBackToProjects.removeDisplayNone();
-        //     btnBackToProjects.removeFocus();
-            
-        //     imgsLittleLemon.show();
-
-        //     setTimeout(() => {
-
-        //         sectionProjects.projectViewOn();
-                
-        //         headingSectionProjects.undisplay();
-        //         projectsExceptLittleLemon.undisplay();
-        //         btnsViewProject.undisplay();
-        //         projectDetailsLittleLemon.display();
-        //         linksInsideProjects.removeFocus();
-        //         sectionAbout.show();
-        //         sectionContact.show();
-
-        //         window.scrollTo(sectionProjects);
-
-        //     }, 500);
-        //     setTimeout(() => {
-
-        //         linkAbout.deactivate();
-        //         linkProjects.activate();
-        //         projectsList.showOnScreenWithTransition();
-        //         btnBackToProjects.showOnScreenWithTransition();
-
-        //     }, 750);
-        //     setTimeout(() => {
-
-        //         document.addEventListener('click', nav.clickLargeScreen);
-        //         linkLogo.enable();
-        //         linkHome.enable();
-        //         linkAbout.enable();
-        //         linkProjects.enable();
-        //         linkContact.enable();
-        //         btnBackToProjects.addFocus();
-        //         linksInsideProjects.addFocus();
-
-        //     }, 1250);
-        
-        // }
         else if(e.target.classList.contains('btn-back-to-projects')) {
 
             sectionProjects.resetWithTransition();
@@ -874,9 +874,9 @@ class SectionProjects extends Section {
             imgsPortfolio.hide();
             imgsSustainary.hide();
             imgsSDGTechAwards.hide();
+            imgsLittleLemon.hide();
             imgsTalentFriendlyNation.hide();
             imgsSustainableInnovationCamp.hide();
-            // imgsLittleLemon.hide();
             screenMsgs.show();
             
             window.scrollTo(sectionProjects);
@@ -915,9 +915,9 @@ class SectionProjects extends Section {
         imgsPortfolio.hide();
         imgsSustainary.hide();
         imgsSDGTechAwards.hide();
+        imgsLittleLemon.hide();
         imgsTalentFriendlyNation.hide();
         imgsSustainableInnovationCamp.hide();
-        // imgsLittleLemon.hide();
         screenMsgs.show();
         
         sectionProjects.addEventListener('pointerover', sectionProjects.hoverOverProject);
@@ -1057,9 +1057,9 @@ const projectsExceptJumpOverCacti = new Projects('.project:not(.project-jump-ove
 const projectsExceptPeterRomanPortfolio = new Projects('.project:not(.project-peter-roman-portfolio)');
 const projectsExceptSustainaryMainWebsite = new Projects('.project:not(.project-sustainary-main-website)');
 const projectsExceptSDGTechAwards = new Projects('.project:not(.project-sdg-tech-awards)');
+const projectsExceptLittleLemon = new Projects('.project:not(.project-little-lemon)');
 const projectsExceptTalentFriendlyNation = new Projects('.project:not(.project-talent-friendly-nation)');
 const projectsExceptSustainableInnovationCamp = new Projects('.project:not(.project-sustainable-innovation-camp)');
-// const projectsExceptLittleLemon = new Projects('.project:not(.project-little-lemon)');
 
 const projectDetailsAll = new SectionProjectsElements('.project-lg-xl-details');
 const projectDetailsContentAll = new SectionProjectsElements('.project-lg-xl-details-content');
@@ -1070,9 +1070,9 @@ const projectDetailsJumpOverCacti = new SectionProjectsElement('.project-details
 const projectDetailsPeterRomanPortfolio = new SectionProjectsElement('.project-details-peter-roman-portfolio');
 const projectDetailsSustainaryMainWebsite = new SectionProjectsElement('.project-details-sustainary-main-website');
 const projectDetailsSDGTechAwards = new SectionProjectsElement('.project-details-sdg-tech-awards');
+const projectDetailsLittleLemon = new SectionProjectsElement('.project-details-little-lemon');
 const projectDetailsTalentFriendlyNation = new SectionProjectsElement('.project-details-talent-friendly-nation');
 const projectDetailsSustainableInnovationCamp = new SectionProjectsElement('.project-details-sustainable-innovation-camp');
-// const projectDetailsLittleLemon = new SectionProjectsElement('.project-details-little-lemon');
 
 const screenMsgs = new ScreenElements('.screen-msg');
 const imgsLingvaKviz = new ScreenElements('.img-lingvakviz');
@@ -1082,9 +1082,9 @@ const imgsJumpOverCacti = new ScreenElements('.img-jump-over-cacti');
 const imgsPortfolio = new ScreenElements('.img-portfolio');
 const imgsSustainary = new ScreenElements('.img-sustainary');
 const imgsSDGTechAwards = new ScreenElements('.img-sdg-tech-awards');
+const imgsLittleLemon = new ScreenElements('.img-little-lemon');
 const imgsTalentFriendlyNation = new ScreenElements('.img-talent-fiendly-nation');
 const imgsSustainableInnovationCamp = new ScreenElements('.img-sustainable-innovation-camp');
-// const imgsLittleLemon = new ScreenElements('.img-little-lemon');
 
 const linksOutsideProjects = new Links('a[tabindex="0"]');
 const linksInsideProjects = new Links('.link-inside-project');
