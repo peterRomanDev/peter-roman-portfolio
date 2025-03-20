@@ -30,7 +30,7 @@ The website is divided into four sections:
 
 You can use the navigation or the links in the Home section to skip to any particular section on the website.
 
-The About section includes information about my work experience, skills and education. Each of these sub-sections is further divided into individual work experiences, tech skills, courses, etc. You can read about each of them, click the provided link to check out their website, and to access credentials I have gained for completing the displayed courses.
+The About section includes information about me, my work experience, skills and education. Each of these sub-sections is further divided into individual work experiences, tech skills, courses, etc. You can read about each of them, click the provided link to check out their website, and to access credentials I have gained for completing the displayed courses.
 
 On desktop, the Projects section is an interactive projects gallery. As the list of projects appears on screen, a MacBook and an iPhone also make an appearance on screen. You can preview each project by moving your cursor over it (images of the project will show up on both the MacBook and the iPhone screens, allowing you to see how to project looks like on different screen sizes), and you can get more info about each project by clicking on them. Once a project is clicked, the list of projects disappears and more information about the chosen project appears. You can now read a detailed description of the project and to click on the provided buttons. Depending on the project, they might lead to the project's website itself, its source code, or its social media. To go back to the projects screen, click the "Back To Projects" button or any of the links in the navigation.
 
