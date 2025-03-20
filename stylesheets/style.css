@@ -1887,7 +1887,7 @@ html::-webkit-scrollbar-track,
 		--width-testimonial-window: 50rem;
 		--width-carousel-indicator: 1rem;
 		--width-sub-item-bio: 88%;
-		--width-list-bio-ps: 30rem;
+		--width-list-bio-ps: 32.5rem;
 
         --height-section-home: 100vh;
         --height-section-home: 100vh;
@@ -1944,7 +1944,6 @@ html::-webkit-scrollbar-track,
         /* --width-laptop-screen: calc(var(--width-laptop) - 30px); */
         --width-btn-view-project: 37vw;
 		--width-sub-item-bio: 82%;
-		--width-list-bio-ps: 35rem;
 
         --height-laptop-screen: 260px;
         /* --height-laptop-screen: calc(var(--height-laptop) - 50px); */
