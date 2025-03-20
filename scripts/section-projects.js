@@ -1163,3 +1163,9 @@ window.addEventListener('resize', () => {
     }
 
 });
+
+if ("scrollRestoration" in history) {
+	// prevents scroll positions of sections from being redefined by going to the projects section, then clicking on a project, waiting for it to fully load, thening refresh the page
+
+    history.scrollRestoration = "manual";
+}
