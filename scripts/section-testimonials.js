@@ -1,4 +1,4 @@
-const testimonialMiguelOliveira = {
+const testimonial1 = {
   name: "Miguel Oliveira",
   jobTitle: "Project Coordinator and Executive Assistant",
   company: "Boston Consulting Group",
@@ -11,7 +11,7 @@ const testimonialMiguelOliveira = {
     "Peter has always shown high levels of professionalism and enthusiasm. He was always ahead of schedule and that helped tremendously in busy days where many events and meeting were being held. Therefore, it was always a pleasure to work with Peter. I am sure that his organisational skills and structured approach to work definitely add value to any team he joins.",
 };
 
-const testimonialManuelaSobral = {
+const testimonial2 = {
   name: "Manuela Sobral",
   jobTitle: "Project Manager and HR Coordinator",
   company: "Sustainary",
@@ -24,7 +24,7 @@ const testimonialManuelaSobral = {
     "Peter is a team-player, ready and willing to help his teammates, and deeply caring for the users. He possesses strong problem-solving skills and is able to solve technical challenges on his own. We could always count on him as he is focused on consistently delivering high-quality work, which is something we have highly appreciated.",
 };
 
-const testimonialBoKochChristensen = {
+const testimonial3 = {
   name: "Bo Koch-Christensen",
   jobTitle: "Project and Organisation Coordinator",
   company: "Sustainary",
@@ -37,12 +37,26 @@ const testimonialBoKochChristensen = {
     "Peter played a crucial role in shaping a strong identity and seamless user experience across our websites, making them not only visually appealing but also user-friendly and easy to update in the future. The quality of his work speaks for itself, and his websites are now helping Sustainary fulfil its vision.",
 };
 
+const testimonial4 = {
+  name: "Ignas Bagdonas",
+  jobTitle: "Engineering Manager",
+  company: "AdPlenty",
+  img: {
+    src: "./images/testimonials/ignas-bagdonas.jpg",
+    alt: this.name,
+  },
+  contact: "https://www.linkedin.com/in/ignasbagdonas",
+  quote:
+    "Peter was detail-oriented and often spent time thinking through edge cases, testing different scenarios, and looking for ways to keep the code clean and optimized. He would also ask questions to understand the broader context behind a task, rather than only focusing on the immediate implementation.",
+};
+
 const testimonials = [
   // every testimonial that is to be displayed on the website need to be included in this array
 
-  testimonialMiguelOliveira,
-  testimonialManuelaSobral,
-  testimonialBoKochChristensen,
+  testimonial1,
+  testimonial2,
+  testimonial3,
+  testimonial4,
 ];
 
 let nextTestimonial;
@@ -247,7 +261,7 @@ const testimonialSwitch = {
             // if testimonials[nextIndex] is truthy (is not undefined), assign the nextTestimonial to the next testimonial in line
             nextTestimonial = {
               name: testimonials[nextIndex].name,
-              jobTitle: `${testimonials[nextIndex].jobTitle} at ${testimonials[nextIndex].company}`,
+              jobTitle: `${testimonials[nextIndex].jobTitle} @ ${testimonials[nextIndex].company}`,
               img: {
                 src: testimonials[nextIndex].img.src,
                 alt: testimonials[nextIndex].img.alt,
@@ -264,7 +278,7 @@ const testimonialSwitch = {
             // if testimonials[nextIndex] is falsy (is undefined), assign the nextTestimonial to the first testimonial
             nextTestimonial = {
               name: testimonials[firstIndex].name,
-              jobTitle: `${testimonials[firstIndex].jobTitle} at ${testimonials[firstIndex].company}`,
+              jobTitle: `${testimonials[firstIndex].jobTitle} @ ${testimonials[firstIndex].company}`,
               img: {
                 src: testimonials[firstIndex].img.src,
                 alt: testimonials[firstIndex].img.alt,
@@ -333,7 +347,7 @@ const testimonialSwitch = {
             // if testimonials[prevIndex] is truthy (is not undefined), assign the nextTestimonial to the previous testimonial in line
             prevTestimonial = {
               name: testimonials[prevIndex].name,
-              jobTitle: `${testimonials[prevIndex].jobTitle} at ${testimonials[prevIndex].company}`,
+              jobTitle: `${testimonials[prevIndex].jobTitle} @ ${testimonials[prevIndex].company}`,
               img: {
                 src: testimonials[prevIndex].img.src,
                 alt: testimonials[prevIndex].img.alt,
@@ -350,7 +364,7 @@ const testimonialSwitch = {
             // if testimonials[prevIndex] is falsy (is undefined), assign the nextTestimonial to the last testimonial
             prevTestimonial = {
               name: testimonials[lastIndex].name,
-              jobTitle: `${testimonials[lastIndex].jobTitle} at ${testimonials[lastIndex].company}`,
+              jobTitle: `${testimonials[lastIndex].jobTitle} @ ${testimonials[lastIndex].company}`,
               img: {
                 src: testimonials[lastIndex].img.src,
                 alt: testimonials[lastIndex].img.alt,
@@ -440,7 +454,7 @@ const testimonialSwitch = {
 
     currentTestimonial.name.textContent =
       testimonials[nextCarouselIndicatorIndex].name;
-    currentTestimonial.jobTitle.textContent = `${testimonials[nextCarouselIndicatorIndex].jobTitle} at ${testimonials[nextCarouselIndicatorIndex].company}`;
+    currentTestimonial.jobTitle.textContent = `${testimonials[nextCarouselIndicatorIndex].jobTitle} @ ${testimonials[nextCarouselIndicatorIndex].company}`;
     currentTestimonial.img.src =
       testimonials[nextCarouselIndicatorIndex].img.src;
     currentTestimonial.img.alt =
