@@ -1757,6 +1757,10 @@ html::-webkit-scrollbar-track,
 	font-size: var(--fs-400);
 }
 
+.btn-big * {
+	pointer-events: none;
+}
+
 .strong {
     color: var(--clr-blue-light-100);
     font-weight: var(--fw-bold);
