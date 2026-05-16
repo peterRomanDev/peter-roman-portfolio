@@ -1,53 +1,53 @@
 const testimonial1 = {
-  name: "Miguel Oliveira",
-  jobTitle: "Project Coordinator and Executive Assistant",
-  company: "Boston Consulting Group",
+  name: 'Miguel Oliveira',
+  jobTitle: 'Project Coordinator and Executive Assistant',
+  company: 'Boston Consulting Group',
   img: {
-    src: "./images/testimonials/miguel-oliveira.jpg",
+    src: './images/testimonials/miguel-oliveira.jpg',
     alt: this.name,
   },
-  contact: "https://www.linkedin.com/in/miguelsoska",
+  contact: 'https://www.linkedin.com/in/miguelsoska',
   quote:
-    "Peter has always shown high levels of professionalism and enthusiasm. He was always ahead of schedule and that helped tremendously in busy days where many events and meeting were being held. Therefore, it was always a pleasure to work with Peter. I am sure that his organisational skills and structured approach to work definitely add value to any team he joins.",
+    'Peter has always shown high levels of professionalism and enthusiasm. He was always ahead of schedule and that helped tremendously in busy days where many events and meeting were being held. Therefore, it was always a pleasure to work with Peter. I am sure that his organisational skills and structured approach to work definitely add value to any team he joins.',
 };
 
 const testimonial2 = {
-  name: "Manuela Sobral",
-  jobTitle: "Project Manager and HR Coordinator",
-  company: "Sustainary",
+  name: 'Manuela Sobral',
+  jobTitle: 'Project Manager and HR Coordinator',
+  company: 'Sustainary',
   img: {
-    src: "./images/testimonials/manuela-sobral.jpg",
+    src: './images/testimonials/manuela-sobral.jpg',
     alt: this.name,
   },
-  contact: "https://www.linkedin.com/in/manuela-sobral",
+  contact: 'https://www.linkedin.com/in/manuela-sobral',
   quote:
-    "Peter is a team-player, ready and willing to help his teammates, and deeply caring for the users. He possesses strong problem-solving skills and is able to solve technical challenges on his own. We could always count on him as he is focused on consistently delivering high-quality work, which is something we have highly appreciated.",
+    'Peter is a team-player, ready and willing to help his teammates, and deeply caring for the users. He possesses strong problem-solving skills and is able to solve technical challenges on his own. We could always count on him as he is focused on consistently delivering high-quality work, which is something we have highly appreciated.',
 };
 
 const testimonial3 = {
-  name: "Bo Koch-Christensen",
-  jobTitle: "Project and Organisation Coordinator",
-  company: "Sustainary",
+  name: 'Bo Koch-Christensen',
+  jobTitle: 'Project and Organisation Coordinator',
+  company: 'Sustainary',
   img: {
-    src: "./images/testimonials/bo-koch-christensen.jpg",
+    src: './images/testimonials/bo-koch-christensen.jpg',
     alt: this.name,
   },
-  contact: "https://www.linkedin.com/in/highperformer",
+  contact: 'https://www.linkedin.com/in/highperformer',
   quote:
-    "Peter played a crucial role in shaping a strong identity and seamless user experience across our websites, making them not only visually appealing but also user-friendly and easy to update in the future. The quality of his work speaks for itself, and his websites are now helping Sustainary fulfil its vision.",
+    'Peter played a crucial role in shaping a strong identity and seamless user experience across our websites, making them not only visually appealing but also user-friendly and easy to update in the future. The quality of his work speaks for itself, and his websites are now helping Sustainary fulfil its vision.',
 };
 
 const testimonial4 = {
-  name: "Ignas Bagdonas",
-  jobTitle: "Engineering Manager",
-  company: "AdPlenty",
+  name: 'Ignas Bagdonas',
+  jobTitle: 'Engineering Manager',
+  company: 'AdPlenty',
   img: {
-    src: "./images/testimonials/ignas-bagdonas.jpg",
+    src: './images/testimonials/ignas-bagdonas.jpg',
     alt: this.name,
   },
-  contact: "https://www.linkedin.com/in/ignasbagdonas",
+  contact: 'https://www.linkedin.com/in/ignasbagdonas',
   quote:
-    "Peter was detail-oriented and often spent time thinking through edge cases, testing different scenarios, and looking for ways to keep the code clean and optimized. He would also ask questions to understand the broader context behind a task, rather than only focusing on the immediate implementation.",
+    'Peter was detail-oriented and often spent time thinking through edge cases, testing different scenarios, and looking for ways to keep the code clean and optimized. He would also ask questions to understand the broader context behind a task, rather than only focusing on the immediate implementation.',
 };
 
 const testimonials = [
@@ -62,11 +62,11 @@ const testimonials = [
 let nextTestimonial;
 let prevTestimonial;
 const currentTestimonial = {
-  name: document.querySelector(".testimonial-name"),
-  jobTitle: document.querySelector(".testimonial-job-title"),
-  img: document.querySelector(".testimonial-img"),
-  contact: document.querySelector(".testimonial-contact"),
-  quote: document.querySelector(".testimonial-quote"),
+  name: document.querySelector('.testimonial-name'),
+  jobTitle: document.querySelector('.testimonial-job-title'),
+  img: document.querySelector('.testimonial-img'),
+  contact: document.querySelector('.testimonial-contact'),
+  quote: document.querySelector('.testimonial-quote'),
 };
 
 let nextTestimonialIndex;
@@ -81,72 +81,42 @@ const transition = {
     phase1() {
       // remove event listeners for clicking any buttons and swiping to switch testimonials
       carouselIndicators.forEach((carouselIndicator) =>
-        carouselIndicator.removeEventListener(
-          "click",
-          handleCarouselIndicatorClick
-        )
+        carouselIndicator.removeEventListener('click', handleCarouselIndicatorClick),
       );
-      btnTestimonialNext.removeEventListener(
-        "click",
-        handleBtnTestimonialNextClick
-      );
-      btnTestimonialPrev.removeEventListener(
-        "click",
-        handleBtnTestimonialPrevClick
-      );
-      testimonialWindow.removeEventListener(
-        "pointerdown",
-        handleTestimonialWindowSwipeStart
-      );
-      testimonialWindow.removeEventListener(
-        "pointerup",
-        handleTestimonialWindowSwipeEnd
-      );
+      btnTestimonialNext.removeEventListener('click', handleBtnTestimonialNextClick);
+      btnTestimonialPrev.removeEventListener('click', handleBtnTestimonialPrevClick);
+      testimonialWindow.removeEventListener('pointerdown', handleTestimonialWindowSwipeStart);
+      testimonialWindow.removeEventListener('pointerup', handleTestimonialWindowSwipeEnd);
       testimonialSwitchNextAutomaticEnd();
 
-      testimonialAuthorWrapper.classList.add("testimonial-off-screen-left");
-      testimonialQuote.classList.add("testimonial-off-screen-left");
+      testimonialAuthorWrapper.classList.add('testimonial-off-screen-left');
+      testimonialQuote.classList.add('testimonial-off-screen-left');
     },
     phase2() {
-      testimonialAuthorWrapper.classList.remove("transition-testimonial");
-      testimonialQuote.classList.remove("transition-testimonial");
+      testimonialAuthorWrapper.classList.remove('transition-testimonial');
+      testimonialQuote.classList.remove('transition-testimonial');
 
-      testimonialAuthorWrapper.classList.remove("testimonial-off-screen-left");
-      testimonialQuote.classList.remove("testimonial-off-screen-left");
+      testimonialAuthorWrapper.classList.remove('testimonial-off-screen-left');
+      testimonialQuote.classList.remove('testimonial-off-screen-left');
 
-      testimonialAuthorWrapper.classList.add("testimonial-off-screen-right");
-      testimonialQuote.classList.add("testimonial-off-screen-right");
+      testimonialAuthorWrapper.classList.add('testimonial-off-screen-right');
+      testimonialQuote.classList.add('testimonial-off-screen-right');
     },
     phase4() {
-      testimonialAuthorWrapper.classList.add("transition-testimonial");
-      testimonialQuote.classList.add("transition-testimonial");
+      testimonialAuthorWrapper.classList.add('transition-testimonial');
+      testimonialQuote.classList.add('transition-testimonial');
 
-      testimonialAuthorWrapper.classList.remove("testimonial-off-screen-right");
-      testimonialQuote.classList.remove("testimonial-off-screen-right");
+      testimonialAuthorWrapper.classList.remove('testimonial-off-screen-right');
+      testimonialQuote.classList.remove('testimonial-off-screen-right');
 
       // add event listeners for clicking any buttons and swiping to switch testimonials
       carouselIndicators.forEach((carouselIndicator) =>
-        carouselIndicator.addEventListener(
-          "click",
-          handleCarouselIndicatorClick
-        )
+        carouselIndicator.addEventListener('click', handleCarouselIndicatorClick),
       );
-      btnTestimonialNext.addEventListener(
-        "click",
-        handleBtnTestimonialNextClick
-      );
-      btnTestimonialPrev.addEventListener(
-        "click",
-        handleBtnTestimonialPrevClick
-      );
-      testimonialWindow.addEventListener(
-        "pointerdown",
-        handleTestimonialWindowSwipeStart
-      );
-      testimonialWindow.addEventListener(
-        "pointerup",
-        handleTestimonialWindowSwipeEnd
-      );
+      btnTestimonialNext.addEventListener('click', handleBtnTestimonialNextClick);
+      btnTestimonialPrev.addEventListener('click', handleBtnTestimonialPrevClick);
+      testimonialWindow.addEventListener('pointerdown', handleTestimonialWindowSwipeStart);
+      testimonialWindow.addEventListener('pointerup', handleTestimonialWindowSwipeEnd);
       testimonialSwitchNextAutomaticStart();
     },
   },
@@ -154,72 +124,42 @@ const transition = {
     phase1() {
       // remove event listeners for clicking any buttons and swiping to switch testimonials
       carouselIndicators.forEach((carouselIndicator) =>
-        carouselIndicator.removeEventListener(
-          "click",
-          handleCarouselIndicatorClick
-        )
+        carouselIndicator.removeEventListener('click', handleCarouselIndicatorClick),
       );
-      btnTestimonialNext.removeEventListener(
-        "click",
-        handleBtnTestimonialNextClick
-      );
-      btnTestimonialPrev.removeEventListener(
-        "click",
-        handleBtnTestimonialPrevClick
-      );
-      testimonialWindow.removeEventListener(
-        "pointerdown",
-        handleTestimonialWindowSwipeStart
-      );
-      testimonialWindow.removeEventListener(
-        "pointerup",
-        handleTestimonialWindowSwipeEnd
-      );
+      btnTestimonialNext.removeEventListener('click', handleBtnTestimonialNextClick);
+      btnTestimonialPrev.removeEventListener('click', handleBtnTestimonialPrevClick);
+      testimonialWindow.removeEventListener('pointerdown', handleTestimonialWindowSwipeStart);
+      testimonialWindow.removeEventListener('pointerup', handleTestimonialWindowSwipeEnd);
       testimonialSwitchNextAutomaticEnd();
 
-      testimonialAuthorWrapper.classList.add("testimonial-off-screen-right");
-      testimonialQuote.classList.add("testimonial-off-screen-right");
+      testimonialAuthorWrapper.classList.add('testimonial-off-screen-right');
+      testimonialQuote.classList.add('testimonial-off-screen-right');
     },
     phase2() {
-      testimonialAuthorWrapper.classList.remove("transition-testimonial");
-      testimonialQuote.classList.remove("transition-testimonial");
+      testimonialAuthorWrapper.classList.remove('transition-testimonial');
+      testimonialQuote.classList.remove('transition-testimonial');
 
-      testimonialAuthorWrapper.classList.remove("testimonial-off-screen-right");
-      testimonialQuote.classList.remove("testimonial-off-screen-right");
+      testimonialAuthorWrapper.classList.remove('testimonial-off-screen-right');
+      testimonialQuote.classList.remove('testimonial-off-screen-right');
 
-      testimonialAuthorWrapper.classList.add("testimonial-off-screen-left");
-      testimonialQuote.classList.add("testimonial-off-screen-left");
+      testimonialAuthorWrapper.classList.add('testimonial-off-screen-left');
+      testimonialQuote.classList.add('testimonial-off-screen-left');
     },
     phase4() {
-      testimonialAuthorWrapper.classList.add("transition-testimonial");
-      testimonialQuote.classList.add("transition-testimonial");
+      testimonialAuthorWrapper.classList.add('transition-testimonial');
+      testimonialQuote.classList.add('transition-testimonial');
 
-      testimonialAuthorWrapper.classList.remove("testimonial-off-screen-left");
-      testimonialQuote.classList.remove("testimonial-off-screen-left");
+      testimonialAuthorWrapper.classList.remove('testimonial-off-screen-left');
+      testimonialQuote.classList.remove('testimonial-off-screen-left');
 
       // add event listeners for clicking any buttons and swiping to switch testimonials
       carouselIndicators.forEach((carouselIndicator) =>
-        carouselIndicator.addEventListener(
-          "click",
-          handleCarouselIndicatorClick
-        )
+        carouselIndicator.addEventListener('click', handleCarouselIndicatorClick),
       );
-      btnTestimonialNext.addEventListener(
-        "click",
-        handleBtnTestimonialNextClick
-      );
-      btnTestimonialPrev.addEventListener(
-        "click",
-        handleBtnTestimonialPrevClick
-      );
-      testimonialWindow.addEventListener(
-        "pointerdown",
-        handleTestimonialWindowSwipeStart
-      );
-      testimonialWindow.addEventListener(
-        "pointerup",
-        handleTestimonialWindowSwipeEnd
-      );
+      btnTestimonialNext.addEventListener('click', handleBtnTestimonialNextClick);
+      btnTestimonialPrev.addEventListener('click', handleBtnTestimonialPrevClick);
+      testimonialWindow.addEventListener('pointerdown', handleTestimonialWindowSwipeStart);
+      testimonialWindow.addEventListener('pointerup', handleTestimonialWindowSwipeEnd);
       testimonialSwitchNextAutomaticStart();
     },
   },
@@ -271,9 +211,7 @@ const testimonialSwitch = {
             };
 
             // get the index of the next testimonial
-            nextTestimonialIndex = testimonials.indexOf(
-              testimonials[nextIndex]
-            );
+            nextTestimonialIndex = testimonials.indexOf(testimonials[nextIndex]);
           } else {
             // if testimonials[nextIndex] is falsy (is undefined), assign the nextTestimonial to the first testimonial
             nextTestimonial = {
@@ -288,9 +226,7 @@ const testimonialSwitch = {
             };
 
             // get the index of the first testimonial
-            nextTestimonialIndex = testimonials.indexOf(
-              testimonials[firstIndex]
-            );
+            nextTestimonialIndex = testimonials.indexOf(testimonials[firstIndex]);
           }
 
           // make the nextTestimonial the currentTestimonial
@@ -303,15 +239,9 @@ const testimonialSwitch = {
 
           // remove highlighing from the previously active carousel indicator
           // highlight the carousel indicator that has the same nextTesimonialIndex
-          const carouselIndicatorActive = document.querySelector(
-            ".carousel-indicator-active"
-          );
-          carouselIndicatorActive?.classList.remove(
-            "carousel-indicator-active"
-          );
-          carouselIndicators[nextTestimonialIndex]?.classList.add(
-            "carousel-indicator-active"
-          );
+          const carouselIndicatorActive = document.querySelector('.carousel-indicator-active');
+          carouselIndicatorActive?.classList.remove('carousel-indicator-active');
+          carouselIndicators[nextTestimonialIndex]?.classList.add('carousel-indicator-active');
 
           // stop executing the loop when a testimonial changes
           break;
@@ -357,9 +287,7 @@ const testimonialSwitch = {
             };
 
             // get the index of the previous testimonial
-            prevTestimonialIndex = testimonials.indexOf(
-              testimonials[prevIndex]
-            );
+            prevTestimonialIndex = testimonials.indexOf(testimonials[prevIndex]);
           } else {
             // if testimonials[prevIndex] is falsy (is undefined), assign the nextTestimonial to the last testimonial
             prevTestimonial = {
@@ -374,9 +302,7 @@ const testimonialSwitch = {
             };
 
             // get the index of the last testimonial
-            prevTestimonialIndex = testimonials.indexOf(
-              testimonials[lastIndex]
-            );
+            prevTestimonialIndex = testimonials.indexOf(testimonials[lastIndex]);
           }
 
           // make the prevTestimonial the currentTestimonial
@@ -389,15 +315,9 @@ const testimonialSwitch = {
 
           // remove highlighing from the previously active carousel indicator
           // highlight the carousel indicator that has the same prevTesimonialIndex
-          const carouselIndicatorActive = document.querySelector(
-            ".carousel-indicator-active"
-          );
-          carouselIndicatorActive?.classList.remove(
-            "carousel-indicator-active"
-          );
-          carouselIndicators[prevTestimonialIndex]?.classList.add(
-            "carousel-indicator-active"
-          );
+          const carouselIndicatorActive = document.querySelector('.carousel-indicator-active');
+          carouselIndicatorActive?.classList.remove('carousel-indicator-active');
+          carouselIndicators[prevTestimonialIndex]?.classList.add('carousel-indicator-active');
 
           // stop executing the loop when a testimonial changes
           break;
@@ -452,49 +372,36 @@ const testimonialSwitch = {
   clickedCarouselIndicator() {
     // make the current testimonial the one that corresponds to the index of the current carousel indicator
 
-    currentTestimonial.name.textContent =
-      testimonials[nextCarouselIndicatorIndex].name;
+    currentTestimonial.name.textContent = testimonials[nextCarouselIndicatorIndex].name;
     currentTestimonial.jobTitle.textContent = `${testimonials[nextCarouselIndicatorIndex].jobTitle} @ ${testimonials[nextCarouselIndicatorIndex].company}`;
-    currentTestimonial.img.src =
-      testimonials[nextCarouselIndicatorIndex].img.src;
-    currentTestimonial.img.alt =
-      testimonials[nextCarouselIndicatorIndex].img.alt;
-    currentTestimonial.contact.href =
-      testimonials[nextCarouselIndicatorIndex].contact;
-    currentTestimonial.quote.textContent =
-      testimonials[nextCarouselIndicatorIndex].quote;
+    currentTestimonial.img.src = testimonials[nextCarouselIndicatorIndex].img.src;
+    currentTestimonial.img.alt = testimonials[nextCarouselIndicatorIndex].img.alt;
+    currentTestimonial.contact.href = testimonials[nextCarouselIndicatorIndex].contact;
+    currentTestimonial.quote.textContent = testimonials[nextCarouselIndicatorIndex].quote;
   },
 };
 
-const testimonialAuthorWrapper = document.querySelector(
-  ".testimonial-author-wrapper"
-);
-const testimonialQuote = document.querySelector(".testimonial-quote-p");
-const btnTestimonialPrev = document.querySelector(".btn-testimonial-prev");
-const btnTestimonialNext = document.querySelector(".btn-testimonial-next");
-const testimonialWindow = document.querySelector(".testimonial-window");
-const carouselIndicators = Array.from(
-  document.querySelectorAll(".carousel-indicator")
-);
+const testimonialAuthorWrapper = document.querySelector('.testimonial-author-wrapper');
+const testimonialQuote = document.querySelector('.testimonial-quote-p');
+const btnTestimonialPrev = document.querySelector('.btn-testimonial-prev');
+const btnTestimonialNext = document.querySelector('.btn-testimonial-next');
+const testimonialWindow = document.querySelector('.testimonial-window');
+const carouselIndicators = Array.from(document.querySelectorAll('.carousel-indicator'));
 
 const handleCarouselIndicatorClick = ({ target }) => {
   // a carousel indicator (one of the little dots below the testimonials) is clicked
 
   // remove highlighing from the previously active carousel indicator
   // highlight the clicked carousel indicator
-  const carouselIndicatorActive = document.querySelector(
-    ".carousel-indicator-active"
-  );
-  carouselIndicatorActive?.classList.remove("carousel-indicator-active");
-  target.classList.add("carousel-indicator-active");
+  const carouselIndicatorActive = document.querySelector('.carousel-indicator-active');
+  carouselIndicatorActive?.classList.remove('carousel-indicator-active');
+  target.classList.add('carousel-indicator-active');
 
   // get the index of the next carousel indicator (the one that was clicked and gained the class carousel-indicator-active)
   nextCarouselIndicatorIndex = carouselIndicators.indexOf(target);
 
   // get the index of the previous carousel indicator (the one that had the class carousel-indicator-active and lost it)
-  prevCarouselIndicatorIndex = carouselIndicators.indexOf(
-    carouselIndicatorActive
-  );
+  prevCarouselIndicatorIndex = carouselIndicators.indexOf(carouselIndicatorActive);
 
   if (nextCarouselIndicatorIndex > prevCarouselIndicatorIndex) {
     testimonialSwitch.clickedCarouselIndicatorNext();
@@ -557,18 +464,12 @@ const testimonialSwitchNextAutomaticEnd = () => {
 
 // add event listeners for clicking any buttons to switch testimonials
 carouselIndicators.forEach((carouselIndicator) =>
-  carouselIndicator.addEventListener("click", handleCarouselIndicatorClick)
+  carouselIndicator.addEventListener('click', handleCarouselIndicatorClick),
 );
-btnTestimonialNext.addEventListener("click", handleBtnTestimonialNextClick);
-btnTestimonialPrev.addEventListener("click", handleBtnTestimonialPrevClick);
-testimonialWindow.addEventListener(
-  "pointerdown",
-  handleTestimonialWindowSwipeStart
-);
-testimonialWindow.addEventListener(
-  "pointerup",
-  handleTestimonialWindowSwipeEnd
-);
-document.addEventListener("DOMContentLoaded", () => {
+btnTestimonialNext.addEventListener('click', handleBtnTestimonialNextClick);
+btnTestimonialPrev.addEventListener('click', handleBtnTestimonialPrevClick);
+testimonialWindow.addEventListener('pointerdown', handleTestimonialWindowSwipeStart);
+testimonialWindow.addEventListener('pointerup', handleTestimonialWindowSwipeEnd);
+document.addEventListener('DOMContentLoaded', () => {
   testimonialSwitchNextAutomaticStart();
 });
