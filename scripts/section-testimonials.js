@@ -1,62 +1,52 @@
-const testimonial1 = {
-  name: 'Miguel Oliveira',
-  jobTitle: 'Project Coordinator and Executive Assistant',
-  company: 'Boston Consulting Group',
-  img: {
-    src: './images/testimonials/miguel-oliveira.jpg',
-    alt: this.name,
-  },
-  contact: 'https://www.linkedin.com/in/miguelsoska',
-  quote:
-    'Peter has always shown high levels of professionalism and enthusiasm. He was always ahead of schedule and that helped tremendously in busy days where many events and meeting were being held. Therefore, it was always a pleasure to work with Peter. I am sure that his organisational skills and structured approach to work definitely add value to any team he joins.',
-};
-
-const testimonial2 = {
-  name: 'Manuela Sobral',
-  jobTitle: 'Project Manager and HR Coordinator',
-  company: 'Sustainary',
-  img: {
-    src: './images/testimonials/manuela-sobral.jpg',
-    alt: this.name,
-  },
-  contact: 'https://www.linkedin.com/in/manuela-sobral',
-  quote:
-    'Peter is a team-player, ready and willing to help his teammates, and deeply caring for the users. He possesses strong problem-solving skills and is able to solve technical challenges on his own. We could always count on him as he is focused on consistently delivering high-quality work, which is something we have highly appreciated.',
-};
-
-const testimonial3 = {
-  name: 'Bo Koch-Christensen',
-  jobTitle: 'Project and Organisation Coordinator',
-  company: 'Sustainary',
-  img: {
-    src: './images/testimonials/bo-koch-christensen.jpg',
-    alt: this.name,
-  },
-  contact: 'https://www.linkedin.com/in/highperformer',
-  quote:
-    'Peter played a crucial role in shaping a strong identity and seamless user experience across our websites, making them not only visually appealing but also user-friendly and easy to update in the future. The quality of his work speaks for itself, and his websites are now helping Sustainary fulfil its vision.',
-};
-
-const testimonial4 = {
-  name: 'Ignas Bagdonas',
-  jobTitle: 'Engineering Manager',
-  company: 'AdPlenty',
-  img: {
-    src: './images/testimonials/ignas-bagdonas.jpg',
-    alt: this.name,
-  },
-  contact: 'https://www.linkedin.com/in/ignasbagdonas',
-  quote:
-    'Peter was detail-oriented and often spent time thinking through edge cases, testing different scenarios, and looking for ways to keep the code clean and optimized. He would also ask questions to understand the broader context behind a task, rather than only focusing on the immediate implementation.',
-};
-
 const testimonials = [
-  // every testimonial that is to be displayed on the website need to be included in this array
-
-  testimonial1,
-  testimonial2,
-  testimonial3,
-  testimonial4,
+  {
+    name: 'Ignas Bagdonas',
+    jobTitle: 'Engineering Manager',
+    company: 'AdPlenty',
+    img: {
+      src: './images/testimonials/ignas-bagdonas.jpg',
+      alt: this.name,
+    },
+    contact: 'https://www.linkedin.com/in/ignasbagdonas',
+    quote:
+      'Peter was detail-oriented and often spent time thinking through edge cases, testing different scenarios, and looking for ways to keep the code clean and optimized. He would also ask questions to understand the broader context behind a task, rather than only focusing on the immediate implementation.',
+  },
+  {
+    name: 'Miguel Oliveira',
+    jobTitle: 'Project Coordinator and Executive Assistant',
+    company: 'Boston Consulting Group',
+    img: {
+      src: './images/testimonials/miguel-oliveira.jpg',
+      alt: this.name,
+    },
+    contact: 'https://www.linkedin.com/in/miguelsoska',
+    quote:
+      'Peter has always shown high levels of professionalism and enthusiasm. He was always ahead of schedule and that helped tremendously in busy days where many events and meeting were being held. Therefore, it was always a pleasure to work with Peter. I am sure that his organisational skills and structured approach to work definitely add value to any team he joins.',
+  },
+  {
+    name: 'Manuela Sobral',
+    jobTitle: 'Project Manager and HR Coordinator',
+    company: 'Sustainary',
+    img: {
+      src: './images/testimonials/manuela-sobral.jpg',
+      alt: this.name,
+    },
+    contact: 'https://www.linkedin.com/in/manuela-sobral',
+    quote:
+      'Peter is a team-player, ready and willing to help his teammates, and deeply caring for the users. He possesses strong problem-solving skills and is able to solve technical challenges on his own. We could always count on him as he is focused on consistently delivering high-quality work, which is something we have highly appreciated.',
+  },
+  {
+    name: 'Bo Koch-Christensen',
+    jobTitle: 'Project and Organisation Coordinator',
+    company: 'Sustainary',
+    img: {
+      src: './images/testimonials/bo-koch-christensen.jpg',
+      alt: this.name,
+    },
+    contact: 'https://www.linkedin.com/in/highperformer',
+    quote:
+      'Peter played a crucial role in shaping a strong identity and seamless user experience across our websites, making them not only visually appealing but also user-friendly and easy to update in the future. The quality of his work speaks for itself, and his websites are now helping Sustainary fulfil its vision.',
+  },
 ];
 
 let nextTestimonial;
@@ -387,7 +377,10 @@ const testimonialQuote = document.querySelector('.testimonial-quote-p');
 const btnTestimonialPrev = document.querySelector('.btn-testimonial-prev');
 const btnTestimonialNext = document.querySelector('.btn-testimonial-next');
 const testimonialWindow = document.querySelector('.testimonial-window');
-const carouselIndicators = Array.from(document.querySelectorAll('.carousel-indicator'));
+const carouselIndicatorWrapper = document.querySelector('.carousel-indicators-wrapper');
+
+// stores references for the carousel indicator DOM elements after the are created and appended to the DOM
+const carouselIndicators = [];
 
 const handleCarouselIndicatorClick = ({ target }) => {
   // a carousel indicator (one of the little dots below the testimonials) is clicked
@@ -448,6 +441,31 @@ const handleTestimonialWindowSwipeEnd = ({ clientX }) => {
   }
 };
 
+const handleDOMContentLoaded = () => {
+  currentTestimonial.name.textContent = testimonials[0].name;
+  currentTestimonial.jobTitle.textContent = `${testimonials[0].jobTitle} @ ${testimonials[0].company}`;
+  currentTestimonial.img.src = testimonials[0].img.src;
+  currentTestimonial.img.alt = testimonials[0].img.alt;
+  currentTestimonial.contact.href = testimonials[0].contact;
+  currentTestimonial.quote.textContent = testimonials[0].quote;
+
+  // create a carousel indicator for each testimonial and append it to the DOM
+  testimonials.forEach((testimonial) => {
+    const carouselIndicator = document.createElement('div');
+    carouselIndicator.classList.add('carousel-indicator', 'button-outside-project');
+    if (currentTestimonial.name.textContent === testimonial.name) {
+      carouselIndicator.classList.add('carousel-indicator-active');
+    }
+    // add event listeners for clicking any buttons to switch testimonials
+    carouselIndicator.addEventListener('click', handleCarouselIndicatorClick);
+    carouselIndicatorWrapper.append(carouselIndicator);
+  });
+  // store references to the carousel indicator DOM elements
+  carouselIndicators.push(...Array.from(document.querySelectorAll('.carousel-indicator')));
+
+  testimonialSwitchNextAutomaticStart();
+};
+
 let testimonialSwitchNextAutomatic = null;
 
 const testimonialSwitchNextAutomaticStart = () => {
@@ -463,14 +481,8 @@ const testimonialSwitchNextAutomaticEnd = () => {
   testimonialSwitchNextAutomatic = null;
 };
 
-// add event listeners for clicking any buttons to switch testimonials
-carouselIndicators.forEach((carouselIndicator) =>
-  carouselIndicator.addEventListener('click', handleCarouselIndicatorClick),
-);
 btnTestimonialNext.addEventListener('click', handleBtnTestimonialNextClick);
 btnTestimonialPrev.addEventListener('click', handleBtnTestimonialPrevClick);
 testimonialWindow.addEventListener('pointerdown', handleTestimonialWindowSwipeStart);
 testimonialWindow.addEventListener('pointerup', handleTestimonialWindowSwipeEnd);
-document.addEventListener('DOMContentLoaded', () => {
-  testimonialSwitchNextAutomaticStart();
-});
+document.addEventListener('DOMContentLoaded', handleDOMContentLoaded);
