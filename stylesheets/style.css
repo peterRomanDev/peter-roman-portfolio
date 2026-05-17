@@ -767,18 +767,18 @@ body {
   width: 100%;
 
   display: var(--d-section-projects-h2-wrapper);
-  justify-content: flex-end;
+  justify-content: flex-start;
 
   position: var(--pos-section-projects-h2-wrapper);
-  right: var(--pos-projects-right);
+  left: var(--pos-projects-left);
 }
 
 .pos-section-projects-h2-on-screen {
-  right: var(--pos-projects-on-screen-right);
+  left: var(--pos-projects-on-screen-left);
 }
 
 .transition-section-projects-h2 {
-  transition: right 500ms;
+  transition: left 500ms;
 }
 
 .btn-back-to-projects-wrapper {
@@ -788,7 +788,7 @@ body {
 .btn-back-to-projects {
   position: absolute;
   top: calc(0% - var(--height-btn-back-to-projects) * 1.5);
-  left: 100%;
+  left: calc(0% - var(--width-btn));
 }
 
 .btn-back-to-projects:hover {
@@ -796,7 +796,7 @@ body {
 }
 
 .pos-btn-back-to-projects-on-screen {
-  left: calc(100% - var(--width-btn));
+  left: 0%;
 }
 
 .transition-btn-back-to-projects {
@@ -936,15 +936,15 @@ body {
   gap: var(--gap-projects);
 
   position: var(--pos-projects);
-  right: var(--pos-projects-right);
+  left: var(--pos-projects-left);
 }
 
 .pos-projects-on-screen {
-  right: var(--pos-projects-on-screen-right);
+  left: var(--pos-projects-on-screen-left);
 }
 
 .transition-projects {
-  transition: right 500ms;
+  transition: left 500ms;
 }
 
 /* XS-MD SCREEN */
@@ -1057,7 +1057,7 @@ body {
 
 .btn-view-project {
   width: var(--width-btn-view-project);
-  padding: 0;
+  padding: 1.3rem 2rem;
   background-color: var(--clr-blue-dark-700);
   border: 0;
   border-radius: var(--br-10px);
@@ -1071,14 +1071,13 @@ body {
     box-shadow 200ms;
 
   display: flex;
-  align-items: stretch;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .btn-view-project:hover {
   cursor: pointer;
   transform: var(--grow-item);
-  background-color: var(--clr-blue-dark-800);
   box-shadow: var(--box-shadow-slight-shadow-100);
 
   text-decoration: none;
@@ -1086,35 +1085,32 @@ body {
 }
 
 .btn-view-project-title {
-  width: 76%;
-  padding: 1.3rem 2rem;
+  width: 100%;
 
   font-size: var(--fs-h2);
   font-weight: var(--fw-bold);
   text-align: left;
   pointer-events: none;
   line-height: 2.25rem;
+
+  transition: color 200ms;
 }
 
 .btn-view-project-subtitle {
-  width: 25%;
-  padding: 0 1.3rem;
-  background-color: var(--clr-blue-dark-800);
-  border-radius: 0 var(--br-10px) var(--br-10px) 0;
+  width: 100%;
+  text-align: left;
 
   font-size: var(--fs-300);
-  font-weight: var(--fw-bold);
+  font-weight: var(--fw-normal);
   line-height: 1.3rem;
   pointer-events: none;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  transition: color 200ms;
 }
 
 .btn-view-project:hover .btn-view-project-title {
   text-decoration: none;
-  color: var(--clr-blue-light-200);
+  color: var(--clr-red-accent);
 }
 
 .btn-view-project:hover .btn-view-project-subtitle {
@@ -1190,27 +1186,28 @@ html::-webkit-scrollbar-track,
 
   position: fixed;
   top: 45%;
-  left: calc(0% - var(--width-phone));
+  right: calc(0% - var(--width-phone));
 }
 
 .devices-lg-on-screen {
-  left: 10%;
+  right: var(--pos-devices-lg-on-screen-right);
 }
 
 .devices-xl {
   display: var(--d-devices-xl);
+  align-items: flex-end;
 
   position: fixed;
-  top: 50%;
-  left: calc(0% - var(--width-laptop-keyboard) - var(--width-phone));
+  top: 45%;
+  right: calc(0% - var(--width-laptop-keyboard) - var(--width-phone));
 }
 
 .devices-xl-on-screen {
-  left: 5%;
+  right: var(--pos-devices-xl-on-screen-right);
 }
 
 .transition-devices {
-  transition: left 500ms;
+  transition: right 500ms;
 }
 
 /* LAPTOP */
@@ -1228,6 +1225,7 @@ html::-webkit-scrollbar-track,
   justify-content: center;
 
   position: relative;
+  right: -10px;
 }
 
 .laptop-camera {
@@ -1273,12 +1271,6 @@ html::-webkit-scrollbar-track,
 
 /* PHONE */
 
-.phone-position {
-  position: absolute;
-  bottom: -1px;
-  right: calc(0% - var(--width-phone) + 5px);
-}
-
 .phone {
   width: var(--width-phone);
   height: var(--height-phone);
@@ -1292,6 +1284,7 @@ html::-webkit-scrollbar-track,
   justify-content: center;
 
   position: relative;
+  z-index: 10;
 }
 
 .phone-camera {
@@ -1802,7 +1795,7 @@ html::-webkit-scrollbar-track,
     --d-btn-toggle-nav: none;
 
     --width-laptop: 28.438rem;
-    --width-laptop-keyboard: calc(var(--width-laptop) + 60px);
+    --width-laptop-keyboard: calc(var(--width-laptop) + 30px);
     --width-nav-item-big: 8.125rem;
     --width-section-home-content-image: 14rem;
 
@@ -1848,8 +1841,11 @@ html::-webkit-scrollbar-track,
 
     --pos-projects: relative;
     --pos-section-projects-h2-wrapper: relative;
-    --pos-projects-right: calc(0% - var(--width-btn-view-project));
-    --pos-projects-on-screen-right: 5%;
+    --pos-projects-left: calc(0% - var(--width-btn-view-project));
+    --pos-projects-on-screen-left: calc(
+      var(--margin-left-category) + var(--margin-left-sub-category)
+    );
+    --pos-devices-lg-on-screen-right: var(--pos-projects-on-screen-left);
     --pos-link-credential-bottom: 50%;
     --pos-link-credential-translate: translateY(50%);
 
@@ -1900,7 +1896,7 @@ html::-webkit-scrollbar-track,
     --padding-top-section-testimonials: 35rem;
     /* --padding-bottom-section-projects: 0; */
 
-    --align-items-projects: flex-end;
+    --align-items-projects: flex-start;
     --align-items-sub-item-bio: center;
     --gap-projects: 1rem;
     --gap-sub-item-bio: 0;
@@ -1913,14 +1909,16 @@ html::-webkit-scrollbar-track,
 /* XL SCREEN SIZE */
 @media (min-width: 1200px) {
   :root {
-    --pos-projects-right: calc(0% - var(--width-btn-view-project));
+    --pos-projects-left: calc(0% - var(--width-btn-view-project));
+    --pos-projects-on-screen-left: var(--margin-left-category);
+    --pos-devices-xl-on-screen-right: var(--pos-projects-on-screen-left);
 
-    --d-devices-xl: block;
+    --d-devices-xl: flex;
     --d-devices-md-lg: none;
 
     --width-laptop-screen: 425px;
     /* --width-laptop-screen: calc(var(--width-laptop) - 30px); */
-    --width-btn-view-project: 37vw;
+    --width-btn-view-project: 33vw;
     --width-sub-item-bio: 82%;
 
     --height-laptop-screen: 260px;
