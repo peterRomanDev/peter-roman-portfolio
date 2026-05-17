@@ -165,14 +165,15 @@ const transition = {
   },
 };
 
-const transitionMs = {
-  // ms for each phase of the testimonial transition
+const TRANSITION_DELAY_TESTIMONIAL_SWITCH_AUTOMATIC = 20000;
 
-  phase1: 0,
-  phase2: 350,
-  phase3: 400,
-  phase4: 450,
-};
+const transitionDelayTestimonial = Object.freeze({
+  // ms for each phase of the testimonial transition
+  PHASE_01: 0,
+  PHASE_02: 250,
+  PHASE_03: 300,
+  PHASE_04: 350,
+});
 
 const testimonialSwitch = {
   // functions to switch the current testimonial to a different one
@@ -183,11 +184,11 @@ const testimonialSwitch = {
 
     setTimeout(() => {
       transition.next.phase1();
-    }, transitionMs.phase1);
+    }, transitionDelayTestimonial.PHASE_01);
 
     setTimeout(() => {
       transition.next.phase2();
-    }, transitionMs.phase2);
+    }, transitionDelayTestimonial.PHASE_02);
 
     setTimeout(() => {
       for (let i = 0; i < testimonials.length; i++) {
@@ -247,11 +248,11 @@ const testimonialSwitch = {
           break;
         }
       }
-    }, transitionMs.phase3);
+    }, transitionDelayTestimonial.PHASE_03);
 
     setTimeout(() => {
       transition.next.phase4();
-    }, transitionMs.phase4);
+    }, transitionDelayTestimonial.PHASE_04);
   },
   prev() {
     // function to switch to the previous testimonial
@@ -259,11 +260,11 @@ const testimonialSwitch = {
 
     setTimeout(() => {
       transition.prev.phase1();
-    }, transitionMs.phase1);
+    }, transitionDelayTestimonial.PHASE_01);
 
     setTimeout(() => {
       transition.prev.phase2();
-    }, transitionMs.phase2);
+    }, transitionDelayTestimonial.PHASE_02);
 
     setTimeout(() => {
       for (let i = 0; i < testimonials.length; i++) {
@@ -323,11 +324,11 @@ const testimonialSwitch = {
           break;
         }
       }
-    }, transitionMs.phase3);
+    }, transitionDelayTestimonial.PHASE_03);
 
     setTimeout(() => {
       transition.prev.phase4();
-    }, transitionMs.phase4);
+    }, transitionDelayTestimonial.PHASE_04);
   },
   clickedCarouselIndicatorNext() {
     // function to switch to the testimonial that is represented by a carousel indicator
@@ -335,19 +336,19 @@ const testimonialSwitch = {
 
     setTimeout(() => {
       transition.next.phase1();
-    }, transitionMs.phase1);
+    }, transitionDelayTestimonial.PHASE_01);
 
     setTimeout(() => {
       transition.next.phase2();
-    }, transitionMs.phase2);
+    }, transitionDelayTestimonial.PHASE_02);
 
     setTimeout(() => {
       this.clickedCarouselIndicator();
-    }, transitionMs.phase3);
+    }, transitionDelayTestimonial.PHASE_03);
 
     setTimeout(() => {
       transition.next.phase4();
-    }, transitionMs.phase4);
+    }, transitionDelayTestimonial.PHASE_04);
   },
   clickedCarouselIndicatorPrev() {
     // function to switch to the testimonial that is represented by a carousel indicator
@@ -355,19 +356,19 @@ const testimonialSwitch = {
 
     setTimeout(() => {
       transition.prev.phase1();
-    }, transitionMs.phase1);
+    }, transitionDelayTestimonial.PHASE_01);
 
     setTimeout(() => {
       transition.prev.phase2();
-    }, transitionMs.phase2);
+    }, transitionDelayTestimonial.PHASE_02);
 
     setTimeout(() => {
       this.clickedCarouselIndicator();
-    }, transitionMs.phase3);
+    }, transitionDelayTestimonial.PHASE_03);
 
     setTimeout(() => {
       transition.prev.phase4();
-    }, transitionMs.phase4);
+    }, transitionDelayTestimonial.PHASE_04);
   },
   clickedCarouselIndicator() {
     // make the current testimonial the one that corresponds to the index of the current carousel indicator
@@ -453,7 +454,7 @@ const testimonialSwitchNextAutomaticStart = () => {
   if (!testimonialSwitchNextAutomatic) {
     testimonialSwitchNextAutomatic = setInterval(() => {
       testimonialSwitch.next();
-    }, 10000);
+    }, TRANSITION_DELAY_TESTIMONIAL_SWITCH_AUTOMATIC);
   }
 };
 
