@@ -71,8 +71,11 @@ class SectionProjects extends Section {
         }
       });
     };
+    const options = {
+      rootMargin: '-50px 0px 0px 0px',
+    };
 
-    const observer = new IntersectionObserver(projectsListOnScreen);
+    const observer = new IntersectionObserver(projectsListOnScreen, options);
 
     observer.observe(projectsList);
   }
