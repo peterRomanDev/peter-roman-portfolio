@@ -1,3 +1,9 @@
+const transitionDelayProject = Object.freeze({
+  PHASE_01: 250,
+  PHASE_02: 400,
+  PHASE_03: 650,
+});
+
 class PageBody {
   constructor(elementTagName) {
     this.element = document.querySelector(elementTagName);
@@ -65,8 +71,12 @@ class SectionProjects extends Section {
         }
       });
     };
+    const options = {
+      // root margin to account for the nav height
+      rootMargin: '-50px 0px 0px 0px',
+    };
 
-    const observer = new IntersectionObserver(projectsListOnScreen);
+    const observer = new IntersectionObserver(projectsListOnScreen, options);
 
     observer.observe(projectsList);
   }
@@ -180,13 +190,13 @@ class SectionProjects extends Section {
         sectionContact.show();
 
         window.scrollTo(sectionProjects);
-      }, 500);
+      }, transitionDelayProject.PHASE_01);
       setTimeout(() => {
         linkAbout.deactivate();
         linkProjects.activate();
         projectsList.showOnScreenWithTransition();
         btnBackToProjects.showOnScreenWithTransition();
-      }, 750);
+      }, transitionDelayProject.PHASE_02);
       setTimeout(() => {
         document.addEventListener('click', nav.clickLargeScreen);
         linkLogo.enable();
@@ -196,7 +206,7 @@ class SectionProjects extends Section {
         linkContact.enable();
         btnBackToProjects.addFocus();
         linksInsideProjects.addFocus();
-      }, 1250);
+      }, transitionDelayProject.PHASE_03);
     } else if (e.target.classList.contains('btn-polyglot-gathering')) {
       document.removeEventListener('click', nav.clickLargeScreen);
       linkLogo.disable();
@@ -234,13 +244,13 @@ class SectionProjects extends Section {
         sectionContact.show();
 
         window.scrollTo(sectionProjects);
-      }, 500);
+      }, transitionDelayProject.PHASE_01);
       setTimeout(() => {
         linkAbout.deactivate();
         linkProjects.activate();
         projectsList.showOnScreenWithTransition();
         btnBackToProjects.showOnScreenWithTransition();
-      }, 750);
+      }, transitionDelayProject.PHASE_02);
       setTimeout(() => {
         document.addEventListener('click', nav.clickLargeScreen);
         linkLogo.enable();
@@ -250,7 +260,7 @@ class SectionProjects extends Section {
         linkContact.enable();
         btnBackToProjects.addFocus();
         linksInsideProjects.addFocus();
-      }, 1250);
+      }, transitionDelayProject.PHASE_03);
     } else if (e.target.classList.contains('btn-ekokviz')) {
       document.removeEventListener('click', nav.clickLargeScreen);
       linkLogo.disable();
@@ -288,13 +298,13 @@ class SectionProjects extends Section {
         sectionContact.show();
 
         window.scrollTo(sectionProjects);
-      }, 500);
+      }, transitionDelayProject.PHASE_01);
       setTimeout(() => {
         linkAbout.deactivate();
         linkProjects.activate();
         projectsList.showOnScreenWithTransition();
         btnBackToProjects.showOnScreenWithTransition();
-      }, 750);
+      }, transitionDelayProject.PHASE_02);
       setTimeout(() => {
         document.addEventListener('click', nav.clickLargeScreen);
         linkLogo.enable();
@@ -304,7 +314,7 @@ class SectionProjects extends Section {
         linkContact.enable();
         btnBackToProjects.addFocus();
         linksInsideProjects.addFocus();
-      }, 1250);
+      }, transitionDelayProject.PHASE_03);
     } else if (e.target.classList.contains('btn-jump-over-cacti')) {
       document.removeEventListener('click', nav.clickLargeScreen);
       linkLogo.disable();
@@ -342,13 +352,13 @@ class SectionProjects extends Section {
         sectionContact.show();
 
         window.scrollTo(sectionProjects);
-      }, 500);
+      }, transitionDelayProject.PHASE_01);
       setTimeout(() => {
         linkAbout.deactivate();
         linkProjects.activate();
         projectsList.showOnScreenWithTransition();
         btnBackToProjects.showOnScreenWithTransition();
-      }, 750);
+      }, transitionDelayProject.PHASE_02);
       setTimeout(() => {
         document.addEventListener('click', nav.clickLargeScreen);
         linkLogo.enable();
@@ -358,7 +368,7 @@ class SectionProjects extends Section {
         linkContact.enable();
         btnBackToProjects.addFocus();
         linksInsideProjects.addFocus();
-      }, 1250);
+      }, transitionDelayProject.PHASE_03);
     } else if (e.target.classList.contains('btn-peter-roman-portfolio')) {
       document.removeEventListener('click', nav.clickLargeScreen);
       linkLogo.disable();
@@ -396,13 +406,13 @@ class SectionProjects extends Section {
         sectionContact.show();
 
         window.scrollTo(sectionProjects);
-      }, 500);
+      }, transitionDelayProject.PHASE_01);
       setTimeout(() => {
         linkAbout.deactivate();
         linkProjects.activate();
         projectsList.showOnScreenWithTransition();
         btnBackToProjects.showOnScreenWithTransition();
-      }, 750);
+      }, transitionDelayProject.PHASE_02);
       setTimeout(() => {
         document.addEventListener('click', nav.clickLargeScreen);
         linkLogo.enable();
@@ -412,7 +422,7 @@ class SectionProjects extends Section {
         linkContact.enable();
         btnBackToProjects.addFocus();
         linksInsideProjects.addFocus();
-      }, 1250);
+      }, transitionDelayProject.PHASE_03);
     } else if (e.target.classList.contains('btn-sustainary-main-website')) {
       document.removeEventListener('click', nav.clickLargeScreen);
       linkLogo.disable();
@@ -450,13 +460,13 @@ class SectionProjects extends Section {
         sectionContact.show();
 
         window.scrollTo(sectionProjects);
-      }, 500);
+      }, transitionDelayProject.PHASE_01);
       setTimeout(() => {
         linkAbout.deactivate();
         linkProjects.activate();
         projectsList.showOnScreenWithTransition();
         btnBackToProjects.showOnScreenWithTransition();
-      }, 750);
+      }, transitionDelayProject.PHASE_02);
       setTimeout(() => {
         document.addEventListener('click', nav.clickLargeScreen);
         linkLogo.enable();
@@ -466,7 +476,7 @@ class SectionProjects extends Section {
         linkContact.enable();
         btnBackToProjects.addFocus();
         linksInsideProjects.addFocus();
-      }, 1250);
+      }, transitionDelayProject.PHASE_03);
     } else if (e.target.classList.contains('btn-sdg-tech-awards')) {
       document.removeEventListener('click', nav.clickLargeScreen);
       linkLogo.disable();
@@ -504,13 +514,13 @@ class SectionProjects extends Section {
         sectionContact.show();
 
         window.scrollTo(sectionProjects);
-      }, 500);
+      }, transitionDelayProject.PHASE_01);
       setTimeout(() => {
         linkAbout.deactivate();
         linkProjects.activate();
         projectsList.showOnScreenWithTransition();
         btnBackToProjects.showOnScreenWithTransition();
-      }, 750);
+      }, transitionDelayProject.PHASE_02);
       setTimeout(() => {
         document.addEventListener('click', nav.clickLargeScreen);
         linkLogo.enable();
@@ -520,7 +530,7 @@ class SectionProjects extends Section {
         linkContact.enable();
         btnBackToProjects.addFocus();
         linksInsideProjects.addFocus();
-      }, 1250);
+      }, transitionDelayProject.PHASE_03);
     } else if (e.target.classList.contains('btn-little-lemon')) {
       document.removeEventListener('click', nav.clickLargeScreen);
       linkLogo.disable();
@@ -558,13 +568,13 @@ class SectionProjects extends Section {
         sectionContact.show();
 
         window.scrollTo(sectionProjects);
-      }, 500);
+      }, transitionDelayProject.PHASE_01);
       setTimeout(() => {
         linkAbout.deactivate();
         linkProjects.activate();
         projectsList.showOnScreenWithTransition();
         btnBackToProjects.showOnScreenWithTransition();
-      }, 750);
+      }, transitionDelayProject.PHASE_02);
       setTimeout(() => {
         document.addEventListener('click', nav.clickLargeScreen);
         linkLogo.enable();
@@ -574,7 +584,7 @@ class SectionProjects extends Section {
         linkContact.enable();
         btnBackToProjects.addFocus();
         linksInsideProjects.addFocus();
-      }, 1250);
+      }, transitionDelayProject.PHASE_03);
     } else if (e.target.classList.contains('btn-talent-friendly-nation')) {
       document.removeEventListener('click', nav.clickLargeScreen);
       linkLogo.disable();
@@ -612,13 +622,13 @@ class SectionProjects extends Section {
         sectionContact.show();
 
         window.scrollTo(sectionProjects);
-      }, 500);
+      }, transitionDelayProject.PHASE_01);
       setTimeout(() => {
         linkAbout.deactivate();
         linkProjects.activate();
         projectsList.showOnScreenWithTransition();
         btnBackToProjects.showOnScreenWithTransition();
-      }, 750);
+      }, transitionDelayProject.PHASE_02);
       setTimeout(() => {
         document.addEventListener('click', nav.clickLargeScreen);
         linkLogo.enable();
@@ -628,7 +638,7 @@ class SectionProjects extends Section {
         linkContact.enable();
         btnBackToProjects.addFocus();
         linksInsideProjects.addFocus();
-      }, 1250);
+      }, transitionDelayProject.PHASE_03);
     } else if (e.target.classList.contains('btn-sustainable-innovation-camp')) {
       document.removeEventListener('click', nav.clickLargeScreen);
       linkLogo.disable();
@@ -666,13 +676,13 @@ class SectionProjects extends Section {
         sectionContact.show();
 
         window.scrollTo(sectionProjects);
-      }, 500);
+      }, transitionDelayProject.PHASE_01);
       setTimeout(() => {
         linkAbout.deactivate();
         linkProjects.activate();
         projectsList.showOnScreenWithTransition();
         btnBackToProjects.showOnScreenWithTransition();
-      }, 750);
+      }, transitionDelayProject.PHASE_02);
       setTimeout(() => {
         document.addEventListener('click', nav.clickLargeScreen);
         linkLogo.enable();
@@ -682,7 +692,7 @@ class SectionProjects extends Section {
         linkContact.enable();
         btnBackToProjects.addFocus();
         linksInsideProjects.addFocus();
-      }, 1250);
+      }, transitionDelayProject.PHASE_03);
     } else if (e.target.classList.contains('btn-creative-studio')) {
       document.removeEventListener('click', nav.clickLargeScreen);
       linkLogo.disable();
@@ -720,13 +730,13 @@ class SectionProjects extends Section {
         sectionContact.show();
 
         window.scrollTo(sectionProjects);
-      }, 500);
+      }, transitionDelayProject.PHASE_01);
       setTimeout(() => {
         linkAbout.deactivate();
         linkProjects.activate();
         projectsList.showOnScreenWithTransition();
         btnBackToProjects.showOnScreenWithTransition();
-      }, 750);
+      }, transitionDelayProject.PHASE_02);
       setTimeout(() => {
         document.addEventListener('click', nav.clickLargeScreen);
         linkLogo.enable();
@@ -736,7 +746,7 @@ class SectionProjects extends Section {
         linkContact.enable();
         btnBackToProjects.addFocus();
         linksInsideProjects.addFocus();
-      }, 1250);
+      }, transitionDelayProject.PHASE_03);
     } else if (e.target.classList.contains('btn-back-to-projects')) {
       sectionProjects.resetWithTransition();
     }
@@ -775,12 +785,12 @@ class SectionProjects extends Section {
       screenMsgs.show();
 
       window.scrollTo(sectionProjects);
-    }, 500);
+    }, transitionDelayProject.PHASE_01);
     setTimeout(() => {
       headingSectionProjects.showOnScreenWithTransition();
       projectsList.showOnScreenWithTransition();
       pageBody.enableScrolling();
-    }, 750);
+    }, transitionDelayProject.PHASE_02);
   }
   resetNoTransition() {
     pageBody.enableScrolling();

@@ -177,6 +177,14 @@
   --gap-testimonial-author-wrapper: 0.5rem;
   --gap-sub-item-bio: 2rem;
   --transform-chat-window: translateX(50%);
+
+  --transition-delay-project-phase-01: 250ms;
+  --transition-delay-project-phase-02: 400ms;
+  --transition-delay-project-phase-03: 650ms;
+  --transition-delay-testimonial-phase-01: 0ms;
+  --transition-delay-testimonial-phase-02: 250ms;
+  --transition-delay-testimonial-phase-03: 300ms;
+  --transition-delay-testimonial-phase-04: 350ms;
 }
 
 /* CSS RESET */
@@ -778,7 +786,7 @@ body {
 }
 
 .transition-section-projects-h2 {
-  transition: left 500ms;
+  transition: left var(--transition-delay-project-phase-01);
 }
 
 .btn-back-to-projects-wrapper {
@@ -800,7 +808,7 @@ body {
 }
 
 .transition-btn-back-to-projects {
-  transition: left 500ms;
+  transition: left var(--transition-delay-project-phase-01);
 }
 
 /* SECTION TESTIMONIALS */
@@ -910,8 +918,8 @@ body {
 
 .transition-testimonial {
   transition:
-    transform 350ms,
-    opacity 350ms;
+    transform var(--transition-delay-testimonial-phase-02),
+    opacity var(--transition-delay-testimonial-phase-02);
 }
 
 .testimonial-off-screen-left {
@@ -944,7 +952,7 @@ body {
 }
 
 .transition-projects {
-  transition: left 500ms;
+  transition: left var(--transition-delay-project-phase-01);
 }
 
 /* XS-MD SCREEN */
