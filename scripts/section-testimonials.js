@@ -77,7 +77,7 @@ const transition = {
       btnTestimonialPrev.removeEventListener('click', handleBtnTestimonialPrevClick);
       testimonialWindow.removeEventListener('pointerdown', handleTestimonialWindowSwipeStart);
       testimonialWindow.removeEventListener('pointerup', handleTestimonialWindowSwipeEnd);
-      testimonialSwitchNextAutomaticEnd();
+      testimonialAutoSwitchNextEnd();
 
       testimonialAuthorWrapper.classList.add('testimonial-off-screen-left');
       testimonialQuote.classList.add('testimonial-off-screen-left');
@@ -107,7 +107,7 @@ const transition = {
       btnTestimonialPrev.addEventListener('click', handleBtnTestimonialPrevClick);
       testimonialWindow.addEventListener('pointerdown', handleTestimonialWindowSwipeStart);
       testimonialWindow.addEventListener('pointerup', handleTestimonialWindowSwipeEnd);
-      testimonialSwitchNextAutomaticStart();
+      testimonialAutoSwitchNextStart();
     },
   },
   prev: {
@@ -120,7 +120,7 @@ const transition = {
       btnTestimonialPrev.removeEventListener('click', handleBtnTestimonialPrevClick);
       testimonialWindow.removeEventListener('pointerdown', handleTestimonialWindowSwipeStart);
       testimonialWindow.removeEventListener('pointerup', handleTestimonialWindowSwipeEnd);
-      testimonialSwitchNextAutomaticEnd();
+      testimonialAutoSwitchNextEnd();
 
       testimonialAuthorWrapper.classList.add('testimonial-off-screen-right');
       testimonialQuote.classList.add('testimonial-off-screen-right');
@@ -150,12 +150,12 @@ const transition = {
       btnTestimonialPrev.addEventListener('click', handleBtnTestimonialPrevClick);
       testimonialWindow.addEventListener('pointerdown', handleTestimonialWindowSwipeStart);
       testimonialWindow.addEventListener('pointerup', handleTestimonialWindowSwipeEnd);
-      testimonialSwitchNextAutomaticStart();
+      testimonialAutoSwitchNextStart();
     },
   },
 };
 
-const TRANSITION_DELAY_TESTIMONIAL_SWITCH_AUTOMATIC = 20000;
+const TRANSITION_DELAY_TESTIMONIAL_AUTO_SWITCH = 20000;
 
 const transitionDelayTestimonial = Object.freeze({
   // ms for each phase of the testimonial transition
@@ -463,22 +463,22 @@ const handleDOMContentLoaded = () => {
   // store references to the carousel indicator DOM elements
   carouselIndicators.push(...Array.from(document.querySelectorAll('.carousel-indicator')));
 
-  testimonialSwitchNextAutomaticStart();
+  testimonialAutoSwitchNextStart();
 };
 
-let testimonialSwitchNextAutomatic = null;
+let testimonialAutoSwitchNext = null;
 
-const testimonialSwitchNextAutomaticStart = () => {
-  if (!testimonialSwitchNextAutomatic) {
-    testimonialSwitchNextAutomatic = setInterval(() => {
+const testimonialAutoSwitchNextStart = () => {
+  if (!testimonialAutoSwitchNext) {
+    testimonialAutoSwitchNext = setInterval(() => {
       testimonialSwitch.next();
-    }, TRANSITION_DELAY_TESTIMONIAL_SWITCH_AUTOMATIC);
+    }, TRANSITION_DELAY_TESTIMONIAL_AUTO_SWITCH);
   }
 };
 
-const testimonialSwitchNextAutomaticEnd = () => {
-  clearInterval(testimonialSwitchNextAutomatic);
-  testimonialSwitchNextAutomatic = null;
+const testimonialAutoSwitchNextEnd = () => {
+  clearInterval(testimonialAutoSwitchNext);
+  testimonialAutoSwitchNext = null;
 };
 
 btnTestimonialNext.addEventListener('click', handleBtnTestimonialNextClick);
