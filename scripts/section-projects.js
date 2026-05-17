@@ -72,6 +72,7 @@ class SectionProjects extends Section {
       });
     };
     const options = {
+      // root margin to account for the nav height
       rootMargin: '-50px 0px 0px 0px',
     };
 

@@ -442,6 +442,7 @@ const handleTestimonialWindowSwipeEnd = ({ clientX }) => {
 };
 
 const handleDOMContentLoaded = () => {
+  // assign the first testimonial as the current testimonial
   currentTestimonial.name.textContent = testimonials[0].name;
   currentTestimonial.jobTitle.textContent = `${testimonials[0].jobTitle} @ ${testimonials[0].company}`;
   currentTestimonial.img.src = testimonials[0].img.src;
